@@ -28,10 +28,10 @@ class IAImageView(NSView):
         if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
 
     def increaseZoom(self):
-        self.setZoom_(self.zoom * 2);
+        self.setZoom_(self.zoom * 2.0);
         
     def decreaseZoom(self):
-        self.setZoom_(self.zoom / 2);
+        self.setZoom_(self.zoom / 2.0);
     
     def zoomToFill(self, zoom=1.0):
         self.zoomingToFill = zoom
@@ -39,8 +39,8 @@ class IAImageView(NSView):
         size = self.image.size()
         framesize = self.frame().size
         zoom = min(framesize.width/size.width, framesize.height/size.height)*self.zoomingToFill
-        if zoom > 1:
-            zoom = min(4,floor(zoom))
+        if zoom > 1.0:
+            zoom = min(4.0,floor(zoom))
         self._setZoom(zoom)
     
     def _limitImageOffset(self):
@@ -64,7 +64,7 @@ class IAImageView(NSView):
         self._setZoom(zoom);
     
     def _setZoom(self,zoom):
-        self.zoom = min(16,max(1.0/128,zoom))
+        self.zoom = min(16.0,max(1.0/128.0,zoom))
         self._limitImageOffset()
         self.setNeedsDisplay_(YES)      
 
@@ -81,12 +81,12 @@ class IAImageView(NSView):
         self.backgroundRenderer = renderer;
         self.setNeedsDisplay_(YES)      
 
-    def initWithFrame_(self, frame):
-        self = super(IAImageView, self).initWithFrame_(frame)       
-        if self:
-            # initialization code here
-            pass
-        return self
+#    def initWithFrame_(self, frame):
+#        self = super(IAImageView, self).initWithFrame_(frame)       
+#        if self:
+#            # initialization code here
+#            pass
+#        return self
 
     def isOpaque(self):
         return self.backgroundRenderer is not None
@@ -97,7 +97,9 @@ class IAImageView(NSView):
         image = self.image if not self.drawAlternateImage else self.alternateImage;
         if image is None: return
 		
-        NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if self.smooth and self.zoom != 1.0 else NSImageInterpolationNone)
+        unscaled = abs(self.zoom - 1.0) < 0.01;
+        
+        NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if self.smooth and not unscaled else NSImageInterpolationNone)
         
         frame = self.frame();
         imgsize = image.size()
@@ -107,7 +109,7 @@ class IAImageView(NSView):
         x = (rect.origin.x - offx) / self.zoom
         y = (rect.origin.y - offy) / self.zoom
         
-        if self.zoom == 1.0 or (self.smooth and self.zoom <= 1.0):
+        if unscaled:
             x = ceil(x)
             y = ceil(y)
         

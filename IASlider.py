@@ -40,17 +40,17 @@ class IAZoomTransformer(NSValueTransformer):
         return YES      
         
     def reverseTransformedValue_(self,zoom):
-        result = NSNumber.numberWithFloat_(1.0/(4-zoom) if zoom < 3 else zoom-2)# if zoom < 7 else (zoom-4)*2
+        result = NSNumber.numberWithFloat_(1.0/(4.0-zoom) if zoom < 3.0 else zoom-2.0)
         return result
         
     def transformedValue_(self,zoom):
         zoom = zoom or 1.0
-        result = NSNumber.numberWithFloat_(max(0,4-1.0/zoom) if zoom < 1 else zoom+2)
+        result = NSNumber.numberWithFloat_(max(0,4.0-1.0/zoom) if zoom < 1.0 else zoom+2.0)
         return result
 
 class IAZoomTimesTransformer(NSValueTransformer):
     def transformedValue_(self,zoom):
-        return u"%d×" % zoom if zoom >= 1 else [u"½×",u"⅓×",u"¼×"][min(2,int(round(1.0/zoom))-2)];
+        return u"%d×" % zoom if zoom >= 1.0 else [u"½×",u"⅓×",u"¼×"][min(2,int(round(1.0/zoom))-2)];
 
 # converts numbers 0-257 to 0-9 range
 class IABitDepthTransformer(NSValueTransformer):

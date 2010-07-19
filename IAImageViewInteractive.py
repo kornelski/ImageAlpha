@@ -120,10 +120,35 @@ class IAImageViewInteractive(IAImageView):
         else:   
             self.mouseChange_(YES);
             self.mouseDragged_(event)
+                        
+    def magnifyWithEvent_(self, event):
+        NSLog("magnified by %f z = %f" % (event.magnification(), self.zoom));
+        
+        oldzoom = self.zoom;
+        # zoom < 1 requires different zooming speed than > 1
+        if (oldzoom + event.magnification() > 1):
+            zoom = ((oldzoom / 20) + event.magnification()/4) * 20;
+        else:
+            zoom = 1 / (1/oldzoom - event.magnification());
 
+        # avoid crossing of the 1.0 boundary at wrong speed
+        if (zoom > 1.0 and oldzoom < 1.0) or (zoom < 1.0 and oldzoom > 1.0):
+            zoom = 1.0;
+
+        self.setZoom_(max(0.25,zoom));
+    
+    def keyDown_(self,event):
+        NSLog("key! %s" % event);
+    
     def mouseUp_(self,event):
         self.mouseChange_(NO);        
-            
+
+    def updateTouches_(self,event):
+        touches = event.touchesMatchingPhase_inView_( NSTouchPhaseStationary, self);
+        NSLog("touches %s" % touches.allObjects());
+        self.drawAlternateImage = (touches.count() >= 3);
+        self.setNeedsDisplay_(YES)
+    
     def otherMouseDown_(self,event):
         self.drawAlternateImage = YES
         self.setNeedsDisplay_(YES)
