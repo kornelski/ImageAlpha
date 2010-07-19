@@ -35,6 +35,7 @@
 		5A91FE970E95837F004954A0 /* IABackgroundRenderer.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */; };
 		5A91FE990E95837F004954A0 /* IASlider.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE920E95837F004954A0 /* IASlider.py */; };
 		5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */; };
+		5A9993CC109F833000ADB7DE /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9993CB109F832D00ADB7DE /* liblibpng.dylib */; };
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5ABD76510F0E791500515CC9 /* pngnq in Resources */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; };
 		5AD1807B0F4B738000370142 /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; };
@@ -55,6 +56,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8D15AC270486D014006FF6A4;
 			remoteInfo = ImageAlpha;
+		};
+		5A9993CA109F832D00ADB7DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D;
+			remoteInfo = libpng;
 		};
 		5ABD764F0F0E78E700515CC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -113,6 +121,7 @@
 		5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IABackgroundRenderer.py; sourceTree = "<group>"; };
 		5A91FE920E95837F004954A0 /* IASlider.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IASlider.py; sourceTree = "<group>"; };
 		5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ImageAlphaDocument.py; sourceTree = "<group>"; };
+		5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5AA5327D0EE32FC700360305 /* IAImage.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImage.py; sourceTree = "<group>"; };
 		5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngnq.xcodeproj; path = ../pngnq/pngnq.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5AD1805E0F4B732100370142 /* pngquant.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngquant.xcodeproj; path = ../pngquant/pngquant.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -169,6 +178,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* ImageAlpha */ = {
 			isa = PBXGroup;
 			children = (
+				5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */,
 				5A7B7EDF0F5CA4DD00F72F1F /* appcast.xml */,
 				5AD1805E0F4B732100370142 /* pngquant.xcodeproj */,
 				5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */,
@@ -238,6 +248,14 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		5A9993C7109F832D00ADB7DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A9993CB109F832D00ADB7DE /* liblibpng.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5AA5327C0EE32FAB00360305 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +315,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 5A9993C7109F832D00ADB7DE /* Products */;
+					ProjectRef = 5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */;
+				},
+				{
 					ProductGroup = 5ABD764C0F0E78E700515CC9 /* Products */;
 					ProjectRef = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
 				},
@@ -314,6 +336,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5A9993CB109F832D00ADB7DE /* liblibpng.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = liblibpng.dylib;
+			remoteRef = 5A9993CA109F832D00ADB7DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5ABD76500F0E78E700515CC9 /* pngnq */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -342,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A9993CC109F833000ADB7DE /* liblibpng.dylib in Resources */,
 				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
 				5AD1807B0F4B738000370142 /* pngquant in Resources */,
 				8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */,
@@ -528,11 +558,18 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				GCC_AUTO_VECTORIZATION = YES;
+				GCC_ENABLE_SSE3_EXTENSIONS = YES;
+				GCC_STRICT_ALIASING = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LLVM_LTO = YES;
 				PREBINDING = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
-				VALID_ARCHS = "i386 ppc ppc7400 ppc970 x86_64";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
+				VALID_ARCHS = "i386 ppc";
 			};
 			name = Release;
 		};
