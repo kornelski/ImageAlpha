@@ -14,6 +14,8 @@ from math import ceil, floor
 class IAImageView(NSView):
     zoom = 2.0
     image = None
+    alternateImage = None
+    drawAlternateImage = NO
     backgroundRenderer = None
     smooth = YES
     backgroundOffset = (0,0)
@@ -71,6 +73,10 @@ class IAImageView(NSView):
         if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
         self.setNeedsDisplay_(YES)  
 
+    def setAlternateImage_(self,aImage):
+        self.alternateImage = aImage
+        self.setNeedsDisplay_(YES)
+
     def setBackgroundRenderer_(self,renderer):
         self.backgroundRenderer = renderer;
         self.setNeedsDisplay_(YES)      
@@ -88,12 +94,13 @@ class IAImageView(NSView):
     def drawRect_(self,rect):
         if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
         
-        if self.image is None: return
-        
+        image = self.image if not self.drawAlternateImage else self.alternateImage;
+        if image is None: return
+		
         NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if self.smooth and self.zoom != 1.0 else NSImageInterpolationNone)
         
         frame = self.frame();
-        imgsize = self.image.size()
+        imgsize = image.size()
         offx = (frame.size.width  - imgsize.width * self.zoom )/2 + self.imageOffset[0] 
         offy = (frame.size.height - imgsize.height * self.zoom )/2 + self.imageOffset[1]
         
@@ -105,5 +112,5 @@ class IAImageView(NSView):
             y = ceil(y)
         
         imgrect = ((x,y), (rect.size.width / self.zoom, rect.size.height / self.zoom));
-        self.image.drawInRect_fromRect_operation_fraction_(rect, imgrect, NSCompositeSourceOver, self.imageFade)
+        image.drawInRect_fromRect_operation_fraction_(rect, imgrect, NSCompositeSourceOver, self.imageFade)
 

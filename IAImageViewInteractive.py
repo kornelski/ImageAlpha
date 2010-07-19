@@ -122,5 +122,13 @@ class IAImageViewInteractive(IAImageView):
             self.mouseDragged_(event)
 
     def mouseUp_(self,event):
-        self.mouseChange_(NO);
+        self.mouseChange_(NO);        
             
+    def otherMouseDown_(self,event):
+        self.drawAlternateImage = YES
+        self.setNeedsDisplay_(YES)
+                
+    def otherMouseUp_(self,event):
+        self.drawAlternateImage = NO
+        self.setNeedsDisplay_(YES)
+        

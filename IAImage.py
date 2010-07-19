@@ -12,8 +12,9 @@ from AppKit import *
 class IAImage(NSObject):
     _image = None
     _imageData = None
-    
+	
     path = None
+    _sourceFileSize = None
 
     versions = None
 
@@ -43,9 +44,15 @@ class IAImage(NSObject):
         
     def imageData(self):
         return self._imageData;
-                
+		
+    def sourceFileSize(self):
+		return self._sourceFileSize;
+		  					        
     def setPath_(self,path):
-        self.path = path
+		self.path = path
+		(attrs,error) = NSFileManager.defaultManager().attributesOfItemAtPath_error_(self.path,None);
+		self._sourceFileSize = attrs.objectForKey_(NSFileSize) if attrs is not None and error is None else None;
+        
            
     def setDithering_(self,val):
         self.dithering = int(val) > 0

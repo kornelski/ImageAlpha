@@ -76,7 +76,7 @@ class IACollectionImageView(IAImageView):
 
 
     def tag(self):
-        return 1234;
+        return 1234; # magic for interface builder
 
     def mouseEntered_(self,event):
         self.imageFade = 0.85

@@ -163,10 +163,14 @@ class ImageAlphaDocument(NSDocument):
         self.setDocumentImage_(docimg);
         docimg.setCallbackWhenImageChanges_(self);
         self.setDisplayImage_(docimg.image());
-        if self.zoomedImageView is not None: self.zoomedImageView.zoomToFill()
+		
+        if self.zoomedImageView is not None: 
+			self.zoomedImageView.setAlternateImage_(docimg.image())
+			self.zoomedImageView.zoomToFill()
         return YES
     
     def setDocumentImage_(self,docimg):
+		# FIXME: check if callbacks of old one need to be stopped
         self.documentImage = docimg;
     
     def setDisplayImage_(self,image):
@@ -180,7 +184,14 @@ class ImageAlphaDocument(NSDocument):
         self.setDisplayImage_(self.documentImage.image());
         data = self.documentImage.imageData()
         self.updateProgressbar()
-        if data is not None: self.setStatusMessage_("Image size: %d bytes" % data.length())
+        if data is not None: 
+			source_filesize = self.documentImage.sourceFileSize();
+			if source_filesize is None or source_filesize < data.length():
+				msg = "Image size: %d bytes" % data.length() 
+			else:
+				percent = 100-data.length()*100/source_filesize
+				msg = "Image size: %d bytes (saved %d%% of %d bytes)" % (data.length(), percent, source_filesize)
+			self.setStatusMessage_(msg)
     
     def _getImage(self,name,ext="png"):
         path = NSBundle.mainBundle().resourcePath().stringByAppendingPathComponent_(name).stringByAppendingPathExtension_(ext);
@@ -202,8 +213,7 @@ class ImageAlphaDocument(NSDocument):
     def updateProgressbar(self):
         if self.progressBarView is None: return
         
-        isBusy = self._busyLevel > 0;        
-        if not isBusy and self.documentImage is not None and self.documentImage.isBusy(): isBusy = True
+        isBusy = self._busyLevel > 0 or (self.documentImage is not None and self.documentImage.isBusy());
         
         if isBusy:
             self.progressBarView.startAnimation_(self);
