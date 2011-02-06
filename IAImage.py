@@ -25,7 +25,6 @@ class IAImage(NSObject):
     quantizationMethod = 1; # 1 = pngnq; 2 = pngquant nofs
     dithering = NO
     ieMode = NO
-    ieModeSupported = NO
 
     callbackWhenImageChanges = None
 
@@ -57,6 +56,8 @@ class IAImage(NSObject):
 
     def setIeMode_(self,val):
         self.ieMode = int(val) > 0;
+        if self.ieMode and self.quantizationMethod != 2:
+            self.setQuantizationMethod_(2);
         self.update()
 
     def setDithering_(self,val):
@@ -69,13 +70,9 @@ class IAImage(NSObject):
 
     def setQuantizationMethod_(self,num):
         self.quantizationMethod = num
-        self.setIeModeSupported_(num == 2)
+        if num != 2:
+            self.setIeMode_(False)
         self.update()
-
-    def setIeModeSupported_(self,b):
-        self.ieModeSupported = b;
-        if not b:
-            self.setIeMode_(False);
 
     def isBusy(self):
         if self.path is None: return False
