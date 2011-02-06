@@ -20,6 +20,7 @@ class ImageAlphaDocument(NSDocument):
     statusBarView = objc.IBOutlet()
     backgroundsView = objc.IBOutlet()
     progressBarView = objc.IBOutlet()
+    savePanelView = objc.IBOutlet()
 
     documentImage = None;
 
@@ -67,6 +68,11 @@ class ImageAlphaDocument(NSDocument):
         return super(ImageAlphaDocument, self).validateUserInterfaceItem_(item);
 
 
+    def prepareSavePanel_(self, savePanel):
+        if NSApplication.sharedApplication().delegate().imageOptimPath is not None:
+            savePanel.setAccessoryView_(self.savePanelView);
+        return YES
+
     def dataOfType_error_(self, typeName, outError):
         if url.isFileURL() or self.documentImage is not None:
             return (self.documentImage.imageData(), None)
@@ -78,7 +84,9 @@ class ImageAlphaDocument(NSDocument):
         if url.isFileURL() or self.documentImage is not None:
             data = self.documentImage.imageData();
             if data is not None:
-                return (NSFileManager.defaultManager().createFileAtPath_contents_attributes_(url.path(), data, None), None)
+                if NSFileManager.defaultManager().createFileAtPath_contents_attributes_(url.path(), data, None):
+                    self.optimizeFileIfNeeded_(url);
+                    return (True, None)
 
         return (NO,None)
 
@@ -87,6 +95,14 @@ class ImageAlphaDocument(NSDocument):
         if not url.isFileURL():
             return (NO,None)
         return (self.setDocumentImageFromPath_(url.path()),None)
+
+    def optimizeFileIfNeeded_(self,url):
+        delegate = NSApplication.sharedApplication().delegate();
+        if delegate.imageOptimPath is None or not delegate.imageOptimEnabled:
+            return
+
+        w = NSWorkspace.sharedWorkspace();
+        w.openURLs_withAppBundleIdentifier_options_additionalEventParamDescriptor_launchIdentifiers_([url], "net.pornel.imageoptim", NSWorkspaceLaunchAsync|NSWorkspaceLaunchWithoutAddingToRecents, None, None)
 
     def setStatusMessage_(self,msg):
         NSLog("(status) %s", msg);

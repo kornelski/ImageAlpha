@@ -5,13 +5,14 @@
 #  Created by porneL on 18.wrze?nia.08.
 #  Copyright Lyncroft 2008. All rights reserved.
 #
-
+from objc import *
 from Foundation import *
 from AppKit import *
 
 class IAApplication(NSObject):
-    def applicationDidFinishLaunching_(self, sender):
-        pass
+    imageOptimPath = None
+    imageOptimEnabled = True
 
-	def awakeFromNib(self):
+    def applicationDidFinishLaunching_(self, sender):
+        self.imageOptimPath = NSWorkspace.sharedWorkspace().absolutePathForAppBundleWithIdentifier_("net.pornel.imageoptim");
         pass

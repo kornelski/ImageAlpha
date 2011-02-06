@@ -63,6 +63,20 @@
 			remoteGlobalIDString = 8D15AC270486D014006FF6A4;
 			remoteInfo = ImageAlpha;
 		};
+		5A937D4D12FEDF2D001D2786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E /* pngquant */;
+			remoteInfo = pngquant;
+		};
+		5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E /* pngnq */;
+			remoteInfo = pngnq;
+		};
 		5A9993CA109F832D00ADB7DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */;
@@ -301,6 +315,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				5A937D4E12FEDF2D001D2786 /* PBXTargetDependency */,
+				5A937D5012FEDF30001D2786 /* PBXTargetDependency */,
 			);
 			name = ImageAlpha;
 			productInstallPath = "$(HOME)/Applications";
@@ -462,6 +478,16 @@
 			isa = PBXTargetDependency;
 			target = 8D15AC270486D014006FF6A4 /* ImageAlpha */;
 			targetProxy = 5A8CE1950F5B5E23002ED669 /* PBXContainerItemProxy */;
+		};
+		5A937D4E12FEDF2D001D2786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = pngquant;
+			targetProxy = 5A937D4D12FEDF2D001D2786 /* PBXContainerItemProxy */;
+		};
+		5A937D5012FEDF30001D2786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = pngnq;
+			targetProxy = 5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
