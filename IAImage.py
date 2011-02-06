@@ -24,6 +24,8 @@ class IAImage(NSObject):
 
     quantizationMethod = 1; # 1 = pngnq; 2 = pngquant nofs
     dithering = NO
+    ieMode = NO
+    ieModeSupported = NO
 
     callbackWhenImageChanges = None
 
@@ -53,6 +55,9 @@ class IAImage(NSObject):
 		(attrs,error) = NSFileManager.defaultManager().attributesOfItemAtPath_error_(self.path,None);
 		self._sourceFileSize = attrs.objectForKey_(NSFileSize) if attrs is not None and error is None else None;
 
+    def setIeMode_(self,val):
+        self.ieMode = int(val) > 0;
+        self.update()
 
     def setDithering_(self,val):
         self.dithering = int(val) > 0
@@ -60,11 +65,17 @@ class IAImage(NSObject):
 
     def setNumberOfColors_(self,num):
         self.numberOfColors = num
-        self.update();
+        self.update()
 
     def setQuantizationMethod_(self,num):
         self.quantizationMethod = num
+        self.setIeModeSupported_(num == 2)
         self.update()
+
+    def setIeModeSupported_(self,b):
+        self.ieModeSupported = b;
+        if not b:
+            self.setIeMode_(False);
 
     def isBusy(self):
         if self.path is None: return False
@@ -84,7 +95,7 @@ class IAImage(NSObject):
 
             elif id not in self.versions:
                 self.versions[id] = IAImageVersion.alloc().init()
-                self.versions[id].generateFromPath_method_dither_colors_callback_(self.path, self.quantizationMethod, self.dithering, self.numberOfColors, self)
+                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizationMethod, self.dithering, self.ieMode, self.numberOfColors, self)
 
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.updateProgressbar();
 
@@ -95,7 +106,8 @@ class IAImage(NSObject):
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.imageChanged();
 
     def currentVersionId(self):
-        return "c%d:t%d:m%d:d%d" % (self.numberOfColors, self.transparencyDepth, self.quantizationMethod, self.dithering);
+        return "c%d:t%d:m%d:d%d%d" % (self.numberOfColors, self.transparencyDepth,
+                                self.quantizationMethod, self.dithering, self.ieMode);
 
     def destroy(self):
         self.callbackWhenImageChanges = None
@@ -112,7 +124,7 @@ class IAImageVersion(NSObject):
     outputPipe = None
     callbackWhenFinished = None
 
-    def generateFromPath_method_dither_colors_callback_(self,path,method,dither,colors,callbackWhenFinished):
+    def generateFromPath_method_dither_iemode_colors_callback_(self,path,method,dither,ieMode,colors,callbackWhenFinished):
 
         self.isDone = False
         self.callbackWhenFinished = callbackWhenFinished
@@ -120,7 +132,10 @@ class IAImageVersion(NSObject):
         if method == 1:
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngnq", ""), ["-Q","f" if dither else "n","-n","%d" % colors], path, True);
         else:
-            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),["-fs" if dither else "-nofs","%d" % colors],path,False);
+            args = ["-fs" if dither else "-nofs","%d" % colors];
+            if ieMode:
+                args.insert(0,"-iebug");
+            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),args,path,False);
 
 
     def launchTask_withArguments_stdin_library_(self,launchPath,args,path,useLib):
