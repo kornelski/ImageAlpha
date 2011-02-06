@@ -4,7 +4,7 @@
 #  ImageAlpha
 #
 #  Created by porneL on 21.września.08.
-#  Copyright (c) 2008 porneL. All rights reserved.
+#  Copyright (c) 2011 porneL. All rights reserved.
 #
 
 from objc import *
@@ -155,6 +155,7 @@ class ImageAlphaDocument(NSDocument):
 
         docimg = IAImage.alloc().init();
         self.setFileURL_(NSURL.fileURLWithPath_(path))
+        self.setFileType_("public.png.imagealpha");
 
         docimg.setPath_(path);
         docimg.setImage_(image);
