@@ -15,9 +15,9 @@ from math import pow,log
 
 class IASlider(NSSlider):
     zoomView = objc.IBOutlet()
-    
+
     def scrollWheel_(self,event):
-        if self.zoomView is not None: 
+        if self.zoomView is not None:
             self.zoomView.scrollWheel_(event)
 
 #    def initWithFrame_(self, frame):
@@ -35,14 +35,14 @@ class IASlider(NSSlider):
 class IAZoomTransformer(NSValueTransformer):
     def transformedValueClass(self):
         return NSNumber.__class__
-        
+
     def allowsReverseTransformation(self):
-        return YES      
-        
+        return YES
+
     def reverseTransformedValue_(self,zoom):
         result = NSNumber.numberWithFloat_(1.0/(4.0-zoom) if zoom < 3.0 else zoom-2.0)
         return result
-        
+
     def transformedValue_(self,zoom):
         zoom = zoom or 1.0
         result = NSNumber.numberWithFloat_(max(0,4.0-1.0/zoom) if zoom < 1.0 else zoom+2.0)
@@ -58,19 +58,19 @@ class IABitDepthTransformer(NSValueTransformer):
         return NSNumber.__class__
 
     def allowsReverseTransformation(self):
-        return YES  
-                
-    # colors to depth            
+        return YES
+
+    # colors to depth
     def transformedValue_(self,value):
         if value is None: return None;
-        value = int(value);    
+        value = int(value);
         if (value > 256): return 9;
         if (value <= 2): return 1;
         return log(value,2);
-        
+
     # depth to colors
     def reverseTransformedValue_(self,value):
-        if value is None: return None;  
+        if value is None: return None;
         value = int(value);
         NSLog("Reverse transforming from %d" % value);
         if (value > 8): return 257;
@@ -94,8 +94,8 @@ class IABitDepthReverseTransformer(NSValueTransformer):
     # depth to colors
     def transformedValue_(self,value):
         if value is None: return None;
-        value = int(value);    
+        value = int(value);
         if (value <= 1): return 2;
         return pow(2,value);
-        
-        
+
+
