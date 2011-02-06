@@ -138,6 +138,8 @@ class ImageAlphaDocument(NSDocument):
             return NO
 
         docimg = IAImage.alloc().init();
+        self.setFileURL_(NSURL.fileURLWithPath_(path))
+
         docimg.setPath_(path);
         docimg.setImage_(image);
         return self.setNewDocumentImage_(docimg);
