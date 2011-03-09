@@ -4,7 +4,7 @@
 #  ImageAlpha
 #
 #  Created by porneL on 24.wrzenia.08.
-#  Copyright (c) 2008 porneL. All rights reserved.
+#  Copyright (c) 2011 porneL. All rights reserved.
 #
 
 from objc import YES, NO, IBAction, IBOutlet

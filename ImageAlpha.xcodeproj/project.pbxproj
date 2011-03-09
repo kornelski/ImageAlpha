@@ -26,7 +26,7 @@
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
 		5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
-		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
+		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
 		5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */; };
 		5A91FE8B0E958375004954A0 /* IACollectionItem.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8A0E958375004954A0 /* IACollectionItem.py */; };
 		5A91FE930E95837F004954A0 /* IAApplication.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8C0E95837F004954A0 /* IAApplication.py */; };
@@ -35,7 +35,6 @@
 		5A91FE970E95837F004954A0 /* IABackgroundRenderer.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */; };
 		5A91FE990E95837F004954A0 /* IASlider.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE920E95837F004954A0 /* IASlider.py */; };
 		5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */; };
-		5A9993CC109F833000ADB7DE /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A9993CB109F832D00ADB7DE /* liblibpng.dylib */; };
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5ABD76510F0E791500515CC9 /* pngnq in Resources */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; };
 		5AD1807B0F4B738000370142 /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; };
@@ -43,19 +42,11 @@
 		77383F380C07B0890043B131 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77383F370C07B0890043B131 /* Python.framework */; };
 		779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F70C0A0980000694DF /* MainMenu.xib */; };
 		779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */; };
-		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5A443B9112FEB57800907064 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5AB88C38125543FF000E1F52;
-			remoteInfo = pngstatic;
-		};
 		5A8CE1950F5B5E23002ED669 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
@@ -67,22 +58,15 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E /* pngquant */;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
 			remoteInfo = pngquant;
 		};
 		5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E /* pngnq */;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
 			remoteInfo = pngnq;
-		};
-		5A9993CA109F832D00ADB7DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC0630554660B00DB518D;
-			remoteInfo = libpng;
 		};
 		5ABD764F0F0E78E700515CC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,20 +92,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5A8CE1460F5B5BD5002ED669 /* CopyFiles */ = {
+		5A8CE1460F5B5BD5002ED669 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in CopyFiles */,
+				5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */,
 			);
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,15 +124,15 @@
 		5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IABackgroundRenderer.py; sourceTree = "<group>"; };
 		5A91FE920E95837F004954A0 /* IASlider.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IASlider.py; sourceTree = "<group>"; };
 		5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ImageAlphaDocument.py; sourceTree = "<group>"; };
-		5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5AA5327D0EE32FC700360305 /* IAImage.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImage.py; sourceTree = "<group>"; };
+		5AA71B4612FF268F002E5E77 /* ImageAlpha.tar.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ImageAlpha.tar.bz2; path = build/Release/ImageAlpha.tar.bz2; sourceTree = "<group>"; };
 		5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngnq.xcodeproj; path = ../pngnq/pngnq.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5AD1805E0F4B732100370142 /* pngquant.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngquant.xcodeproj; path = ../pngquant/pngquant.xcodeproj; sourceTree = SOURCE_ROOT; };
 		77383F220C07AB8F0043B131 /* main.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
 		77383F370C07B0890043B131 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = /System/Library/Frameworks/Python.framework; sourceTree = "<absolute>"; };
 		779AE5F80C0A0980000694DF /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		779AE5FA0C0A0980000694DF /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ImageAlphaDocument.xib; sourceTree = "<group>"; };
-		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "<none>"; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* ImageAlpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAlpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				8D15AC370486D014006FF6A4 /* ImageAlpha.app */,
+				5AA71B4612FF268F002E5E77 /* ImageAlpha.tar.bz2 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +182,6 @@
 		2A37F4AAFDCFA73011CA2CEA /* ImageAlpha */ = {
 			isa = PBXGroup;
 			children = (
-				5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */,
 				5A7B7EDF0F5CA4DD00F72F1F /* appcast.xml */,
 				5AD1805E0F4B732100370142 /* pngquant.xcodeproj */,
 				5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */,
@@ -240,7 +224,6 @@
 				779AE5F70C0A0980000694DF /* MainMenu.xib */,
 				779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
-				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -264,15 +247,6 @@
 				5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */,
 			);
 			name = UI;
-			sourceTree = "<group>";
-		};
-		5A9993C7109F832D00ADB7DE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5A9993CB109F832D00ADB7DE /* liblibpng.dylib */,
-				5A443B9212FEB57800907064 /* libpngstatic.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5AA5327C0EE32FAB00360305 /* Image */ = {
@@ -310,7 +284,7 @@
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
-				5A8CE1460F5B5BD5002ED669 /* CopyFiles */,
+				5A8CE1460F5B5BD5002ED669 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -343,10 +317,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5A9993C7109F832D00ADB7DE /* Products */;
-					ProjectRef = 5A9993C6109F832D00ADB7DE /* libpng.xcodeproj */;
-				},
-				{
 					ProductGroup = 5ABD764C0F0E78E700515CC9 /* Products */;
 					ProjectRef = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
 				},
@@ -364,20 +334,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5A443B9212FEB57800907064 /* libpngstatic.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libpngstatic.a;
-			remoteRef = 5A443B9112FEB57800907064 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5A9993CB109F832D00ADB7DE /* liblibpng.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = liblibpng.dylib;
-			remoteRef = 5A9993CA109F832D00ADB7DE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5ABD76500F0E78E700515CC9 /* pngnq */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -406,10 +362,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A9993CC109F833000ADB7DE /* liblibpng.dylib in Resources */,
 				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
 				5AD1807B0F4B738000370142 /* pngquant in Resources */,
-				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				77383F230C07AB8F0043B131 /* main.py in Resources */,
 				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
 				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
@@ -443,7 +397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" ImageAlpha.app\n";
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=../../optimal_file_list\n";
 		};
 		5A8CE19A0F5B5E9D002ED669 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -492,14 +446,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				089C1660FE840EACC02AAC07 /* English */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		779AE5F70C0A0980000694DF /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

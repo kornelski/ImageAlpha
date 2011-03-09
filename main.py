@@ -3,7 +3,7 @@
 #  ImageAlpha
 #
 #  Created by porneL on 2.pa?dziernika.08.
-#  Copyright porneL 2008. All rights reserved.
+#  Copyright porneL 2011. All rights reserved.
 #
 
 #import modules required by application
