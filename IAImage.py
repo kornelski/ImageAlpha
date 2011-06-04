@@ -22,7 +22,7 @@ class IAImage(NSObject):
     transparencyDepth = 8;
     transparencyAdjust = 0;
 
-    quantizationMethod = 1; # 1 = pngnq; 2 = pngquant nofs
+    quantizationMethod = 2; # 1 = pngnq; 2 = pngquant nofs; 3 = posterizer
     dithering = NO
     ieMode = NO
 
@@ -103,8 +103,14 @@ class IAImage(NSObject):
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.imageChanged();
 
     def currentVersionId(self):
-        return "c%d:t%d:m%d:d%d%d" % (self.numberOfColors, self.transparencyDepth,
-                                self.quantizationMethod, self.dithering, self.ieMode);
+        d = self.dithering;
+        c = self.numberOfColors;
+        if (self.quantizationMethod == 3): # ugly hack to reduce amount of pointless versions posterizer generates
+            d = 0;
+            c = c/2;
+        
+        return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
+                                self.quantizationMethod, d, self.ieMode);
 
     def destroy(self):
         self.callbackWhenImageChanges = None
@@ -128,12 +134,14 @@ class IAImageVersion(NSObject):
 
         if method == 1:
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngnq", ""), ["-Q","f" if dither else "n","-n","%d" % colors], path, True);
-        else:
+        elif method == 2:
             args = ["-fs" if dither else "-nofs","%d" % colors];
             if ieMode:
                 args.insert(0,"-iebug");
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),args,path,False);
-
+        else:
+            c = round(10+colors*118/256);
+            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("posterizer", ""),["%d" % c],path,False);
 
     def launchTask_withArguments_stdin_library_(self,launchPath,args,path,useLib):
         task = NSTask.alloc().init()
@@ -144,12 +152,6 @@ class IAImageVersion(NSObject):
 
         if useLib:
             environment = NSProcessInfo.processInfo().environment();
-
-            libpath = NSBundle.mainBundle().pathForResource_ofType_("liblibpng","dylib");
-            if libpath:
-                libpath = libpath.stringByDeletingLastPathComponent();
-                environment.setObject_forKey_(libpath, "DYLD_FALLBACK_LIBRARY_PATH");
-                task.setEnvironment_(environment);
 
         # pngout works best via standard input/output
         file = NSFileHandle.fileHandleForReadingAtPath_(path);

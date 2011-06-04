@@ -72,7 +72,7 @@ class IABitDepthTransformer(NSValueTransformer):
     def reverseTransformedValue_(self,value):
         if value is None: return None;
         value = int(value);
-        NSLog("Reverse transforming from %d" % value);
+        #NSLog("Reverse transforming from %d" % value);
         if (value > 8): return 257;
         if (value <= 1): return 2;
         return round(pow(2,value));

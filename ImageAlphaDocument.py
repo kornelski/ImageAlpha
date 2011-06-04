@@ -102,7 +102,11 @@ class ImageAlphaDocument(NSDocument):
             return
 
         w = NSWorkspace.sharedWorkspace();
-        w.openURLs_withAppBundleIdentifier_options_additionalEventParamDescriptor_launchIdentifiers_([url], "net.pornel.imageoptim", NSWorkspaceLaunchAsync|NSWorkspaceLaunchWithoutAddingToRecents, None, None)
+        result = w.openURLs_withAppBundleIdentifier_options_additionalEventParamDescriptor_launchIdentifiers_([url], "net.pornel.imageoptim", NSWorkspaceLaunchAsync|NSWorkspaceLaunchWithoutAddingToRecents, None, None)
+        if (not result):
+            result = w.openFile_withApplication_(url.path(), delegate.imageOptimPath);
+            if (not result):
+                NSLog("Could not launch ImageOptim for %s" % url);
 
     def setStatusMessage_(self,msg):
         NSLog("(status) %s", msg);
@@ -150,7 +154,7 @@ class ImageAlphaDocument(NSDocument):
     def setDocumentImageFromPath_(self,path):
         image = NSImage.alloc().initWithContentsOfFile_(path)
         if image is None:
-            NSLog("img is none");
+            #NSLog("img is none");
             return NO
 
         docimg = IAImage.alloc().init();
@@ -173,12 +177,12 @@ class ImageAlphaDocument(NSDocument):
 #        return self.setNewDocumentImage_(docimg);
 
     def setNewDocumentImage_(self,docimg):
-        NSLog("new dimage set");
+        #NSLog("new dimage set");
         if self.documentImage is not None:
-            NSLog("Destroying document image %s" % self.documentImage);
+            #NSLog("Destroying document image %s" % self.documentImage);
             self.documentImage.destroy();
 
-        NSLog("Setting new document image %s, replaces old %s " % ( docimg, self.documentImage));
+        #NSLog("Setting new document image %s, replaces old %s " % ( docimg, self.documentImage));
         self.setDocumentImage_(docimg);
         docimg.setCallbackWhenImageChanges_(self);
         self.setDisplayImage_(docimg.image());
@@ -197,7 +201,7 @@ class ImageAlphaDocument(NSDocument):
         self.zoomedImageView.setImage_(image)
         self.backgroundsView.setImage_(image)
         self.backgroundsView.setSelectable_(YES if image is not None else NO);
-        NSLog("Set new display image %s" % image);
+        #NSLog("Set new display image %s" % image);
 
     def imageChanged(self):
         self.setDisplayImage_(self.documentImage.image());

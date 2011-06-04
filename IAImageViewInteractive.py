@@ -122,7 +122,7 @@ class IAImageViewInteractive(IAImageView):
             self.mouseDragged_(event)
 
     def magnifyWithEvent_(self, event):
-        NSLog("magnified by %f z = %f" % (event.magnification(), self.zoom));
+        #NSLog("magnified by %f z = %f" % (event.magnification(), self.zoom));
 
         oldzoom = self.zoom;
         # zoom < 1 requires different zooming speed than > 1
@@ -137,15 +137,15 @@ class IAImageViewInteractive(IAImageView):
 
         self.setZoom_(max(0.25,zoom));
 
-    def keyDown_(self,event):
-        NSLog("key! %s" % event);
+    #def keyDown_(self,event):
+        #NSLog("key! %s" % event);
 
     def mouseUp_(self,event):
         self.mouseChange_(NO);
 
     def updateTouches_(self,event):
         touches = event.touchesMatchingPhase_inView_( NSTouchPhaseStationary, self);
-        NSLog("touches %s" % touches.allObjects());
+        #NSLog("touches %s" % touches.allObjects());
         self.drawAlternateImage = (touches.count() >= 3);
         self.setNeedsDisplay_(YES)
 
