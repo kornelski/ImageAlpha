@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5ABD76000F0E588100515CC9 /* rwpng.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD75FA0F0E588100515CC9 /* rwpng.c */; };
+		5ABD76010F0E588100515CC9 /* neuquant32.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD75FB0F0E588100515CC9 /* neuquant32.c */; };
+		5ABD76030F0E588100515CC9 /* pngnq.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD75FD0F0E588100515CC9 /* pngnq.c */; };
+		5ABD774E0F0E883E00515CC9 /* rwpng.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD75FA0F0E588100515CC9 /* rwpng.c */; };
+		5ABD774F0F0E883E00515CC9 /* neuquant32.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD75FB0F0E588100515CC9 /* neuquant32.c */; };
+		5ABD775A0F0E886100515CC9 /* pngcomp.c in Sources */ = {isa = PBXBuildFile; fileRef = 5ABD77590F0E886100515CC9 /* pngcomp.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5ABD75FA0F0E588100515CC9 /* rwpng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rwpng.c; path = pngnq/src/rwpng.c; sourceTree = SOURCE_ROOT; };
+		5ABD75FB0F0E588100515CC9 /* neuquant32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = neuquant32.c; path = pngnq/src/neuquant32.c; sourceTree = SOURCE_ROOT; };
+		5ABD75FD0F0E588100515CC9 /* pngnq.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngnq.c; path = pngnq/src/pngnq.c; sourceTree = SOURCE_ROOT; };
+		5ABD75FE0F0E588100515CC9 /* neuquant32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = neuquant32.h; path = pngnq/src/neuquant32.h; sourceTree = SOURCE_ROOT; };
+		5ABD75FF0F0E588100515CC9 /* rwpng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rwpng.h; path = pngnq/src/rwpng.h; sourceTree = SOURCE_ROOT; };
+		5ABD77440F0E87ED00515CC9 /* pngcomp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pngcomp; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ABD77590F0E886100515CC9 /* pngcomp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngcomp.c; path = pngnq/src/pngcomp.c; sourceTree = SOURCE_ROOT; };
+		5AED10E6139BD44B00FF5C69 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		5AED10E7139BD44B00FF5C69 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		8DD76FB20486AB0100D96B5E /* pngnq */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pngnq; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5ABD77420F0E87ED00515CC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76FAD0486AB0100D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* pngnq */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				5AED10E6139BD44B00FF5C69 /* release.xcconfig */,
+				5AED10E7139BD44B00FF5C69 /* debug.xcconfig */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = pngnq;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5ABD75FA0F0E588100515CC9 /* rwpng.c */,
+				5ABD77590F0E886100515CC9 /* pngcomp.c */,
+				5ABD75FB0F0E588100515CC9 /* neuquant32.c */,
+				5ABD75FD0F0E588100515CC9 /* pngnq.c */,
+				5ABD75FE0F0E588100515CC9 /* neuquant32.h */,
+				5ABD75FF0F0E588100515CC9 /* rwpng.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76FB20486AB0100D96B5E /* pngnq */,
+				5ABD77440F0E87ED00515CC9 /* pngcomp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5ABD77430F0E87ED00515CC9 /* pngcomp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5ABD774D0F0E881300515CC9 /* Build configuration list for PBXNativeTarget "pngcomp" */;
+			buildPhases = (
+				5ABD77410F0E87ED00515CC9 /* Sources */,
+				5ABD77420F0E87ED00515CC9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pngcomp;
+			productName = pngcomp;
+			productReference = 5ABD77440F0E87ED00515CC9 /* pngcomp */;
+			productType = "com.apple.product-type.tool";
+		};
+		8DD76FA90486AB0100D96B5E /* pngnq */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "pngnq" */;
+			buildPhases = (
+				8DD76FAB0486AB0100D96B5E /* Sources */,
+				8DD76FAD0486AB0100D96B5E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pngnq;
+			productInstallPath = "$(HOME)/bin";
+			productName = pngnq;
+			productReference = 8DD76FB20486AB0100D96B5E /* pngnq */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "pngnq" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* pngnq */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76FA90486AB0100D96B5E /* pngnq */,
+				5ABD77430F0E87ED00515CC9 /* pngcomp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5ABD77410F0E87ED00515CC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABD774E0F0E883E00515CC9 /* rwpng.c in Sources */,
+				5ABD774F0F0E883E00515CC9 /* neuquant32.c in Sources */,
+				5ABD775A0F0E886100515CC9 /* pngcomp.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD76FAB0486AB0100D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABD76000F0E588100515CC9 /* rwpng.c in Sources */,
+				5ABD76010F0E588100515CC9 /* neuquant32.c in Sources */,
+				5ABD76030F0E588100515CC9 /* pngnq.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB928608733DD80010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/local/bin;
+				KEEP_PRIVATE_EXTERNS = YES;
+				PRODUCT_NAME = pngnq;
+			};
+			name = Debug;
+		};
+		1DEB928708733DD80010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				INSTALL_PATH = /usr/local/bin;
+				KEEP_PRIVATE_EXTERNS = YES;
+				PRODUCT_NAME = pngnq;
+			};
+			name = Release;
+		};
+		1DEB928A08733DD80010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AED10E7139BD44B00FF5C69 /* debug.xcconfig */;
+			buildSettings = {
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PNG_CONFIGURE_LIBPNG,
+					HAVE_CONFIG_H,
+				);
+				LD_GENERATE_MAP_FILE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/X11/lib/,
+					/usr/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lz",
+				);
+				STRIP_INSTALLED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = "~/ImageOptim/libpng/";
+			};
+			name = Debug;
+		};
+		1DEB928B08733DD80010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AED10E6139BD44B00FF5C69 /* release.xcconfig */;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PNG_CONFIGURE_LIBPNG,
+					HAVE_CONFIG_H,
+				);
+				LD_GENERATE_MAP_FILE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/X11/lib/,
+					/usr/lib,
+				);
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lz",
+				);
+				STRIP_INSTALLED_PRODUCT = NO;
+				USER_HEADER_SEARCH_PATHS = "~/ImageOptim/libpng/";
+			};
+			name = Release;
+		};
+		5ABD77460F0E87ED00515CC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = pngcomp;
+			};
+			name = Debug;
+		};
+		5ABD77470F0E87ED00515CC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = pngcomp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB928508733DD80010E9CD /* Build configuration list for PBXNativeTarget "pngnq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB928608733DD80010E9CD /* Debug */,
+				1DEB928708733DD80010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "pngnq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB928A08733DD80010E9CD /* Debug */,
+				1DEB928B08733DD80010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5ABD774D0F0E881300515CC9 /* Build configuration list for PBXNativeTarget "pngcomp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5ABD77460F0E87ED00515CC9 /* Debug */,
+				5ABD77470F0E87ED00515CC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
