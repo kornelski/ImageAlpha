@@ -29,7 +29,7 @@
 		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
 		5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */; };
 		5A91FE8B0E958375004954A0 /* IACollectionItem.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8A0E958375004954A0 /* IACollectionItem.py */; };
-		5A91FE930E95837F004954A0 /* IAApplication.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8C0E95837F004954A0 /* IAApplication.py */; };
+		5A91FE930E95837F004954A0 /* ImageAlphaApplication.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */; };
 		5A91FE940E95837F004954A0 /* IAImageView.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8D0E95837F004954A0 /* IAImageView.py */; };
 		5A91FE950E95837F004954A0 /* IAImageViewInteractive.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */; };
 		5A91FE970E95837F004954A0 /* IABackgroundRenderer.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */; };
@@ -37,7 +37,6 @@
 		5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */; };
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5AC0D6801411752700446066 /* pngnq in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5AC0D670141173C500446066 /* pngnq */; };
-		5AC0D6811411752B00446066 /* pngquant in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5AC0D666141173B100446066 /* pngquant */; };
 		5AC0D6821411752E00446066 /* posterizer in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5AC0D65D1411738F00446066 /* posterizer */; };
 		77383F230C07AB8F0043B131 /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = 77383F220C07AB8F0043B131 /* main.py */; };
 		77383F380C07B0890043B131 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77383F370C07B0890043B131 /* Python.framework */; };
@@ -62,13 +61,6 @@
 			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
 			remoteInfo = posterizer;
 		};
-		5AC0D665141173B100446066 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
-			remoteInfo = pngquant;
-		};
 		5AC0D66F141173C500446066 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
@@ -89,13 +81,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5AC0D6731411749300446066;
 			remoteInfo = "download-sparkle";
-		};
-		5AC0D6791411750200446066 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
-			remoteInfo = pngquant;
 		};
 		5AC0D67B1411750500446066 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -132,7 +117,6 @@
 			dstSubfolderSpec = 7;
 			files = (
 				5AC0D6821411752E00446066 /* posterizer in Copy Tools */,
-				5AC0D6811411752B00446066 /* pngquant in Copy Tools */,
 				5AC0D6801411752700446066 /* pngnq in Copy Tools */,
 			);
 			name = "Copy Tools";
@@ -153,7 +137,7 @@
 		5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		5A91FE8A0E958375004954A0 /* IACollectionItem.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IACollectionItem.py; sourceTree = "<group>"; };
-		5A91FE8C0E95837F004954A0 /* IAApplication.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAApplication.py; sourceTree = "<group>"; };
+		5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = ImageAlphaApplication.py; path = ../../Users/porneL/ImageAlpha/ImageAlphaApplication.py; sourceTree = "<group>"; };
 		5A91FE8D0E95837F004954A0 /* IAImageView.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImageView.py; sourceTree = "<group>"; };
 		5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImageViewInteractive.py; sourceTree = "<group>"; };
 		5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IABackgroundRenderer.py; sourceTree = "<group>"; };
@@ -234,7 +218,7 @@
 			children = (
 				5AA5327C0EE32FAB00360305 /* Image */,
 				5A91FE9B0E958383004954A0 /* UI */,
-				5A91FE8C0E95837F004954A0 /* IAApplication.py */,
+				5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */,
 				5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */,
 			);
 			name = Classes;
@@ -303,7 +287,6 @@
 		5AC0D662141173B100446066 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5AC0D666141173B100446066 /* pngquant */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,7 +334,6 @@
 			dependencies = (
 				5AC0D67E1411750700446066 /* PBXTargetDependency */,
 				5AC0D67C1411750500446066 /* PBXTargetDependency */,
-				5AC0D67A1411750200446066 /* PBXTargetDependency */,
 				5AC0D678141174CC00446066 /* PBXTargetDependency */,
 			);
 			name = ImageAlpha;
@@ -412,13 +394,6 @@
 			remoteRef = 5AC0D65C1411738F00446066 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5AC0D666141173B100446066 /* pngquant */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = pngquant;
-			remoteRef = 5AC0D665141173B100446066 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5AC0D670141173C500446066 /* pngnq */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -444,7 +419,7 @@
 				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
 				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
 				5A91FE8B0E958375004954A0 /* IACollectionItem.py in Resources */,
-				5A91FE930E95837F004954A0 /* IAApplication.py in Resources */,
+				5A91FE930E95837F004954A0 /* ImageAlphaApplication.py in Resources */,
 				5A91FE940E95837F004954A0 /* IAImageView.py in Resources */,
 				5A91FE950E95837F004954A0 /* IAImageViewInteractive.py in Resources */,
 				5A91FE970E95837F004954A0 /* IABackgroundRenderer.py in Resources */,
@@ -513,11 +488,6 @@
 			isa = PBXTargetDependency;
 			target = 5AC0D6731411749300446066 /* download-sparkle */;
 			targetProxy = 5AC0D677141174CC00446066 /* PBXContainerItemProxy */;
-		};
-		5AC0D67A1411750200446066 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = pngquant;
-			targetProxy = 5AC0D6791411750200446066 /* PBXContainerItemProxy */;
 		};
 		5AC0D67C1411750500446066 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
