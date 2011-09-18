@@ -65,7 +65,7 @@ class IAImage(NSObject):
         self.update()
 
     def setNumberOfColors_(self,num):
-        self.numberOfColors = num
+        self.numberOfColors = int(num)
         self.update()
 
     def setQuantizationMethod_(self,num):

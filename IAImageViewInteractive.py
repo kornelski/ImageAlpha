@@ -146,14 +146,11 @@ class IAImageViewInteractive(IAImageView):
     def updateTouches_(self,event):
         touches = event.touchesMatchingPhase_inView_( NSTouchPhaseStationary, self);
         #NSLog("touches %s" % touches.allObjects());
-        self.drawAlternateImage = (touches.count() >= 3);
-        self.setNeedsDisplay_(YES)
+        self.setDrawAlternateImage_((touches.count() >= 3))
 
     def otherMouseDown_(self,event):
-        self.drawAlternateImage = YES
-        self.setNeedsDisplay_(YES)
+        self.setDrawAlternateImage_(YES)
 
     def otherMouseUp_(self,event):
-        self.drawAlternateImage = NO
-        self.setNeedsDisplay_(YES)
+        self.setDrawAlternateImage_(NO)
 

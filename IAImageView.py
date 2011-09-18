@@ -71,10 +71,14 @@ class IAImageView(NSView):
     def setImage_(self,aImage):
         self.image=aImage
         if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
-        self.setNeedsDisplay_(YES)
+        self.setDrawAlternateImage_(NO)
 
     def setAlternateImage_(self,aImage):
         self.alternateImage = aImage
+        self.setNeedsDisplay_(YES)
+
+    def setDrawAlternateImage_(self,tf):
+        self.drawAlternateImage = tf
         self.setNeedsDisplay_(YES)
 
     def setBackgroundRenderer_(self,renderer):

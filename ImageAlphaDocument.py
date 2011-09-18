@@ -244,14 +244,6 @@ class ImageAlphaDocument(NSDocument):
             self.progressBarView.stopAnimation_(self);
 
     @objc.IBAction
-    def next_(self,action):
-        self.setDocumentImageFromPath_(NSBundle.mainBundle().pathForResource_ofType_("bg", "png"));
-
-    @objc.IBAction
-    def prev_(self,action):
-        pass
-
-    @objc.IBAction
     def revert_(self,action):
         pass
 
