@@ -24,7 +24,7 @@ class IAImage(NSObject):
 
     quantizationMethod = 2; # 1 = pngnq; 2 = pngquant nofs; 3 = posterizer
     dithering = NO
-    ieMode = NO
+    _ieMode = False
 
     callbackWhenImageChanges = None
 
@@ -55,10 +55,13 @@ class IAImage(NSObject):
 		self._sourceFileSize = attrs.objectForKey_(NSFileSize) if attrs is not None and error is None else None;
 
     def setIeMode_(self,val):
-        self.ieMode = int(val) > 0;
-        if self.ieMode and self.quantizationMethod != 2:
+        self._ieMode = int(val) > 0;
+        if self._ieMode and self.quantizationMethod != 2:
             self.setQuantizationMethod_(2);
         self.update()
+
+    def ieMode(self):
+        return self._ieMode
 
     def setDithering_(self,val):
         self.dithering = int(val) > 0
@@ -92,7 +95,7 @@ class IAImage(NSObject):
 
             elif id not in self.versions:
                 self.versions[id] = IAImageVersion.alloc().init()
-                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizationMethod, self.dithering, self.ieMode, self.numberOfColors, self)
+                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizationMethod, self.dithering, self._ieMode, self.numberOfColors, self)
 
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.updateProgressbar();
 
@@ -107,9 +110,9 @@ class IAImage(NSObject):
         c = self.numberOfColors;
         if (self.quantizationMethod == 3): # ugly hack to reduce amount of pointless versions posterizer generates
             c = c/2;
-        
+
         return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
-                                self.quantizationMethod, d, self.ieMode);
+                                self.quantizationMethod, d, self._ieMode);
 
     def destroy(self):
         self.callbackWhenImageChanges = None
