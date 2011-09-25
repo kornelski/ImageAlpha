@@ -106,7 +106,6 @@ class IAImage(NSObject):
         d = self.dithering;
         c = self.numberOfColors;
         if (self.quantizationMethod == 3): # ugly hack to reduce amount of pointless versions posterizer generates
-            d = 0;
             c = c/2;
         
         return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
@@ -141,7 +140,10 @@ class IAImageVersion(NSObject):
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),args,path,False);
         else:
             c = round(10+colors*118/256);
-            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("posterizer", ""),["%d" % c],path,False);
+            args = ["%d" % c];
+            if dither:
+                args.insert(0,"-d");
+            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("posterizer", ""),args,path,False);
 
     def launchTask_withArguments_stdin_library_(self,launchPath,args,path,useLib):
         task = NSTask.alloc().init()
