@@ -38,7 +38,7 @@ class IAImageView(NSView):
         if self.image() is None: return
         size = self.image().size()
         framesize = self.frame().size
-        _zoom = min(framesize.width/size.width, framesize.height/size.height)*self.zoomingToFill
+        zoom = min(framesize.width/size.width, framesize.height/size.height)*self.zoomingToFill
         if zoom > 1.0:
             zoom = min(4.0,floor(zoom))
         self._setZoom(zoom)
