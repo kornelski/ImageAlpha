@@ -15,7 +15,7 @@ class IAImageView(NSView):
     zoom = 2.0
     image = None
     alternateImage = None
-    drawAlternateImage = NO
+    _drawAlternateImage = NO
     backgroundRenderer = None
     smooth = YES
     backgroundOffset = (0,0)
@@ -78,8 +78,11 @@ class IAImageView(NSView):
         self.setNeedsDisplay_(YES)
 
     def setDrawAlternateImage_(self,tf):
-        self.drawAlternateImage = tf
+        self._drawAlternateImage = tf
         self.setNeedsDisplay_(YES)
+
+    def drawAlternateImage(self):
+        return self._drawAlternateImage == True
 
     def setBackgroundRenderer_(self,renderer):
         self.backgroundRenderer = renderer;
@@ -98,7 +101,7 @@ class IAImageView(NSView):
     def drawRect_(self,rect):
         if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
 
-        image = self.image if not self.drawAlternateImage else self.alternateImage;
+        image = self.image if not self._drawAlternateImage else self.alternateImage;
         if image is None: return
 
         unscaled = abs(self.zoom - 1.0) < 0.01;
