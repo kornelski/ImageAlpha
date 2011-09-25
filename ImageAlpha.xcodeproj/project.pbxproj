@@ -96,6 +96,13 @@
 			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
 			remoteInfo = pngnq;
 		};
+		5ADA169C142F9E9F006C94D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
+			remoteInfo = pngquant;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -287,6 +294,7 @@
 		5AC0D662141173B100446066 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				5ADA169D142F9E9F006C94D4 /* pngquant */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -406,6 +414,13 @@
 			fileType = "compiled.mach-o.executable";
 			path = pngcomp;
 			remoteRef = 5AC0D671141173C500446066 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5ADA169D142F9E9F006C94D4 /* pngquant */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = pngquant;
+			remoteRef = 5ADA169C142F9E9F006C94D4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
