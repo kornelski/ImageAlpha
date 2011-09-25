@@ -18,13 +18,13 @@ class IAImage(NSObject):
 
     versions = None
 
-    numberOfColors = 256;
+    _numberOfColors = 256;
     transparencyDepth = 8;
     transparencyAdjust = 0;
 
-    quantizationMethod = 2; # 1 = pngnq; 2 = pngquant nofs; 3 = posterizer
-    dithering = NO
-    _ieMode = False
+    _quantizationMethod = 2; # 1 = pngnq; 2 = pngquant nofs; 3 = posterizer
+    _dithering = NO
+    _ieMode = NO
 
     callbackWhenImageChanges = None
 
@@ -54,25 +54,34 @@ class IAImage(NSObject):
 		(attrs,error) = NSFileManager.defaultManager().attributesOfItemAtPath_error_(self.path,None);
 		self._sourceFileSize = attrs.objectForKey_(NSFileSize) if attrs is not None and error is None else None;
 
-    def setIeMode_(self,val):
-        self._ieMode = int(val) > 0;
-        if self._ieMode and self.quantizationMethod != 2:
-            self.setQuantizationMethod_(2);
-        self.update()
-
     def ieMode(self):
         return self._ieMode
 
-    def setDithering_(self,val):
-        self.dithering = int(val) > 0
+    def setIeMode_(self,val):
+        self._ieMode = int(val) > 0;
+        if self._ieMode and self.quantizationMethod() != 2:
+            self.setQuantizationMethod_(2);
         self.update()
+
+    def dithering(self):
+        return self._dithering
+
+    def setDithering_(self,val):
+        self._dithering = int(val) > 0
+        self.update()
+
+    def numberOfColors(self):
+        return self._numberOfColors
 
     def setNumberOfColors_(self,num):
-        self.numberOfColors = int(num)
+        self._numberOfColors = int(num)
         self.update()
 
+    def quantizationMethod(self):
+        return self._quantizationMethod
+
     def setQuantizationMethod_(self,num):
-        self.quantizationMethod = num
+        self._quantizationMethod = num
         if num != 2:
             self.setIeMode_(False)
         self.update()
@@ -87,7 +96,7 @@ class IAImage(NSObject):
         if self.path:
             id = self.currentVersionId()
 
-            if self.numberOfColors > 256:
+            if self.numberOfColors() > 256:
                 self._imageData = NSData.dataWithContentsOfFile_(self.path);
                 self.setImage_(NSImage.alloc().initByReferencingFile_(self.path));
 
@@ -95,7 +104,7 @@ class IAImage(NSObject):
 
             elif id not in self.versions:
                 self.versions[id] = IAImageVersion.alloc().init()
-                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizationMethod, self.dithering, self._ieMode, self.numberOfColors, self)
+                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizationMethod(), self.dithering(), self.ieMode(), self.numberOfColors(), self)
 
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.updateProgressbar();
 
@@ -106,13 +115,13 @@ class IAImage(NSObject):
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.imageChanged();
 
     def currentVersionId(self):
-        d = self.dithering;
-        c = self.numberOfColors;
-        if (self.quantizationMethod == 3): # ugly hack to reduce amount of pointless versions posterizer generates
+        d = self.dithering();
+        c = self.numberOfColors();
+        if (self.quantizationMethod() == 3): # ugly hack to reduce amount of pointless versions posterizer generates
             c = c/2;
 
         return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
-                                self.quantizationMethod, d, self._ieMode);
+                                self.quantizationMethod(), d, self.ieMode());
 
     def destroy(self):
         self.callbackWhenImageChanges = None

@@ -12,12 +12,12 @@ from AppKit import *
 from math import ceil, floor
 
 class IAImageView(NSView):
-    zoom = 2.0
-    image = None
-    alternateImage = None
+    _zoom = 2.0
+    _image = None
+    _alternateImage = None
     _drawAlternateImage = NO
     backgroundRenderer = None
-    smooth = YES
+    _smooth = YES
     backgroundOffset = (0,0)
     imageOffset = (0,0)
     imageFade = 1.0
@@ -35,47 +35,62 @@ class IAImageView(NSView):
 
     def zoomToFill(self, zoom=1.0):
         self.zoomingToFill = zoom
-        if self.image is None: return
-        size = self.image.size()
+        if self.image() is None: return
+        size = self.image().size()
         framesize = self.frame().size
-        zoom = min(framesize.width/size.width, framesize.height/size.height)*self.zoomingToFill
+        _zoom = min(framesize.width/size.width, framesize.height/size.height)*self.zoomingToFill
         if zoom > 1.0:
             zoom = min(4.0,floor(zoom))
         self._setZoom(zoom)
 
     def _limitImageOffset(self):
-        if self.image is None: return
+        if self.image() is None: return
         size = self.frame().size
-        imgsize = self.image.size()
+        imgsize = self.image().size()
 
-        w = (size.width + imgsize.width * self.zoom) /2
-        h = (size.height + imgsize.height * self.zoom) /2
+        w = (size.width + imgsize.width * self.zoom()) /2
+        h = (size.height + imgsize.height * self.zoom()) /2
 
         self.imageOffset = (max(-w+15, min(w-15, self.imageOffset[0])), \
                             max(-h+15, min(h-15, self.imageOffset[1])))
 
+    def smooth(self):
+        return self._smooth;
+
     def setSmooth_(self,smooth):
-        self.smooth = smooth
+        self._smooth = smooth
         NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if smooth else NSImageInterpolationNone)
         self.setNeedsDisplay_(YES)
+
+    def zoom(self):
+        return self._zoom;
 
     def setZoom_(self,zoom):
         self.zoomingToFill = 0
         self._setZoom(zoom);
 
     def _setZoom(self,zoom):
-        self.zoom = min(16.0,max(1.0/128.0,zoom))
+        self._zoom = min(16.0,max(1.0/128.0,zoom))
         self._limitImageOffset()
         self.setNeedsDisplay_(YES)
 
+    def image(self):
+        return self._image;
+
     def setImage_(self,aImage):
-        self.image=aImage
+        self._image=aImage
         if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
         self.setDrawAlternateImage_(NO)
 
+    def alternateImage(self):
+        return self._alternateImage;
+
     def setAlternateImage_(self,aImage):
-        self.alternateImage = aImage
+        self._alternateImage = aImage
         self.setNeedsDisplay_(YES)
+
+    def drawAlternateImage(self):
+        return self._drawAlternateImage;
 
     def setDrawAlternateImage_(self,tf):
         self._drawAlternateImage = tf
@@ -101,25 +116,25 @@ class IAImageView(NSView):
     def drawRect_(self,rect):
         if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
 
-        image = self.image if not self._drawAlternateImage else self.alternateImage;
+        image = self.image() if not self.drawAlternateImage() else self.alternateImage();
         if image is None: return
 
-        unscaled = abs(self.zoom - 1.0) < 0.01;
+        unscaled = abs(self.zoom() - 1.0) < 0.01;
 
-        NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if self.smooth and not unscaled else NSImageInterpolationNone)
+        NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if self.smooth() and not unscaled else NSImageInterpolationNone)
 
         frame = self.frame();
         imgsize = image.size()
-        offx = (frame.size.width  - imgsize.width * self.zoom )/2 + self.imageOffset[0]
-        offy = (frame.size.height - imgsize.height * self.zoom )/2 + self.imageOffset[1]
+        offx = (frame.size.width  - imgsize.width * self.zoom() )/2 + self.imageOffset[0]
+        offy = (frame.size.height - imgsize.height * self.zoom() )/2 + self.imageOffset[1]
 
-        x = (rect.origin.x - offx) / self.zoom
-        y = (rect.origin.y - offy) / self.zoom
+        x = (rect.origin.x - offx) / self.zoom()
+        y = (rect.origin.y - offy) / self.zoom()
 
         if unscaled:
             x = ceil(x)
             y = ceil(y)
 
-        imgrect = ((x,y), (rect.size.width / self.zoom, rect.size.height / self.zoom));
+        imgrect = ((x,y), (rect.size.width / self.zoom(), rect.size.height / self.zoom()));
         image.drawInRect_fromRect_operation_fraction_(rect, imgrect, NSCompositeSourceOver, self.imageFade)
 

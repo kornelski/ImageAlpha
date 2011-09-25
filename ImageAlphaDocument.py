@@ -22,7 +22,7 @@ class ImageAlphaDocument(NSDocument):
     progressBarView = objc.IBOutlet()
     savePanelView = objc.IBOutlet()
 
-    documentImage = None;
+    _documentImage = None;
 
     def windowNibName(self):
         return u"ImageAlphaDocument"
@@ -50,9 +50,9 @@ class ImageAlphaDocument(NSDocument):
         self.zoomedImageView.window().setAcceptsMouseMovedEvents_(YES);
         self.zoomedImageView.setBackgroundRenderer_(IAImageBackgroundRenderer(self._getImage("textures/photoshop","png")))
 
-        if self.documentImage is not None:
-            self.setDisplayImage_(self.documentImage.image())
-           # self.setStatusMessage_("Opened " + NSFileManager.defaultManager().displayNameAtPath_(self.documentImage.path));
+        if self.documentImage() is not None:
+            self.setDisplayImage_(self.documentImage().image())
+           # self.setStatusMessage_("Opened " + NSFileManager.defaultManager().displayNameAtPath_(self.documentImage().path));
         else:
             self.setStatusMessage_("To get started, drop PNG image onto main area on the right");
 
@@ -62,7 +62,7 @@ class ImageAlphaDocument(NSDocument):
         # I can't find nice way to compare selectors in pyobjc, so here comes __repr__() hack (or non-hack I hope)
 
 
-        if self.documentImage is None and item.action().__repr__() in ["'saveDocument:'","'saveDocumentAs:'"]:
+        if self.documentImage() is None and item.action().__repr__() in ["'saveDocument:'","'saveDocumentAs:'"]:
             return NO
 
         return super(ImageAlphaDocument, self).validateUserInterfaceItem_(item);
@@ -74,15 +74,15 @@ class ImageAlphaDocument(NSDocument):
         return YES
 
     def dataOfType_error_(self, typeName, outError):
-        if url.isFileURL() or self.documentImage is not None:
-            return (self.documentImage.imageData(), None)
+        if url.isFileURL() or self.documentImage() is not None:
+            return (self.documentImage().imageData(), None)
         return (None,None)
 
     def writeToURL_ofType_error_(self, url, typeName, outErorr):
         NSLog("write to %s type %s" % (url.path(), typeName));
 
-        if url.isFileURL() or self.documentImage is not None:
-            data = self.documentImage.imageData();
+        if url.isFileURL() or self.documentImage() is not None:
+            data = self.documentImage().imageData();
             if data is not None:
                 if NSFileManager.defaultManager().createFileAtPath_contents_attributes_(url.path(), data, None):
                     self.optimizeFileIfNeeded_(url);
@@ -98,7 +98,7 @@ class ImageAlphaDocument(NSDocument):
 
     def optimizeFileIfNeeded_(self,url):
         delegate = NSApplication.sharedApplication().delegate();
-        if delegate.imageOptimPath is None or not delegate.imageOptimEnabled:
+        if delegate.imageOptimPath is None or not delegate.imageOptimEnabled():
             return
 
         w = NSWorkspace.sharedWorkspace();
@@ -168,7 +168,7 @@ class ImageAlphaDocument(NSDocument):
     def setDocumentImageFromImage_(self,image):
         return NO # not supported until iaimage can save temp image
 
-#        if self.documentImage is not None:
+#        if self.documentImage() is not None:
 #            NSLog("That's not supported yet");
 #            return NO
 
@@ -178,11 +178,11 @@ class ImageAlphaDocument(NSDocument):
 
     def setNewDocumentImage_(self,docimg):
         #NSLog("new dimage set");
-        if self.documentImage is not None:
-            #NSLog("Destroying document image %s" % self.documentImage);
-            self.documentImage.destroy();
+        if self._documentImage is not None:
+            #NSLog("Destroying document image %s" % self._documentImage);
+            self._documentImage.destroy();
 
-        #NSLog("Setting new document image %s, replaces old %s " % ( docimg, self.documentImage));
+        #NSLog("Setting new document image %s, replaces old %s " % ( docimg, self._documentImage));
         self.setDocumentImage_(docimg);
         docimg.setCallbackWhenImageChanges_(self);
         self.setDisplayImage_(docimg.image());
@@ -192,9 +192,12 @@ class ImageAlphaDocument(NSDocument):
 			self.zoomedImageView.zoomToFill()
         return YES
 
+    def documentImage(self):
+        return self._documentImage;
+
     def setDocumentImage_(self,docimg):
 		# FIXME: check if callbacks of old one need to be stopped
-        self.documentImage = docimg;
+        self._documentImage = docimg;
 
     def setDisplayImage_(self,image):
         if self.zoomedImageView is None or self.backgroundsView is None: return;
@@ -204,11 +207,11 @@ class ImageAlphaDocument(NSDocument):
         #NSLog("Set new display image %s" % image);
 
     def imageChanged(self):
-        self.setDisplayImage_(self.documentImage.image());
-        data = self.documentImage.imageData()
+        self.setDisplayImage_(self.documentImage().image());
+        data = self.documentImage().imageData()
         self.updateProgressbar()
         if data is not None:
-			source_filesize = self.documentImage.sourceFileSize();
+			source_filesize = self.documentImage().sourceFileSize();
 			if source_filesize is None or source_filesize < data.length():
 				msg = "Image size: %d bytes" % data.length()
 			else:
@@ -236,7 +239,7 @@ class ImageAlphaDocument(NSDocument):
     def updateProgressbar(self):
         if self.progressBarView is None: return
 
-        isBusy = self._busyLevel > 0 or (self.documentImage is not None and self.documentImage.isBusy());
+        isBusy = self._busyLevel > 0 or (self.documentImage() is not None and self.documentImage().isBusy());
 
         if isBusy:
             self.progressBarView.startAnimation_(self);

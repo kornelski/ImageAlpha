@@ -50,7 +50,7 @@ class IAImageViewInteractive(IAImageView):
         return self.controller.setDocumentImageFromPasteboard_(sender.draggingPasteboard())
 
     def resetCursorRects(self):
-        if self.image is not None or self.backgroundRenderer is not None:
+        if self.image() is not None or self.backgroundRenderer is not None:
             curs = NSCursor.closedHandCursor() if self.mouseIsDown else NSCursor.openHandCursor()
             self.addCursorRect_cursor_(self.visibleRect(), curs)
             curs.setOnMouseEntered_(YES)
@@ -70,12 +70,12 @@ class IAImageViewInteractive(IAImageView):
         self.setNeedsDisplay_(YES)
 
     def pointIsInImage_(self,point):
-        if self.image is None: return NO
-        size = self.image.size();
+        if self.image() is None: return NO
+        size = self.image().size();
 
         fsize = self.frame().size;
-        w = max(50,size.width * self.zoom +15) / 2  # add "border" around image to ease dragging of small ones
-        h = max(50,size.height * self.zoom +15) / 2
+        w = max(50,size.width * self.zoom() +15) / 2  # add "border" around image to ease dragging of small ones
+        h = max(50,size.height * self.zoom() +15) / 2
 
         return point.x >= self.imageOffset[0]+fsize.width/2-w and point.y >= self.imageOffset[1]+fsize.height/2-h and \
                point.x <= self.imageOffset[0]+fsize.width/2+w and point.y <= self.imageOffset[1]+fsize.height/2+h
@@ -86,7 +86,7 @@ class IAImageViewInteractive(IAImageView):
         self.dragStart = (point.x, point.y)
         if self.backgroundRenderer is not None and self.dragBackground:
             self.backgroundRenderer.moveBy_(delta)
-        elif self.image is not None:
+        elif self.image() is not None:
             size = self.frame().size
             self.imageOffset = (self.imageOffset[0] + delta[0],
                                 self.imageOffset[1] + delta[1])
@@ -122,9 +122,9 @@ class IAImageViewInteractive(IAImageView):
             self.mouseDragged_(event)
 
     def magnifyWithEvent_(self, event):
-        #NSLog("magnified by %f z = %f" % (event.magnification(), self.zoom));
+        #NSLog("magnified by %f z = %f" % (event.magnification(), self.zoom()));
 
-        oldzoom = self.zoom;
+        oldzoom = self.zoom();
         # zoom < 1 requires different zooming speed than > 1
         if (oldzoom + event.magnification() > 1):
             zoom = ((oldzoom / 20) + event.magnification()/4) * 20;
