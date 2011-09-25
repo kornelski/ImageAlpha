@@ -62,7 +62,7 @@ class ImageAlphaDocument(NSDocument):
 
     def updateZoomedImageViewAlternateImage(self, zoomToFill=False):
         if self.zoomedImageView is not None:
-			self.zoomedImageView.setAlternateImage_(self.documentImage().image())
+            self.zoomedImageView.setAlternateImage_(self.documentImage().image())
             if zoomToFill:
                 self.zoomedImageView.zoomToFill()
 
