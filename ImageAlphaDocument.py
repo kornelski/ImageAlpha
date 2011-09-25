@@ -61,7 +61,7 @@ class ImageAlphaDocument(NSDocument):
         self._endWork();
 
     def updateZoomedImageViewAlternateImage(self, zoomToFill=False):
-        if self.zoomedImageView is not None:
+        if self.zoomedImageView is not None and self.documentImage() is not None:
             self.zoomedImageView.setAlternateImage_(self.documentImage().image())
             if zoomToFill:
                 self.zoomedImageView.zoomToFill()
@@ -214,6 +214,7 @@ class ImageAlphaDocument(NSDocument):
         #NSLog("Set new display image %s" % image);
 
     def imageChanged(self):
+        assert self.documentImage() is not None
         self.setDisplayImage_(self.documentImage().image());
         data = self.documentImage().imageData()
         self.updateProgressbar()
