@@ -56,7 +56,15 @@ class ImageAlphaDocument(NSDocument):
         else:
             self.setStatusMessage_("To get started, drop PNG image onto main area on the right");
 
+        self.updateZoomedImageViewAlternateImage()
+
         self._endWork();
+
+    def updateZoomedImageViewAlternateImage(self, zoomToFill=False):
+        if self.zoomedImageView is not None:
+			self.zoomedImageView.setAlternateImage_(self.documentImage().image())
+            if zoomToFill:
+                self.zoomedImageView.zoomToFill()
 
     def validateUserInterfaceItem_(self,item):
         # I can't find nice way to compare selectors in pyobjc, so here comes __repr__() hack (or non-hack I hope)
@@ -187,9 +195,8 @@ class ImageAlphaDocument(NSDocument):
         docimg.setCallbackWhenImageChanges_(self);
         self.setDisplayImage_(docimg.image());
 
-        if self.zoomedImageView is not None:
-			self.zoomedImageView.setAlternateImage_(docimg.image())
-			self.zoomedImageView.zoomToFill()
+        self.updateZoomedImageViewAlternateImage(zoomToFill=True)
+
         return YES
 
     def documentImage(self):
