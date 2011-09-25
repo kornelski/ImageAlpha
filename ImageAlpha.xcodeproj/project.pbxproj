@@ -144,7 +144,7 @@
 		5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		5A91FE8A0E958375004954A0 /* IACollectionItem.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IACollectionItem.py; sourceTree = "<group>"; };
-		5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = ImageAlphaApplication.py; path = ../../Users/porneL/ImageAlpha/ImageAlphaApplication.py; sourceTree = "<group>"; };
+		5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ImageAlphaApplication.py; sourceTree = "<group>"; };
 		5A91FE8D0E95837F004954A0 /* IAImageView.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImageView.py; sourceTree = "<group>"; };
 		5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImageViewInteractive.py; sourceTree = "<group>"; };
 		5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IABackgroundRenderer.py; sourceTree = "<group>"; };
