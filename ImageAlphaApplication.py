@@ -9,7 +9,7 @@ from objc import *
 from Foundation import *
 from AppKit import *
 
-class IAApplication(NSObject):
+class ImageAlphaApplication(NSObject):
     imageOptimPath = None
     _imageOptimEnabled = False
 
