@@ -27,21 +27,23 @@ int main(int argc, char *argv[])
         if ( mainFilePath != nil ) break;
     }
 
-	if ( !mainFilePath ) {
-        [NSException raise: NSInternalInconsistencyException format: @"%s:%d main() Failed to find the Main.{py,pyc,pyo} file in the application wrapper's Resources directory.", __FILE__, __LINE__];
+    int result = -1;
+	if ( mainFilePath ) {
+
+        Py_SetProgramName("/usr/bin/python");
+        Py_Initialize();
+        PySys_SetArgv(argc, (char **)argv);
+
+        const char *mainFilePathPtr = [mainFilePath fileSystemRepresentation];
+        FILE *mainFile = fopen(mainFilePathPtr, "r");
+        result = PyRun_SimpleFile(mainFile, (char *)[[mainFilePath lastPathComponent] UTF8String]);
+
     }
-
-    Py_SetProgramName("/usr/bin/python");
-    Py_Initialize();
-    PySys_SetArgv(argc, (char **)argv);
-
-    const char *mainFilePathPtr = [mainFilePath UTF8String];
-    FILE *mainFile = fopen(mainFilePathPtr, "r");
-    int result = PyRun_SimpleFile(mainFile, (char *)[[mainFilePath lastPathComponent] UTF8String]);
-
-    if ( result != 0 )
-        [NSException raise: NSInternalInconsistencyException
-                    format: @"%s:%d main() PyRun_SimpleFile failed with file '%@'.  See console for errors.", __FILE__, __LINE__, mainFilePath];
+    if ( result != 0 ) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Unable to start ImageAlpha" defaultButton:@"Abort" alternateButton:nil otherButton:nil
+                             informativeTextWithFormat:@"Python/PyObjC program failed to start.\nSee Console.app for details.",nil];
+        [alert runModal];
+    }
 
     [pool drain];
 
