@@ -6,18 +6,17 @@
 <description>ImageAlpha updates</description>
 <language>en</language>
 <item>
-<title>Version 1.0</title>
+<title>Version 1.1</title>
 <description><![CDATA[
 <ul>
-<li>Fixed numerous small bugs happening when images were opened or dropped into the window (thanks to Peter Hosey!)
-<li>Added button to show original image</li>
-<li>Made number of colors an editable field</li>
-<li>Updated pngquant to 1.5.1</li>
+<li>Updated pngquant to 1.6 — offers <em>much</em> nicer dithering</li>
+<li>Problems with loading Python will be reported using a message box rather than crash dialog</li>
 </ul>
 ]]></description>
-<pubDate>Wed, 28 Sep 2011 23:46:31 +0000</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.0.tar.bz2" sparkle:version="1.0" length="952135" type="application/bzip2" sparkle:dsaSignature="MCwCFFWdSzwoXcMXPUlbENA7TOitCtcdAhRWyIxupIt0SdqYk6SUn9qW0FYwVA=="/>
+<pubDate>Sat, 29 Oct 2011 13:37:47 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.1.tar.bz2" sparkle:version="1.1" length="944765" type="application/bzip2" sparkle:dsaSignature="MCwCFCBhUkWdreQUnNnTESoDfR5o/+dLAhQ1ZH9SpJ1485UNKHwNWOHLqogWmQ=="/>
 <sparkle:minimumSystemVersion>10.6.4</sparkle:minimumSystemVersion>
+
 </item>
 </channel>
 </rss>
