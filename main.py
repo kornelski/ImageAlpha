@@ -6,6 +6,11 @@
 #  Copyright porneL 2011. All rights reserved.
 #
 
+# can't avoid default encoding. Python dies in a system-initiated callback due to pretending it's still 1963.
+import sys
+reload(sys);
+sys.setdefaultencoding("utf8");
+
 #import modules required by application
 import objc
 import Foundation
