@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">11B26</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1617</string>
-		<string key="IBDocument.AppKitVersion">1138</string>
-		<string key="IBDocument.HIToolboxVersion">566.00</string>
+		<string key="IBDocument.SystemVersion">11C74</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
+		<string key="IBDocument.AppKitVersion">1138.23</string>
+		<string key="IBDocument.HIToolboxVersion">567.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1617</string>
+			<string key="NS.object.0">1938</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSSliderCell</string>
@@ -36,7 +36,10 @@
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</array>
-		<dictionary class="NSMutableDictionary" key="IBDocument.Metadata"/>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
+		</object>
 		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1048">
 			<object class="NSCustomObject" id="1021">
 				<string key="NSClassName">ImageAlphaDocument</string>
@@ -78,7 +81,6 @@
 													<int key="NSvFlags">4114</int>
 													<string key="NSFrameSize">{211, 400}</string>
 													<reference key="NSSuperview" ref="673416910"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="30346470"/>
 													<string key="NSMinGridSize">{0, 0}</string>
 													<string key="NSMaxGridSize">{0, 0}</string>
@@ -98,7 +100,6 @@
 											</array>
 											<string key="NSFrameSize">{211, 400}</string>
 											<reference key="NSSuperview" ref="950135453"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="666746530"/>
 											<reference key="NSDocView" ref="666746530"/>
 											<object class="NSColor" key="NSBGColor" id="742973226">
@@ -117,7 +118,6 @@
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{-100, -100}, {15, 307}}</string>
 											<reference key="NSSuperview" ref="950135453"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="280337130"/>
 											<reference key="NSTarget" ref="950135453"/>
 											<string key="NSAction">_doScroller:</string>
@@ -129,7 +129,6 @@
 											<int key="NSvFlags">-2147483392</int>
 											<string key="NSFrame">{{-100, -100}, {236, 15}}</string>
 											<reference key="NSSuperview" ref="950135453"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="673416910"/>
 											<int key="NSsFlags">1</int>
 											<reference key="NSTarget" ref="950135453"/>
@@ -139,7 +138,6 @@
 									</array>
 									<string key="NSFrameSize">{211, 400}</string>
 									<reference key="NSSuperview" ref="130628275"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="797496987"/>
 									<int key="NSsFlags">133632</int>
 									<reference key="NSVScroller" ref="797496987"/>
@@ -151,14 +149,12 @@
 									<int key="NSvFlags">256</int>
 									<string key="NSFrame">{{220, 0}, {487, 400}}</string>
 									<reference key="NSSuperview" ref="130628275"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="931452600"/>
 									<string key="NSClassName">IAImageViewInteractive</string>
 								</object>
 							</array>
 							<string key="NSFrame">{{20, 95}, {707, 400}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="950135453"/>
 							<bool key="NSIsVertical">YES</bool>
 							<string key="NSAutosaveName">SplitPane</string>
@@ -168,7 +164,6 @@
 							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{635, 68}, {92, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="454238828"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSliderCell" key="NSCell" id="414663094">
@@ -196,7 +191,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{66, 61}, {172, 25}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="773012018"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSliderCell" key="NSCell" id="311790212">
@@ -224,7 +218,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{2, 72}, {61, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="582137970"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="969362198">
@@ -250,7 +243,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{260, 69}, {33, 14}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="46657808"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1030513829">
@@ -268,8 +260,7 @@
 							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{604, 44}, {125, 18}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="393512811"/>
+							<reference key="NSNextKeyView" ref="287756090"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="413574897">
 								<int key="NSCellFlags">-2080244224</int>
@@ -297,7 +288,6 @@
 							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{604, 75}, {27, 14}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1032523297"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="30284635">
@@ -315,7 +305,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{242, 64}, {15, 22}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="164685965"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<array key="NSViewContentFilters">
@@ -354,7 +343,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{313, 31}, {94, 58}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="402300490"/>
 							<bool key="NSEnabled">YES</bool>
 							<int key="NSNumRows">3</int>
@@ -433,7 +421,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{415, 71}, {145, 18}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="463320633"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="693136086">
@@ -457,7 +444,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{415, 51}, {145, 18}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="493400718"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="833034245">
@@ -481,7 +467,6 @@
 							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{68, 31}, {102, 19}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="598800092"/>
 							<string key="NSReuseIdentifierKey">_NS:1534</string>
 							<bool key="NSEnabled">YES</bool>
@@ -510,7 +495,6 @@
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{712, 2}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<int key="NSpiFlags">28938</int>
 							<double key="NSMaxValue">100</double>
@@ -520,8 +504,7 @@
 							<int key="NSvFlags">290</int>
 							<string key="NSFrame">{{7, 4}, {732, 14}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
-							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="130628275"/>
+							<reference key="NSNextKeyView" ref="393512811"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="183848568">
 								<int key="NSCellFlags">68288064</int>
@@ -539,8 +522,7 @@
 					</array>
 					<string key="NSFrameSize">{747, 515}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView" ref="287756090"/>
+					<reference key="NSNextKeyView" ref="130628275"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1578}}</string>
 				<string key="NSMinSize">{673, 244}</string>
@@ -933,67 +915,11 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">view</string>
-						<reference key="source" ref="105585422"/>
-						<reference key="destination" ref="823448764"/>
-					</object>
-					<int key="connectionID">646</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">itemPrototype</string>
-						<reference key="source" ref="666746530"/>
-						<reference key="destination" ref="105585422"/>
-					</object>
-					<int key="connectionID">647</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">imageView</string>
-						<reference key="source" ref="666746530"/>
-						<reference key="destination" ref="30346470"/>
-					</object>
-					<int key="connectionID">651</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">window</string>
 						<reference key="source" ref="1021"/>
 						<reference key="destination" ref="972006081"/>
 					</object>
 					<int key="connectionID">659</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: zoomedImageView.smooth</string>
-						<reference key="source" ref="598800092"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="598800092"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">value: zoomedImageView.smooth</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">zoomedImageView.smooth</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">665</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">controller</string>
-						<reference key="source" ref="30346470"/>
-						<reference key="destination" ref="1021"/>
-					</object>
-					<int key="connectionID">672</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">zoomView</string>
-						<reference key="source" ref="493400718"/>
-						<reference key="destination" ref="30346470"/>
-					</object>
-					<int key="connectionID">675</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1020,6 +946,46 @@
 					<int key="connectionID">724</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progressBarView</string>
+						<reference key="source" ref="1021"/>
+						<reference key="destination" ref="393512811"/>
+					</object>
+					<int key="connectionID">887</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">savePanelView</string>
+						<reference key="source" ref="1021"/>
+						<reference key="destination" ref="970603212"/>
+					</object>
+					<int key="connectionID">1025</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="439893737"/>
+						<reference key="destination" ref="582137970"/>
+					</object>
+					<int key="connectionID">1049</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">controller</string>
+						<reference key="source" ref="30346470"/>
+						<reference key="destination" ref="1021"/>
+					</object>
+					<int key="connectionID">672</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">zoomView</string>
+						<reference key="source" ref="493400718"/>
+						<reference key="destination" ref="30346470"/>
+					</object>
+					<int key="connectionID">675</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: zoomedImageView.zoom</string>
 						<reference key="source" ref="493400718"/>
@@ -1042,90 +1008,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: zoomedImageView.zoom</string>
-						<reference key="source" ref="463320633"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="463320633"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">value: zoomedImageView.zoom</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">zoomedImageView.zoom</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
-								<string key="NSValueTransformerName">IAZoomTimesTransformer</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">726</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: documentImage.numberOfColors</string>
-						<reference key="source" ref="773012018"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="773012018"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">value: documentImage.numberOfColors</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">documentImage.numberOfColors</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
-								<integer value="1" key="NSConditionallySetsHidden"/>
-								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">830</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: documentImage.numberOfColors</string>
-						<reference key="source" ref="164685965"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="164685965"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">value: documentImage.numberOfColors</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">documentImage.numberOfColors</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
-								<integer value="1" key="NSConditionallySetsEnabled"/>
-								<integer value="1" key="NSConditionallySetsHidden"/>
-								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">IABitDepthNameTransformer</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">831</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: zoomedImageView.image</string>
-						<reference key="source" ref="463320633"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="463320633"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">hidden: zoomedImageView.image</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">zoomedImageView.image</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNil</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">878</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: zoomedImageView.image</string>
 						<reference key="source" ref="493400718"/>
 						<reference key="destination" ref="1021"/>
@@ -1143,114 +1025,6 @@
 						</object>
 					</object>
 					<int key="connectionID">879</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: zoomedImageView.image</string>
-						<reference key="source" ref="598800092"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="598800092"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled: zoomedImageView.image</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">zoomedImageView.image</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNotNil</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">880</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">progressBarView</string>
-						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="393512811"/>
-					</object>
-					<int key="connectionID">887</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedTag: documentImage.quantizationMethod</string>
-						<reference key="source" ref="46657808"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="46657808"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">selectedTag: documentImage.quantizationMethod</string>
-							<string key="NSBinding">selectedTag</string>
-							<string key="NSKeyPath">documentImage.quantizationMethod</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
-								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">902</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: documentImage.dithering</string>
-						<reference key="source" ref="402300490"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="402300490"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">value: documentImage.dithering</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">documentImage.dithering</string>
-							<dictionary key="NSOptions">
-								<boolean value="NO" key="NSAllowsEditingMultipleValuesSelection"/>
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">973</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: documentImage</string>
-						<reference key="source" ref="46657808"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="46657808"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled: documentImage</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">documentImage</string>
-							<dictionary key="NSOptions">
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">977</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: documentImage</string>
-						<reference key="source" ref="402300490"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="402300490"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled: documentImage</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">documentImage</string>
-							<dictionary key="NSOptions">
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">981</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1296,6 +1070,344 @@
 					<int key="connectionID">1002</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="582137970"/>
+						<reference key="destination" ref="46657808"/>
+					</object>
+					<int key="connectionID">1050</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled2: zoomedImageView.drawAlternateImage</string>
+						<reference key="source" ref="582137970"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="582137970"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled2: zoomedImageView.drawAlternateImage</string>
+							<string key="NSBinding">enabled2</string>
+							<string key="NSKeyPath">zoomedImageView.drawAlternateImage</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSNegateBoolean</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="821579050"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1070</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: documentImage.numberOfColors</string>
+						<reference key="source" ref="164685965"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="164685965"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">value: documentImage.numberOfColors</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">documentImage.numberOfColors</string>
+							<dictionary key="NSOptions">
+								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
+								<integer value="1" key="NSConditionallySetsEnabled"/>
+								<integer value="1" key="NSConditionallySetsHidden"/>
+								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">IABitDepthNameTransformer</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">831</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: documentImage</string>
+						<reference key="source" ref="164685965"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector" id="411033523">
+							<reference key="NSSource" ref="164685965"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled: documentImage</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">documentImage</string>
+							<dictionary key="NSOptions">
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSIsNotNil</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1074</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled2: zoomedImageView.drawAlternateImage</string>
+						<reference key="source" ref="164685965"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="164685965"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled2: zoomedImageView.drawAlternateImage</string>
+							<string key="NSBinding">enabled2</string>
+							<string key="NSKeyPath">zoomedImageView.drawAlternateImage</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSNegateBoolean</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="411033523"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1083</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: zoomedImageView.smooth</string>
+						<reference key="source" ref="598800092"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="598800092"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">value: zoomedImageView.smooth</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">zoomedImageView.smooth</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">665</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: zoomedImageView.image</string>
+						<reference key="source" ref="598800092"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="598800092"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled: zoomedImageView.image</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">zoomedImageView.image</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNotNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">880</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: zoomedImageView.zoom</string>
+						<reference key="source" ref="463320633"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="463320633"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">value: zoomedImageView.zoom</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">zoomedImageView.zoom</string>
+							<dictionary key="NSOptions">
+								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
+								<string key="NSValueTransformerName">IAZoomTimesTransformer</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">726</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: zoomedImageView.image</string>
+						<reference key="source" ref="463320633"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="463320633"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">hidden: zoomedImageView.image</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">zoomedImageView.image</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">878</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">itemPrototype</string>
+						<reference key="source" ref="666746530"/>
+						<reference key="destination" ref="105585422"/>
+					</object>
+					<int key="connectionID">647</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">imageView</string>
+						<reference key="source" ref="666746530"/>
+						<reference key="destination" ref="30346470"/>
+					</object>
+					<int key="connectionID">651</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: documentImage.numberOfColors</string>
+						<reference key="source" ref="773012018"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="773012018"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">value: documentImage.numberOfColors</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">documentImage.numberOfColors</string>
+							<dictionary key="NSOptions">
+								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
+								<integer value="1" key="NSConditionallySetsHidden"/>
+								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">830</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: documentImage</string>
+						<reference key="source" ref="773012018"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="773012018"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled: documentImage</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">documentImage</string>
+							<dictionary key="NSOptions">
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSIsNotNil</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1075</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="105585422"/>
+						<reference key="destination" ref="823448764"/>
+					</object>
+					<int key="connectionID">646</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">selectedTag: documentImage.quantizationMethod</string>
+						<reference key="source" ref="46657808"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="46657808"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">selectedTag: documentImage.quantizationMethod</string>
+							<string key="NSBinding">selectedTag</string>
+							<string key="NSKeyPath">documentImage.quantizationMethod</string>
+							<dictionary key="NSOptions">
+								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
+								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">902</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: documentImage</string>
+						<reference key="source" ref="46657808"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="46657808"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled: documentImage</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">documentImage</string>
+							<dictionary key="NSOptions">
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSIsNotNil</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">977</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="46657808"/>
+						<reference key="destination" ref="402300490"/>
+					</object>
+					<int key="connectionID">1051</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: documentImage.dithering</string>
+						<reference key="source" ref="402300490"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="402300490"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">value: documentImage.dithering</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">documentImage.dithering</string>
+							<dictionary key="NSOptions">
+								<boolean value="NO" key="NSAllowsEditingMultipleValuesSelection"/>
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">973</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: documentImage</string>
+						<reference key="source" ref="402300490"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="402300490"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled: documentImage</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">documentImage</string>
+							<dictionary key="NSOptions">
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSIsNotNil</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">981</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="402300490"/>
+						<reference key="destination" ref="1032523297"/>
+					</object>
+					<int key="connectionID">1052</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: documentImage</string>
 						<reference key="source" ref="1032523297"/>
@@ -1336,14 +1448,6 @@
 					<int key="connectionID">1009</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">savePanelView</string>
-						<reference key="source" ref="1021"/>
-						<reference key="destination" ref="970603212"/>
-					</object>
-					<int key="connectionID">1025</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: delegate.imageOptimEnabled</string>
 						<reference key="source" ref="323328904"/>
@@ -1358,128 +1462,6 @@
 						</object>
 					</object>
 					<int key="connectionID">1048</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">nextKeyView</string>
-						<reference key="source" ref="439893737"/>
-						<reference key="destination" ref="582137970"/>
-					</object>
-					<int key="connectionID">1049</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">nextKeyView</string>
-						<reference key="source" ref="582137970"/>
-						<reference key="destination" ref="46657808"/>
-					</object>
-					<int key="connectionID">1050</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">nextKeyView</string>
-						<reference key="source" ref="46657808"/>
-						<reference key="destination" ref="402300490"/>
-					</object>
-					<int key="connectionID">1051</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">nextKeyView</string>
-						<reference key="source" ref="402300490"/>
-						<reference key="destination" ref="1032523297"/>
-					</object>
-					<int key="connectionID">1052</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled2: zoomedImageView.drawAlternateImage</string>
-						<reference key="source" ref="582137970"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="582137970"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled2: zoomedImageView.drawAlternateImage</string>
-							<string key="NSBinding">enabled2</string>
-							<string key="NSKeyPath">zoomedImageView.drawAlternateImage</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSNegateBoolean</string>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="821579050"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1070</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: documentImage</string>
-						<reference key="source" ref="164685965"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector" id="411033523">
-							<reference key="NSSource" ref="164685965"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled: documentImage</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">documentImage</string>
-							<dictionary key="NSOptions">
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1074</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: documentImage</string>
-						<reference key="source" ref="773012018"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="773012018"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled: documentImage</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">documentImage</string>
-							<dictionary key="NSOptions">
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1075</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled2: zoomedImageView.drawAlternateImage</string>
-						<reference key="source" ref="164685965"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="164685965"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled2: zoomedImageView.drawAlternateImage</string>
-							<string key="NSBinding">enabled2</string>
-							<string key="NSKeyPath">zoomedImageView.drawAlternateImage</string>
-							<dictionary key="NSOptions">
-								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="-1" key="NSNoSelectionPlaceholder"/>
-								<integer value="-1" key="NSNotApplicablePlaceholder"/>
-								<integer value="-1" key="NSNullPlaceholder"/>
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSNegateBoolean</string>
-							</dictionary>
-							<reference key="NSPreviousConnector" ref="411033523"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1083</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2228,183 +2210,14 @@
 			<nil key="sourceID"/>
 			<int key="maxID">1096</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">IACollectionImageView</string>
-					<string key="superclassName">IAImageView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/IACollectionImageView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">IACollectionView</string>
-					<string key="superclassName">NSCollectionView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">imageView</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">imageView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">imageView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/IACollectionView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">IACollectionViewItem</string>
-					<string key="superclassName">NSCollectionViewItem</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/IACollectionViewItem.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">IAImageView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/IAImageView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">IAImageViewInteractive</string>
-					<string key="superclassName">IAImageView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">controller</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">controller</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">controller</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/IAImageViewInteractive.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">IASlider</string>
-					<string key="superclassName">NSSlider</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">zoomView</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">zoomView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">zoomView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/IASlider.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">ImageAlphaDocument</string>
-					<string key="superclassName">NSDocument</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">revert:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">revert:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">revert:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="backgroundsView">id</string>
-						<string key="progressBarView">id</string>
-						<string key="savePanelView">id</string>
-						<string key="statusBarView">id</string>
-						<string key="zoomedImageView">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="backgroundsView">
-							<string key="name">backgroundsView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="progressBarView">
-							<string key="name">progressBarView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="savePanelView">
-							<string key="name">savePanelView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="statusBarView">
-							<string key="name">statusBarView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="zoomedImageView">
-							<string key="name">zoomedImageView</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ImageAlphaDocument.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSDocument</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="printDocument:">id</string>
-						<string key="revertDocumentToSaved:">id</string>
-						<string key="runPageLayout:">id</string>
-						<string key="saveDocument:">id</string>
-						<string key="saveDocumentAs:">id</string>
-						<string key="saveDocumentTo:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="printDocument:">
-							<string key="name">printDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="revertDocumentToSaved:">
-							<string key="name">revertDocumentToSaved:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="runPageLayout:">
-							<string key="name">runPageLayout:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocument:">
-							<string key="name">saveDocument:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocumentAs:">
-							<string key="name">saveDocumentAs:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="saveDocumentTo:">
-							<string key="name">saveDocumentTo:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSDocument.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
+			<real value="1060" key="NS.object.0"/>
+		</object>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<real value="1060" key="NS.object.0"/>
 		</object>

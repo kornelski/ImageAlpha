@@ -24,6 +24,8 @@
 
 /* Begin PBXBuildFile section */
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
+		5A3123501399A6C500448815 /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; };
+		5A31235C1399A72500448815 /* posterizer in Resources */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
 		5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
 		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
@@ -36,10 +38,10 @@
 		5A91FE990E95837F004954A0 /* IASlider.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE920E95837F004954A0 /* IASlider.py */; };
 		5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */; };
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
-		5AC0D6801411752700446066 /* pngnq in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5AC0D670141173C500446066 /* pngnq */; };
-		5AC0D6821411752E00446066 /* posterizer in Copy Tools */ = {isa = PBXBuildFile; fileRef = 5AC0D65D1411738F00446066 /* posterizer */; };
+		5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA9BAB914268CED007E98AA /* Python.framework */; };
+		5ABD76510F0E791500515CC9 /* pngnq in Resources */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; };
+		5AD1807B0F4B738000370142 /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; };
 		77383F230C07AB8F0043B131 /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = 77383F220C07AB8F0043B131 /* main.py */; };
-		77383F380C07B0890043B131 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77383F370C07B0890043B131 /* Python.framework */; };
 		779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F70C0A0980000694DF /* MainMenu.xib */; };
 		779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -47,6 +49,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A3122E01399A1CF00448815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
+			remoteInfo = posterizer;
+		};
+		5A3122E21399A1E900448815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
+			remoteInfo = posterizer;
+		};
+		5A31234C1399A6BD00448815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A3123451399A6BD00448815 /* libpng.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D;
+			remoteInfo = libpng;
+		};
 		5A8CE1950F5B5E23002ED669 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
@@ -54,54 +77,61 @@
 			remoteGlobalIDString = 8D15AC270486D014006FF6A4;
 			remoteInfo = ImageAlpha;
 		};
-		5AC0D65C1411738F00446066 /* PBXContainerItemProxy */ = {
+		5A8DB0F8140EBBF300475FA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
-			remoteInfo = posterizer;
+			containerPortal = 5A3123451399A6BD00448815 /* libpng.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC0620554660B00DB518D;
+			remoteInfo = libpng;
 		};
-		5AC0D66F141173C500446066 /* PBXContainerItemProxy */ = {
+		5A937D4D12FEDF2D001D2786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
+			remoteInfo = pngquant;
+		};
+		5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
+			remoteInfo = pngnq;
+		};
+		5ABD764F0F0E78E700515CC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
 			remoteInfo = pngnq;
 		};
-		5AC0D671141173C500446066 /* PBXContainerItemProxy */ = {
+		5ABD77490F0E87ED00515CC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5ABD77440F0E87ED00515CC9;
 			remoteInfo = pngcomp;
 		};
-		5AC0D677141174CC00446066 /* PBXContainerItemProxy */ = {
+		5AC0D6031410520900446066 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5AC0D6731411749300446066;
-			remoteInfo = "download-sparkle";
+			containerPortal = 5A3123451399A6BD00448815 /* libpng.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5AC2B4D613394EDA00376783;
+			remoteInfo = static;
 		};
-		5AC0D67B1411750500446066 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
-			remoteInfo = posterizer;
-		};
-		5AC0D67D1411750700446066 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
-			remoteInfo = pngnq;
-		};
-		5ADA169C142F9E9F006C94D4 /* PBXContainerItemProxy */ = {
+		5AD180620F4B732100370142 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
 			remoteInfo = pngquant;
+		};
+		5ADA1684142F9C96006C94D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A6C75A1142F80F700A4CDFF;
+			remoteInfo = "pngquant-static";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -117,18 +147,6 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AC0D67F1411751F00446066 /* Copy Tools */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				5AC0D6821411752E00446066 /* posterizer in Copy Tools */,
-				5AC0D6801411752700446066 /* pngnq in Copy Tools */,
-			);
-			name = "Copy Tools";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -139,23 +157,27 @@
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* ImageAlpha_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAlpha_Prefix.pch; sourceTree = "<group>"; };
 		5A30108D0F55DE1B0083C154 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
-		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = posterizer.xcodeproj; path = ../posterizer/posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5A3123451399A6BD00448815 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../ImageOptim/libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ImageAlpha.icns; sourceTree = "<group>"; };
+		5A7B7EDF0F5CA4DD00F72F1F /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		5A91FE8A0E958375004954A0 /* IACollectionItem.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IACollectionItem.py; sourceTree = "<group>"; };
-		5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ImageAlphaApplication.py; sourceTree = "<group>"; };
-		5A91FE8D0E95837F004954A0 /* IAImageView.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImageView.py; sourceTree = "<group>"; };
-		5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImageViewInteractive.py; sourceTree = "<group>"; };
-		5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IABackgroundRenderer.py; sourceTree = "<group>"; };
-		5A91FE920E95837F004954A0 /* IASlider.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IASlider.py; sourceTree = "<group>"; };
-		5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ImageAlphaDocument.py; sourceTree = "<group>"; };
-		5AA5327D0EE32FC700360305 /* IAImage.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = IAImage.py; sourceTree = "<group>"; };
-		5AA71B4612FF268F002E5E77 /* ImageAlpha.tar.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = ImageAlpha.tar.bz2; path = build/Release/ImageAlpha.tar.bz2; sourceTree = "<group>"; };
-		5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = pngnq.xcodeproj; sourceTree = SOURCE_ROOT; };
-		5AD1805E0F4B732100370142 /* pngquant.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = pngquant.xcodeproj; sourceTree = SOURCE_ROOT; };
-		77383F220C07AB8F0043B131 /* main.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; path = main.py; sourceTree = "<group>"; };
-		77383F370C07B0890043B131 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = /System/Library/Frameworks/Python.framework; sourceTree = "<absolute>"; };
+		5A91FE8A0E958375004954A0 /* IACollectionItem.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IACollectionItem.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5A91FE8C0E95837F004954A0 /* ImageAlphaApplication.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = ImageAlphaApplication.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5A91FE8D0E95837F004954A0 /* IAImageView.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IAImageView.py; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IAImageViewInteractive.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IABackgroundRenderer.py; sourceTree = "<group>"; usesTabs = 1; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5A91FE920E95837F004954A0 /* IASlider.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IASlider.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = ImageAlphaDocument.py; sourceTree = "<group>"; usesTabs = 1; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5AA5327D0EE32FC700360305 /* IAImage.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IAImage.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
+		5AA71B4612FF268F002E5E77 /* ImageAlpha.tar.bz2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ImageAlpha.tar.bz2; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA9BAB914268CED007E98AA /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngnq.xcodeproj; path = ../pngnq/pngnq.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5AD1805E0F4B732100370142 /* pngquant.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngquant.xcodeproj; path = ../pngquant/pngquant.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5AED10DB139BAC1400FF5C69 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		5AED10DC139BAC1400FF5C69 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		77383F220C07AB8F0043B131 /* main.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; lineEnding = 0; path = main.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
 		779AE5F80C0A0980000694DF /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		779AE5FA0C0A0980000694DF /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ImageAlphaDocument.xib; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; plistStructureDefinitionIdentifier = "<none>"; sourceTree = "<group>"; };
@@ -168,7 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
-				77383F380C07B0890043B131 /* Python.framework in Frameworks */,
+				5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */,
 				5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,8 +201,8 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AA9BAB914268CED007E98AA /* Python.framework */,
 				5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */,
-				77383F370C07B0890043B131 /* Python.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -208,11 +230,15 @@
 		2A37F4AAFDCFA73011CA2CEA /* ImageAlpha */ = {
 			isa = PBXGroup;
 			children = (
+				5A3123451399A6BD00448815 /* libpng.xcodeproj */,
 				5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */,
 				5AD1805E0F4B732100370142 /* pngquant.xcodeproj */,
 				5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				5AED10DB139BAC1400FF5C69 /* release.xcconfig */,
+				5AED10DC139BAC1400FF5C69 /* debug.xcconfig */,
+				5A7B7EDF0F5CA4DD00F72F1F /* appcast.xml */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
 				2A37F4C3FDCFA73011CA2CEA /* Frameworks */,
 				19C28FB0FE9D524F11CA2CBB /* Products */,
@@ -263,6 +289,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5A3122DD1399A1CF00448815 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A3122E11399A1CF00448815 /* posterizer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A3123461399A6BD00448815 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A31234D1399A6BD00448815 /* liblibpng.dylib */,
+				5AC0D6041410520900446066 /* libstatic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5A91FE9B0E958383004954A0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,48 +326,25 @@
 			name = Image;
 			sourceTree = "<group>";
 		};
-		5AC0D6591411738F00446066 /* Products */ = {
+		5ABD764C0F0E78E700515CC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5AC0D65D1411738F00446066 /* posterizer */,
+				5ABD76500F0E78E700515CC9 /* pngnq */,
+				5ABD774A0F0E87ED00515CC9 /* pngcomp */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5AC0D662141173B100446066 /* Products */ = {
+		5AD1805F0F4B732100370142 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5ADA169D142F9E9F006C94D4 /* pngquant */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5AC0D66B141173C500446066 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5AC0D670141173C500446066 /* pngnq */,
-				5AC0D672141173C500446066 /* pngcomp */,
+				5AD180630F4B732100370142 /* pngquant */,
+				5ADA1685142F9C96006C94D4 /* pngquant */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXLegacyTarget section */
-		5AC0D6731411749300446066 /* download-sparkle */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = 5AC0D6741411749300446066 /* Build configuration list for PBXLegacyTarget "download-sparkle" */;
-			buildPhases = (
-			);
-			buildToolPath = /Developer/usr/bin/make;
-			dependencies = (
-			);
-			name = "download-sparkle";
-			passBuildSettingsInEnvironment = 1;
-			productName = "download-sparkle";
-		};
-/* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
 		8D15AC270486D014006FF6A4 /* ImageAlpha */ = {
@@ -332,7 +352,6 @@
 			buildConfigurationList = C05733C708A9546B00998B17 /* Build configuration list for PBXNativeTarget "ImageAlpha" */;
 			buildPhases = (
 				8D15AC2B0486D014006FF6A4 /* Resources */,
-				5AC0D67F1411751F00446066 /* Copy Tools */,
 				8D15AC300486D014006FF6A4 /* Sources */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				5A8CE1460F5B5BD5002ED669 /* Copy Frameworks */,
@@ -340,9 +359,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				5AC0D67E1411750700446066 /* PBXTargetDependency */,
-				5AC0D67C1411750500446066 /* PBXTargetDependency */,
-				5AC0D678141174CC00446066 /* PBXTargetDependency */,
+				5A8DB0F9140EBBF300475FA3 /* PBXTargetDependency */,
+				5A937D4E12FEDF2D001D2786 /* PBXTargetDependency */,
+				5A937D5012FEDF30001D2786 /* PBXTargetDependency */,
+				5A3122E31399A1E900448815 /* PBXTargetDependency */,
 			);
 			name = ImageAlpha;
 			productInstallPath = "$(HOME)/Applications";
@@ -357,7 +377,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "ImageAlpha" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -373,15 +393,19 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5AC0D66B141173C500446066 /* Products */;
+					ProductGroup = 5A3123461399A6BD00448815 /* Products */;
+					ProjectRef = 5A3123451399A6BD00448815 /* libpng.xcodeproj */;
+				},
+				{
+					ProductGroup = 5ABD764C0F0E78E700515CC9 /* Products */;
 					ProjectRef = 5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */;
 				},
 				{
-					ProductGroup = 5AC0D662141173B100446066 /* Products */;
+					ProductGroup = 5AD1805F0F4B732100370142 /* Products */;
 					ProjectRef = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
 				},
 				{
-					ProductGroup = 5AC0D6591411738F00446066 /* Products */;
+					ProductGroup = 5A3122DD1399A1CF00448815 /* Products */;
 					ProjectRef = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
 				},
 			);
@@ -389,38 +413,58 @@
 			targets = (
 				8D15AC270486D014006FF6A4 /* ImageAlpha */,
 				5A8CE1920F5B5E1D002ED669 /* Archive */,
-				5AC0D6731411749300446066 /* download-sparkle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5AC0D65D1411738F00446066 /* posterizer */ = {
+		5A3122E11399A1CF00448815 /* posterizer */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = posterizer;
-			remoteRef = 5AC0D65C1411738F00446066 /* PBXContainerItemProxy */;
+			remoteRef = 5A3122E01399A1CF00448815 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5AC0D670141173C500446066 /* pngnq */ = {
+		5A31234D1399A6BD00448815 /* liblibpng.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = liblibpng.dylib;
+			remoteRef = 5A31234C1399A6BD00448815 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5ABD76500F0E78E700515CC9 /* pngnq */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = pngnq;
-			remoteRef = 5AC0D66F141173C500446066 /* PBXContainerItemProxy */;
+			remoteRef = 5ABD764F0F0E78E700515CC9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5AC0D672141173C500446066 /* pngcomp */ = {
+		5ABD774A0F0E87ED00515CC9 /* pngcomp */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = pngcomp;
-			remoteRef = 5AC0D671141173C500446066 /* PBXContainerItemProxy */;
+			remoteRef = 5ABD77490F0E87ED00515CC9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5ADA169D142F9E9F006C94D4 /* pngquant */ = {
+		5AC0D6041410520900446066 /* libstatic.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libstatic.a;
+			remoteRef = 5AC0D6031410520900446066 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AD180630F4B732100370142 /* pngquant */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = pngquant;
-			remoteRef = 5ADA169C142F9E9F006C94D4 /* PBXContainerItemProxy */;
+			remoteRef = 5AD180620F4B732100370142 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5ADA1685142F9C96006C94D4 /* pngquant */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = pngquant;
+			remoteRef = 5ADA1684142F9C96006C94D4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -430,6 +474,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A31235C1399A72500448815 /* posterizer in Resources */,
+				5A3123501399A6C500448815 /* liblibpng.dylib in Resources */,
+				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
+				5AD1807B0F4B738000370142 /* pngquant in Resources */,
 				77383F230C07AB8F0043B131 /* main.py in Resources */,
 				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
 				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
@@ -457,13 +505,14 @@
 			);
 			inputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/ImageAlpha.app",
+				"$(SRCROOT)/optimal_file_list",
 			);
 			outputPaths = (
 				"$(TARGET_BUILD_DIR)/ImageAlpha.tar.bz2",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=../../optimal_file_list\n";
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=$SRCROOT/optimal_file_list\n";
 		};
 		5A8CE19A0F5B5E9D002ED669 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -494,25 +543,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5A3122E31399A1E900448815 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = posterizer;
+			targetProxy = 5A3122E21399A1E900448815 /* PBXContainerItemProxy */;
+		};
 		5A8CE1960F5B5E23002ED669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D15AC270486D014006FF6A4 /* ImageAlpha */;
 			targetProxy = 5A8CE1950F5B5E23002ED669 /* PBXContainerItemProxy */;
 		};
-		5AC0D678141174CC00446066 /* PBXTargetDependency */ = {
+		5A8DB0F9140EBBF300475FA3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5AC0D6731411749300446066 /* download-sparkle */;
-			targetProxy = 5AC0D677141174CC00446066 /* PBXContainerItemProxy */;
+			name = libpng;
+			targetProxy = 5A8DB0F8140EBBF300475FA3 /* PBXContainerItemProxy */;
 		};
-		5AC0D67C1411750500446066 /* PBXTargetDependency */ = {
+		5A937D4E12FEDF2D001D2786 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = posterizer;
-			targetProxy = 5AC0D67B1411750500446066 /* PBXContainerItemProxy */;
+			name = pngquant;
+			targetProxy = 5A937D4D12FEDF2D001D2786 /* PBXContainerItemProxy */;
 		};
-		5AC0D67E1411750700446066 /* PBXTargetDependency */ = {
+		5A937D5012FEDF30001D2786 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = pngnq;
-			targetProxy = 5AC0D67D1411750700446066 /* PBXContainerItemProxy */;
+			targetProxy = 5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -539,9 +593,6 @@
 		5A8CE1930F5B5E1D002ED669 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = Archive;
 			};
 			name = Debug;
@@ -549,58 +600,7 @@
 		5A8CE1940F5B5E1D002ED669 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				PRODUCT_NAME = Archive;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		5AC0D6751411749300446066 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		5AC0D6761411749300446066 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -613,7 +613,6 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ImageAlpha_Prefix.pch;
@@ -621,19 +620,16 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = ImageAlpha;
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		C05733C908A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ImageAlpha_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
@@ -645,25 +641,43 @@
 		};
 		C05733CC08A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AED10DC139BAC1400FF5C69 /* debug.xcconfig */;
 			buildSettings = {
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
 			};
 			name = Debug;
 		};
 		C05733CD08A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AED10DB139BAC1400FF5C69 /* release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				DEAD_CODE_STRIPPING = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_FAST_MATH = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OBJC_CALL_CXX_CDTORS = NO;
 				GCC_STRICT_ALIASING = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LLVM_LTO = YES;
-				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
-				VALID_ARCHS = x86_64;
+				SDKROOT = macosx10.6;
 			};
 			name = Release;
 		};
@@ -675,15 +689,6 @@
 			buildConfigurations = (
 				5A8CE1930F5B5E1D002ED669 /* Debug */,
 				5A8CE1940F5B5E1D002ED669 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5AC0D6741411749300446066 /* Build configuration list for PBXLegacyTarget "download-sparkle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AC0D6751411749300446066 /* Debug */,
-				5AC0D6761411749300446066 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

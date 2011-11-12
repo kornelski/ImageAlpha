@@ -1,0 +1,5 @@
+*.mode1v3
+*.pbxuser
+Sparkle.framework
+build
+DerivedData
