@@ -57,9 +57,9 @@ class IAImageViewInteractive(IAImageView):
 
     def scrollWheel_(self,event):
         if event.deltaY() > 0:
-            self.increaseZoom()
+            self.zoomIn_(None)
         elif event.deltaY() < 0:
-            self.decreaseZoom()
+            self.zoomOut_(None)
 
     def mouseExited_(self,event):
         self.imageFade=1.0

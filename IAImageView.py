@@ -27,11 +27,13 @@ class IAImageView(NSView):
         NSView.setFrame_(self,rect)
         if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
 
-    def increaseZoom(self):
-        self.setZoom_(self.zoom * 2.0);
+    @objc.IBAction
+    def zoomIn_(self, sender):
+        self.setZoom_(self.zoom() * 2.0);
 
-    def decreaseZoom(self):
-        self.setZoom_(self.zoom / 2.0);
+    @objc.IBAction
+    def zoomOut_(self,sender):
+        self.setZoom_(self.zoom() / 2.0);
 
     def zoomToFill(self, zoom=1.0):
         self.zoomingToFill = zoom
