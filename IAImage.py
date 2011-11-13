@@ -1,10 +1,5 @@
 #
 #  IAImage.py
-#  ImageAlpha
-#
-#  Created by porneL on 30.listopada.08.
-#  Copyright (c) 2011 porneL. All rights reserved.
-#
 from objc import *
 from Foundation import *
 from AppKit import *
