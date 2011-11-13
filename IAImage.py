@@ -113,7 +113,7 @@ class IAImage(NSObject):
         d = self.dithering();
         c = self.numberOfColors();
         if (self.quantizationMethod() == 3): # ugly hack to reduce amount of pointless versions posterizer generates
-            c = c/2;
+            c = round(10+c*118/256);
 
         return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
                                 self.quantizationMethod(), d, self.ieMode());

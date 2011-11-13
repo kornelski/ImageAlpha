@@ -38,11 +38,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
-	<key>CFBundleURLTypes</key>
-	<array/>
+	<string>1.2.1</string>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>1.2.1.1</string>
 	<key>LSArchitecturePriority</key>
 	<array>
 		<string>x86_64</string>
@@ -55,17 +53,11 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>NSServices</key>
-	<array/>
 	<key>SUFeedURL</key>
 	<string>http://pornel.net/imagealpha/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 	<key>SUShowReleaseNotes</key>
 	<true/>
-	<key>UTExportedTypeDeclarations</key>
-	<array/>
-	<key>UTImportedTypeDeclarations</key>
-	<array/>
 </dict>
 </plist>

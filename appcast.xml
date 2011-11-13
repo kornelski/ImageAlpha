@@ -6,16 +6,17 @@
 <description>ImageAlpha updates</description>
 <language>en</language>
 <item>
-<title>Version 1.1</title>
+<title>Version 1.2.1</title>
 <description><![CDATA[
 <ul>
-<li>Updated pngquant to 1.6 — offers <em>much</em> nicer dithering</li>
-<li>Problems with loading Python will be reported using a message box rather than crash dialog</li>
+<li>Much more effective posterization</li>
+<li>Small quality improvements in pngquant to 1.6.2</li>
 </ul>
 ]]></description>
-<pubDate>Sat, 29 Oct 2011 13:37:47 +0000</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.1.tar.bz2" sparkle:version="1.1" length="944765" type="application/bzip2" sparkle:dsaSignature="MCwCFCBhUkWdreQUnNnTESoDfR5o/+dLAhQ1ZH9SpJ1485UNKHwNWOHLqogWmQ=="/>
+<pubDate>Sun, 18 Dec 2011 15:13:14 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.2.1.tar.bz2" sparkle:version="1.2.1.1" length="861576" type="application/bzip2" sparkle:dsaSignature="MCwCFFj14nvjrRYg7MoVaBeAagbMPWcWAhRVfcDDHAPDplsb6cw7ClgWvMorqA=="/>
 <sparkle:minimumSystemVersion>10.6.4</sparkle:minimumSystemVersion>
+
 
 </item>
 </channel>
