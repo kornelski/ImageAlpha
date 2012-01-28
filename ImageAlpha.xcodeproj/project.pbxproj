@@ -338,8 +338,8 @@
 		5AD1805F0F4B732100370142 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5AD180630F4B732100370142 /* pngquant */,
 				5ADA1685142F9C96006C94D4 /* pngquant */,
+				5AD180630F4B732100370142 /* pngquant */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -593,14 +593,14 @@
 		5A8CE1930F5B5E1D002ED669 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = Archive;
+				PRODUCT_NAME = ImageAlpha;
 			};
 			name = Debug;
 		};
 		5A8CE1940F5B5E1D002ED669 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = Archive;
+				PRODUCT_NAME = ImageAlpha;
 			};
 			name = Release;
 		};
@@ -643,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AED10DC139BAC1400FF5C69 /* debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx10.6;
@@ -653,6 +654,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AED10DB139BAC1400FF5C69 /* release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
