@@ -6,17 +6,16 @@
 <description>ImageAlpha updates</description>
 <language>en</language>
 <item>
-<title>Version 1.2.1</title>
+<title>Version 1.2.2</title>
 <description><![CDATA[
 <ul>
-<li>Much more effective posterization</li>
-<li>Small quality improvements in pngquant to 1.6.2</li>
+  <li>Much better transparency handling in pngquant to 1.7.0</li>
+  <li>Dithering is on by default</li>
 </ul>
 ]]></description>
-<pubDate>Sun, 18 Dec 2011 15:13:14 +0000</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.2.1.tar.bz2" sparkle:version="1.2.1.1" length="861576" type="application/bzip2" sparkle:dsaSignature="MCwCFFj14nvjrRYg7MoVaBeAagbMPWcWAhRVfcDDHAPDplsb6cw7ClgWvMorqA=="/>
+<pubDate>Tue, 10 Jan 2012 00:46:31 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.2.2.tar.bz2" sparkle:version="1.2.2" length="862146" type="application/bzip2" sparkle:dsaSignature="MCwCFCJwjb6a7kPH0gmBHYx55Dtyi+2aAhRXB5GNg01dLONJNUzfCV8LyIVraQ=="/>
 <sparkle:minimumSystemVersion>10.6.4</sparkle:minimumSystemVersion>
-
 
 </item>
 </channel>

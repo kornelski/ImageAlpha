@@ -17,8 +17,8 @@ class IAImage(NSObject):
     transparencyDepth = 8;
     transparencyAdjust = 0;
 
-    _quantizationMethod = 2; # 1 = pngnq; 2 = pngquant nofs; 3 = posterizer
-    _dithering = NO
+    _quantizationMethod = 2; # 1 = pngnq; 2 = pngquant; 3 = posterizer
+    _dithering = YES
     _ieMode = NO
 
     callbackWhenImageChanges = None
