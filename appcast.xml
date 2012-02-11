@@ -6,16 +6,18 @@
 <description>ImageAlpha updates</description>
 <language>en</language>
 <item>
-<title>Version 1.2.2</title>
+<title>Version 1.2.3</title>
 <description><![CDATA[
 <ul>
-  <li>Much better transparency handling in pngquant to 1.7.0</li>
-  <li>Dithering is on by default</li>
+  <li>Performance improvements in pngquant to 1.7.1</li>
+  <li>Restored compatibility with older CPUs</li>
+  <li>New icon by <a href="http://www.fif7y.com/">Gab/FIF7Y</a></li>
 </ul>
 ]]></description>
-<pubDate>Tue, 10 Jan 2012 00:46:31 +0000</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.2.2.tar.bz2" sparkle:version="1.2.2" length="862146" type="application/bzip2" sparkle:dsaSignature="MCwCFCJwjb6a7kPH0gmBHYx55Dtyi+2aAhRXB5GNg01dLONJNUzfCV8LyIVraQ=="/>
+<pubDate>Sat, 11 Feb 2012 17:04:13 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.2.3.tar.bz2" sparkle:version="1.2.3" length="959331" type="application/bzip2" sparkle:dsaSignature="MC0CFQCKEfeVpRRmEtW1lhONt3Wm3txCNAIULO5Ay03NekhF69weaG61ltTaG70="/>
 <sparkle:minimumSystemVersion>10.6.4</sparkle:minimumSystemVersion>
+
 
 </item>
 </channel>
