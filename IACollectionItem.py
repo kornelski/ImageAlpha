@@ -28,7 +28,7 @@ class IACollectionImageView(IAImageView):
     drawBorder = False
 
     def initWithFrame_(self, frame):
-        self = super(IAImageView, self).initWithFrame_(frame)
+        self = super(IACollectionImageView, self).initWithFrame_(frame)
         if self:
             # initialization code here
             types = [NSFilenamesPboardType]
@@ -84,7 +84,7 @@ class IACollectionImageView(IAImageView):
     def drawRect_(self,rect):
         if self.drawBorder:
             self.imageFade = 0.85
-            IAImageView.drawRect_(self,rect); # super() is broken
+            super(IACollectionImageView, self).drawRect_(rect);
             self.imageFade = 1
             path = NSBezierPath.bezierPath()
             size = self.frame().size;
@@ -93,7 +93,7 @@ class IACollectionImageView(IAImageView):
             path.appendBezierPathWithRoundedRect_xRadius_yRadius_(((3,3),(size.width-6,size.height-6)),8,8)
             path.stroke()
         else:
-            IAImageView.drawRect_(self,rect); # super() is broken
+            super(IACollectionImageView, self).drawRect_(rect);
 
 
     def mouseUp_(self,event):
@@ -157,8 +157,7 @@ class IACollectionView(NSCollectionView):
         pass
 
     def newItemForRepresentedObject_(self,obj):
-        # colitem = super(NSCollectionView,self).newItemForRepresentedObject_(obj); # doesn't work
-        colitem = NSCollectionView.newItemForRepresentedObject_(self,obj);
+        colitem = super(IACollectionView,self).newItemForRepresentedObject_(obj);
 
         view  = colitem.view().viewWithTag_(1234);
         #view = IACollectionImageView.alloc().initWithFrame_(((0,0),image.size()))

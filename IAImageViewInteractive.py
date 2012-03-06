@@ -8,7 +8,7 @@ from  math import floor
 
 class IAImageViewInteractive(IAImageView):
     def initWithFrame_(self, frame):
-        self = super(IAImageView, self).initWithFrame_(frame)
+        self = super(IAImageViewInteractive, self).initWithFrame_(frame)
         if self:
             # initialization code here
             types = [NSFilenamesPboardType]

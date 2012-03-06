@@ -15,17 +15,6 @@ class IASlider(NSSlider):
         if self.zoomView is not None:
             self.zoomView.scrollWheel_(event)
 
-#    def initWithFrame_(self, frame):
-#        self = super(IASlider, self).initWithFrame_(frame)
-#        if self:
-#            # initialization code here
-#            pass
-#        return self
-
-#    def drawRect_(self, rect):
-        # drawing code here
-
-
 
 class IAZoomTransformer(NSValueTransformer):
     def transformedValueClass(self):
