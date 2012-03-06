@@ -4,6 +4,8 @@
 from objc import *
 from Foundation import *
 from AppKit import *
+from Quartz.CoreGraphics import *
+from Quartz.QuartzCore import *
 from math import ceil, floor
 
 class IAImageView(NSView):
@@ -17,6 +19,37 @@ class IAImageView(NSView):
     imageOffset = (0,0)
     imageFade = 1.0
     zoomingToFill = 0
+
+    def initWithFrame_(self, frame):
+        NSLog("initing self with frame");
+        self = super(IAImageView, self).initWithFrame_(frame)
+        if self:
+            self.setWantsLayer_(YES);
+            bg = CALayer.layer();
+            bg.setBackgroundColor_(CGColorCreateGenericRGB(0.5,0.5,0.5,1));
+            self.setLayer_(bg);
+
+            shadowHeight = 10;
+            shadowWidth = 12;
+
+            shadow1 = CAGradientLayer.layer();
+            stops = [CGColorCreateGenericRGB(0,0,0,x) for x in [0, 0.04, 0.11, 0.3]]
+            shadow1.setColors_(stops);
+            shadow1.setAutoresizingMask_(kCALayerWidthSizable | kCALayerMinYMargin);
+            shadow1.setFrame_(((0,-shadowHeight), (30, shadowHeight)));
+
+            shadow2 = CAGradientLayer.layer();
+            stops.reverse();
+            shadow2.setColors_(stops);
+            shadow2.setStartPoint_((0,0));
+            shadow2.setEndPoint_((1,0));
+            shadow2.setAutoresizingMask_(kCALayerHeightSizable | kCALayerMaxXMargin);
+            shadow2.setFrame_(((0,0),(shadowWidth,0)));
+            self.layer().addSublayer_(shadow2);
+            self.layer().addSublayer_(shadow1);
+            self.shadow1 = shadow1;
+
+        return self
 
     def setFrame_(self,rect):
         NSView.setFrame_(self,rect)
@@ -115,13 +148,6 @@ class IAImageView(NSView):
     def setBackgroundRenderer_(self,renderer):
         self.backgroundRenderer = renderer;
         self.setNeedsDisplay_(YES)
-
-#    def initWithFrame_(self, frame):
-#        self = super(IAImageView, self).initWithFrame_(frame)
-#        if self:
-#            # initialization code here
-#            pass
-#        return self
 
     def isOpaque(self):
         return self.backgroundRenderer is not None
