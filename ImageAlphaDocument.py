@@ -25,21 +25,18 @@ class ImageAlphaDocument(ImageAlphaDocumentC):
 		self._startWork();
 
 		bgs = [
-			IAImageBackgroundRenderer(self._getImage("textures/photoshop","png")),
-			IAColorBackgroundRenderer(NSColor.whiteColor()),
-			IAColorBackgroundRenderer(NSColor.colorWithWhite_alpha_(0.5,1)),
-			IAColorBackgroundRenderer(NSColor.blackColor()),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/photoshop","png")),
 			IAColorBackgroundRenderer(NSColor.redColor()),
 			IAColorBackgroundRenderer(NSColor.greenColor()),
 			IAColorBackgroundRenderer(NSColor.blueColor()),
-			IAImageBackgroundRenderer(self._getImage("textures/461223192","jpg")),
-			IAImageBackgroundRenderer(self._getImage("textures/A_MIXRED","jpeg")),
-			IAImageBackgroundRenderer(self._getImage("textures/nature71","jpg")),
-			IAImageBackgroundRenderer(self._getImage("textures/seawaterfull2","jpg")),
-			IAImageBackgroundRenderer(self._getImage("textures/STONE4","jpeg")),
-			IAImageBackgroundRenderer(self._getImage("textures/Rustpattern","jpeg")),
-			IAImageBackgroundRenderer(self._getImage("textures/461223185","jpg")),
-			IAImageBackgroundRenderer(self._getImage("textures/G_IRON3","jpg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/461223192","jpg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/A_MIXRED","jpeg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/nature71","jpg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/seawaterfull2","jpg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/STONE4","jpeg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/Rustpattern","jpeg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/461223185","jpg")),
+			IAImageBackgroundRenderer.alloc().initWithImage_(self._getImage("textures/G_IRON3","jpg")),
 		]
 		self.backgroundsView.setContent_(bgs);
 

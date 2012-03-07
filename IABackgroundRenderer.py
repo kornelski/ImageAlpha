@@ -5,6 +5,9 @@ from Foundation import *
 from AppKit import *
 from IAImageView import IAImageView
 from  math import floor, ceil
+from Quartz.CoreGraphics import *
+from Quartz.QuartzCore import *
+
 
 class IABackgroundRenderer(object):
 	def moveBy_(self,by):
@@ -14,10 +17,18 @@ class IABackgroundRenderer(object):
 		return NO
 
 class IAColorBackgroundRenderer(IABackgroundRenderer):
-	color = None
+	color = None;
+	backgroundImage = None;
 
 	def __init__(self,nscolor):
 		self.color = nscolor
+
+	def getLayer(self):
+		layer = CALayer.layer()
+		# fixme: bad colorspace
+		layer.setBackgroundColor_(CGColorCreateGenericRGB(self.color.redComponent(),self.color.greenComponent(),self.color.blueComponent(),1));
+		layer.setContents_(None);
+		return layer;
 
 	def drawRect_(self,rect):
 		if self.color is None: return
@@ -25,12 +36,14 @@ class IAColorBackgroundRenderer(IABackgroundRenderer):
 		self.color.set()
 		NSRectFill(rect)
 
-class IAImageBackgroundRenderer(IABackgroundRenderer):
+class IAImageBackgroundRenderer(NSClassFromString("IAPatternBackgroundRenderer")):
 	backgroundImage = None
 	backgroundOffset = (0,0)
 	composite = NSCompositeCopy
 
-	def __init__(self,image):
+	def initWithImage_(self,image):
+		self = super(IAImageBackgroundRenderer, self).init();
+		if self:
 			self.backgroundImage = image
 			size = image.size()
 
@@ -53,6 +66,10 @@ class IAImageBackgroundRenderer(IABackgroundRenderer):
 			bigimage.unlockFocus();
 			self.backgroundImage = bigimage
 			self.composite = NSCompositeCopy
+		return self;
+
+	def getLayer(self):
+		return self.layerForTileImage_(self.backgroundImage);
 
 	def canMove(self):
 		return YES
