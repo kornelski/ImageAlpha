@@ -20,36 +20,55 @@ class IAImageView(NSView):
     imageFade = 1.0
     zoomingToFill = 0
 
+    _imageLayer = None
+    _backgroundLayer = None
+
     def initWithFrame_(self, frame):
-        NSLog("initing self with frame");
         self = super(IAImageView, self).initWithFrame_(frame)
         if self:
+
             self.setWantsLayer_(YES);
+            if self.layer() is None: self.setLayer_(CALayer.layer());
+            assert self.layer() is not None;
+
             bg = CALayer.layer();
             bg.setBackgroundColor_(CGColorCreateGenericRGB(0.5,0.5,0.5,1));
-            self.setLayer_(bg);
+            self._backgroundLayer = CALayer.layer();
+            self.layer().addSublayer_(self._backgroundLayer);
 
-            shadowHeight = 10;
-            shadowWidth = 12;
+            self._imageLayer = CALayer.layer()
+            self.layer().addSublayer_(self._imageLayer);
 
-            shadow1 = CAGradientLayer.layer();
-            stops = [CGColorCreateGenericRGB(0,0,0,x) for x in [0, 0.04, 0.11, 0.3]]
-            shadow1.setColors_(stops);
-            shadow1.setAutoresizingMask_(kCALayerWidthSizable | kCALayerMinYMargin);
-            shadow1.setFrame_(((0,-shadowHeight), (30, shadowHeight)));
+            NSLog("initing self with frame");
 
-            shadow2 = CAGradientLayer.layer();
-            stops.reverse();
-            shadow2.setColors_(stops);
-            shadow2.setStartPoint_((0,0));
-            shadow2.setEndPoint_((1,0));
-            shadow2.setAutoresizingMask_(kCALayerHeightSizable | kCALayerMaxXMargin);
-            shadow2.setFrame_(((0,0),(shadowWidth,0)));
-            self.layer().addSublayer_(shadow2);
-            self.layer().addSublayer_(shadow1);
-            self.shadow1 = shadow1;
-
+            self.addShadow();
         return self
+
+    def addShadow(self):
+
+        shadowHeight = 10;
+        shadowWidth = 12;
+
+        bounds = self.layer().bounds();
+        NSLog("bounds %d %d %d %d",bounds.size.width, bounds.size.height, bounds.origin.x, bounds.origin.y);
+
+        shadow1 = CAGradientLayer.layer();
+        stops = [CGColorCreateGenericRGB(0,0,0,x) for x in [0, 0.04, 0.11, 0.3]]
+        shadow1.setColors_(stops);
+        shadow1.setAutoresizingMask_(kCALayerWidthSizable | kCALayerMinYMargin);
+        shadow1.setFrame_(((0,bounds.size.height-shadowHeight), (bounds.size.width, shadowHeight)));
+
+        shadow2 = CAGradientLayer.layer();
+        stops.reverse();
+        shadow2.setColors_(stops);
+        shadow2.setStartPoint_((0,0));
+        shadow2.setEndPoint_((1,0));
+        shadow2.setAutoresizingMask_(kCALayerHeightSizable | kCALayerMaxXMargin);
+        shadow2.setFrame_(((0,0),(shadowWidth,bounds.size.height)));
+        self.layer().addSublayer_(shadow2);
+        self.layer().addSublayer_(shadow1);
+        self.shadow1 = shadow1;
+
 
     def setFrame_(self,rect):
         NSView.setFrame_(self,rect)
@@ -145,15 +164,31 @@ class IAImageView(NSView):
     def drawAlternateImage(self):
         return self._drawAlternateImage == True
 
+    def setBackgroundLayer_(self, layer):
+        assert self.layer() is not None;
+        self.layer().replaceSublayer_with_(self._backgroundLayer, layer);
+        self._backgroundLayer = layer;
+
     def setBackgroundRenderer_(self,renderer):
+        assert renderer is not None;
         self.backgroundRenderer = renderer;
+        if self.layer():
+            self.setBackgroundLayer_(renderer.getLayer())
         self.setNeedsDisplay_(YES)
 
     def isOpaque(self):
         return self.backgroundRenderer is not None
 
+#    def setNeedsDisplay_(self, tf):
+#        if tf:
+#            image = self.image() if not self.drawAlternateImage() else self.alternateImage();
+#            if image is not None:
+#                self._imageLayer.setContents_(image);
+#
+#        super(IAImageView, self).setNeedsDisplay_(tf);
+
     def drawRect_(self,rect):
-        if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
+        #if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
 
         image = self.image() if not self.drawAlternateImage() else self.alternateImage();
         if image is None: return

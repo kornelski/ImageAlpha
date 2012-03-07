@@ -28,13 +28,14 @@ class IACollectionImageView(IAImageView):
     drawBorder = False
 
     def initWithFrame_(self, frame):
+        NSLog("col img view init");
         self = super(IACollectionImageView, self).initWithFrame_(frame)
+        assert self.layer() is not None;
         if self:
             # initialization code here
             types = [NSFilenamesPboardType]
             types.append(NSImage.imagePasteboardTypes())
             self.registerForDraggedTypes_(types);
-            pass
         return self
 
     def draggingEntered_(self,sender):
@@ -42,7 +43,7 @@ class IACollectionImageView(IAImageView):
             self.imageFade = 0.2
             image = NSImage.alloc().initWithPasteboard_(sender.draggingPasteboard())
             if image is not None:
-                self.setBackgroundRenderer_(IAImageBackgroundRenderer(image))
+                self.setBackgroundRenderer_(IAImageBackgroundRenderer.alloc().initWithImage_(image))
                 self.setNeedsDisplay_(YES)
                 return NSDragOperationCopy | NSDragOperationGeneric | NSDragOperationMove
 
@@ -138,7 +139,7 @@ class IACollectionView(NSCollectionView):
             self.imageView.setBackgroundRenderer_(self.content()[idx]);
 
     def setBackgroundImage_(self,img):
-        bgr = IAImageBackgroundRenderer(img);
+        bgr = IAImageBackgroundRenderer.alloc().initWithImage_(img);
         content = NSMutableArray.arrayWithArray_(self.content());
         idx = self.selectionIndexes().firstIndex()
         if idx != NSNotFound:

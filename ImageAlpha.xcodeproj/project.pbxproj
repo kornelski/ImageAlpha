@@ -24,6 +24,8 @@
 
 /* Begin PBXBuildFile section */
 		5A0A24C3174843D0003264CC /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; };
+		5A2C9C61150EAFE600E9245E /* IAPatternBackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */; };
+		5A2C9C69150EB26200E9245E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2C9C68150EB26100E9245E /* Quartz.framework */; };
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
 		5A3123501399A6C500448815 /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; };
 		5A31235C1399A72500448815 /* posterizer in Resources */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; };
@@ -164,6 +166,9 @@
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* ImageAlpha_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAlpha_Prefix.pch; sourceTree = "<group>"; };
 		5A0A24B9174843C5003264CC /* pngquant */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = pngquant; path = DerivedData/ImageAlpha/Build/Products/Release/pngquant; sourceTree = "<group>"; };
+		5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPatternBackgroundRenderer.h; sourceTree = "<group>"; };
+		5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPatternBackgroundRenderer.m; sourceTree = "<group>"; };
+		5A2C9C68150EB26100E9245E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		5A30108D0F55DE1B0083C154 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
 		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = posterizer.xcodeproj; path = ../posterizer/posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5A3123451399A6BD00448815 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../ImageOptim/libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -197,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2C9C69150EB26200E9245E /* Quartz.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */,
 				5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */,
@@ -239,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				5A0A24B9174843C5003264CC /* pngquant */,
+				5A2C9C68150EB26100E9245E /* Quartz.framework */,
+				5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */,
+				5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */,
 				5A3123451399A6BD00448815 /* libpng.xcodeproj */,
 				5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */,
 				5AD1805E0F4B732100370142 /* pngquant.xcodeproj */,
@@ -554,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
+				5A2C9C61150EAFE600E9245E /* IAPatternBackgroundRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
