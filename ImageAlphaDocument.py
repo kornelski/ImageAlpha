@@ -44,7 +44,7 @@ class ImageAlphaDocument(NSDocument):
 		self.backgroundsView.setContent_(bgs);
 
 		self.zoomedImageView.window().setAcceptsMouseMovedEvents_(YES);
-		self.zoomedImageView.setBackgroundRenderer_(IAImageBackgroundRenderer(self._getImage("textures/photoshop","png")))
+		self.zoomedImageView.setBackgroundRenderer_(bgs[0])
 
 		if self.documentImage() is not None:
 			self.setDisplayImage_(self.documentImage().image())

@@ -31,28 +31,28 @@ class IAImageBackgroundRenderer(IABackgroundRenderer):
 	composite = NSCompositeCopy
 
 	def __init__(self,image):
-		self.backgroundImage = image
-		size = image.size()
+			self.backgroundImage = image
+			size = image.size()
 
-		# background may be tiny and somehow 2000 loop iterations in drawRect are SLOOOOOW
-		# so make sure that image is large enough to be drawn in few iterations
-		xtimes = ceil(320.0 / size.width)
-		ytimes = ceil(240.0 / size.height)
+			# background may be tiny and somehow 2000 loop iterations in drawRect are SLOOOOOW
+			# so make sure that image is large enough to be drawn in few iterations
+			xtimes = ceil(320.0 / size.width)
+			ytimes = ceil(240.0 / size.height)
 
-		#if xtimes > 2 or ytimes > 2:
-		# paint it anyway, to render over predictable background color
-		# coreanimation ignores NSCompositeCopy
-		bigimage = NSImage.alloc().initWithSize_((size.width*xtimes,size.height*ytimes))
-		bigsize = bigimage.size()
-		whole = NSMakeRect(0,0,bigsize.width,bigsize.height);
-		self.composite = NSCompositeSourceOver
-		bigimage.lockFocus();
-		NSColor.magentaColor().set()
-		NSRectFill(whole)
-		self.drawRect_(whole);
-		bigimage.unlockFocus();
-		self.backgroundImage = bigimage
-		self.composite = NSCompositeCopy
+			#if xtimes > 2 or ytimes > 2:
+			# paint it anyway, to render over predictable background color
+			# coreanimation ignores NSCompositeCopy
+			bigimage = NSImage.alloc().initWithSize_((size.width*xtimes,size.height*ytimes))
+			bigsize = bigimage.size()
+			whole = NSMakeRect(0,0,bigsize.width,bigsize.height);
+			self.composite = NSCompositeSourceOver
+			bigimage.lockFocus();
+			NSColor.magentaColor().set()
+			NSRectFill(whole)
+			self.drawRect_(whole);
+			bigimage.unlockFocus();
+			self.backgroundImage = bigimage
+			self.composite = NSCompositeCopy
 
 	def canMove(self):
 		return YES
