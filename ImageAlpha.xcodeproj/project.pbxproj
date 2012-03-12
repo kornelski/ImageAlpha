@@ -70,6 +70,13 @@
 			remoteGlobalIDString = D2AAC0630554660B00DB518D;
 			remoteInfo = libpng;
 		};
+		5A5E4C8415FFE5DB00E92975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A5E4C7D15FFE53000E92975;
+			remoteInfo = "pngquant-openmp";
+		};
 		5A63037D1534E0C80036E553 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
@@ -90,13 +97,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC0620554660B00DB518D;
 			remoteInfo = libpng;
-		};
-		5A937D4D12FEDF2D001D2786 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DD76FA90486AB0100D96B5E;
-			remoteInfo = pngquant;
 		};
 		5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -367,8 +367,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				5A5E4C8515FFE5DB00E92975 /* PBXTargetDependency */,
 				5A8DB0F9140EBBF300475FA3 /* PBXTargetDependency */,
-				5A937D4E12FEDF2D001D2786 /* PBXTargetDependency */,
 				5A937D5012FEDF30001D2786 /* PBXTargetDependency */,
 				5A3122E31399A1E900448815 /* PBXTargetDependency */,
 			);
@@ -385,7 +385,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "ImageAlpha" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -563,6 +563,11 @@
 			name = posterizer;
 			targetProxy = 5A3122E21399A1E900448815 /* PBXContainerItemProxy */;
 		};
+		5A5E4C8515FFE5DB00E92975 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "pngquant-openmp";
+			targetProxy = 5A5E4C8415FFE5DB00E92975 /* PBXContainerItemProxy */;
+		};
 		5A8CE1960F5B5E23002ED669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8D15AC270486D014006FF6A4 /* ImageAlpha */;
@@ -572,11 +577,6 @@
 			isa = PBXTargetDependency;
 			name = libpng;
 			targetProxy = 5A8DB0F8140EBBF300475FA3 /* PBXContainerItemProxy */;
-		};
-		5A937D4E12FEDF2D001D2786 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = pngquant;
-			targetProxy = 5A937D4D12FEDF2D001D2786 /* PBXContainerItemProxy */;
 		};
 		5A937D5012FEDF30001D2786 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
