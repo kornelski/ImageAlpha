@@ -15,38 +15,40 @@ static void drawPatternImage(void *info, CGContextRef ctx)
     CGContextDrawImage(ctx, CGRectMake(0,0, CGImageGetWidth(image),CGImageGetHeight(image)), image);
 }
 
-static void releasePatternImage(void *info)
-{
-    CGImageRelease((CGImageRef)info);
-}
 
 @implementation IAPatternBackgroundRenderer
 
--(CALayer *)layerForTileImage:(NSImage *)nsimage {
+-(void)dealloc {
+    if (image) CGImageRelease(image);
+    [super dealloc];
+}
+
+-(void)setTileImage:(NSImage*)nsimage {
+    if (image) CGImageRelease(image);
 
     [NSGraphicsContext saveGraphicsState];
-
-    CGImageRef image = [nsimage CGImageForProposedRect:&(NSRect){.size=[nsimage size]} context:NULL hints:[NSDictionary dictionary]];
+    image = [nsimage CGImageForProposedRect:&(NSRect){.size=[nsimage size]} context:NULL hints:[NSDictionary dictionary]];
     CGImageRetain(image);
+    [NSGraphicsContext restoreGraphicsState];
+}
+
+-(void)tileLayer:(CALayer *)layer atX:(NSNumber*)x Y:(NSNumber *)y {
+
     CGFloat width = CGImageGetWidth(image), height = CGImageGetHeight(image);
     CGPatternRef pattern = CGPatternCreate( image,
                                            CGRectMake(0, 0, width, height),
-                                           CGAffineTransformMake (1, 0, 0, 1, 0, 0),
+                                           CGAffineTransformMake (1, 0, 0, 1, [x doubleValue], [y doubleValue]),
                                            width, height,
                                            kCGPatternTilingConstantSpacing,
                                            true,
-                                           &(CGPatternCallbacks){0, &drawPatternImage, &releasePatternImage});
+                                           &(CGPatternCallbacks){0, &drawPatternImage, 0});
     CGColorSpaceRef space = CGColorSpaceCreatePattern(NULL);
     CGColorRef color = CGColorCreateWithPattern(space, pattern, &(CGFloat){1.0});
     CGColorSpaceRelease(space);
     CGPatternRelease(pattern);
-    CALayer *layer = [CALayer layer];
     NSLog(@"Got color %@", color);
     layer.backgroundColor = color; //set your layer's background to the image
     CGColorRelease(color);
-    [NSGraphicsContext restoreGraphicsState];
-    NSLog(@"Got pattern layer %@", layer);
-    return layer;
 }
 
 @end

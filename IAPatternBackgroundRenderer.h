@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface IAPatternBackgroundRenderer : NSObject
-
+@interface IAPatternBackgroundRenderer : NSObject {
+    CGImageRef image;
+}
 @end

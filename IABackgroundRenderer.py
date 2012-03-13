@@ -39,45 +39,27 @@ class IAColorBackgroundRenderer(IABackgroundRenderer):
 class IAImageBackgroundRenderer(NSClassFromString("IAPatternBackgroundRenderer")):
 	backgroundImage = None
 	backgroundOffset = (0,0)
-	composite = NSCompositeCopy
 
 	def initWithImage_(self,image):
 		self = super(IAImageBackgroundRenderer, self).init();
 		if self:
 			self.backgroundImage = image
-			size = image.size()
-
-			# background may be tiny and somehow 2000 loop iterations in drawRect are SLOOOOOW
-			# so make sure that image is large enough to be drawn in few iterations
-			xtimes = ceil(320.0 / size.width)
-			ytimes = ceil(240.0 / size.height)
-
-			#if xtimes > 2 or ytimes > 2:
-			# paint it anyway, to render over predictable background color
-			# coreanimation ignores NSCompositeCopy
-			bigimage = NSImage.alloc().initWithSize_((size.width*xtimes,size.height*ytimes))
-			bigsize = bigimage.size()
-			whole = NSMakeRect(0,0,bigsize.width,bigsize.height);
-			self.composite = NSCompositeSourceOver
-			bigimage.lockFocus();
-			NSColor.magentaColor().set()
-			NSRectFill(whole)
-			self.drawRect_(whole);
-			bigimage.unlockFocus();
-			self.backgroundImage = bigimage
-			self.composite = NSCompositeCopy
+			self._bgLayer = CALayer.layer();
+			self.setTileImage_(image);
+			self.moveBy_((0,0));
 		return self;
 
 	def getLayer(self):
-		return self.layerForTileImage_(self.backgroundImage);
+		return self._bgLayer;
 
 	def canMove(self):
 		return YES
 
 	def moveBy_(self,delta):
-		size = self.backgroundImage.size()
-		self.backgroundOffset = ((self.backgroundOffset[0] - delta[0]) % size.width,
-								 (self.backgroundOffset[1] - delta[1]) % size.height)
+		self.backgroundOffset = ((self.backgroundOffset[0] + delta[0]),
+								 (self.backgroundOffset[1] + delta[1]))
+		self.tileLayer_atX_Y_(self._bgLayer,self.backgroundOffset[0],self.backgroundOffset[1]);
+
 
 	def drawRect_(self,rect):
 		size = self.backgroundImage.size()
@@ -94,7 +76,7 @@ class IAImageBackgroundRenderer(NSClassFromString("IAPatternBackgroundRenderer")
 			drawnwidth = 0
 			currentx = rect.origin.x // size.width * size.width - self.backgroundOffset[0]
 			while currentx < widthend:
-				self.backgroundImage.drawInRect_fromRect_operation_fraction_(((currentx,currenty),size), wholeimage, self.composite, 1.0)
+				self.backgroundImage.drawInRect_fromRect_operation_fraction_(((currentx,currenty),size), wholeimage, NSCompositeCopy, 1.0)
 				currentx += size.width
 			currenty += size.height
 
