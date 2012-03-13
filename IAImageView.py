@@ -189,28 +189,3 @@ class IAImageView(NSView):
 #
 #        super(IAImageView, self).setNeedsDisplay_(tf);
 
-    def drawRect_(self,rect):
-        #if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
-
-        image = self.image() if not self.drawAlternateImage() else self.alternateImage();
-        if image is None: return
-
-        unscaled = abs(self.zoom() - 1.0) < 0.01;
-
-        NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if self.smooth() and not unscaled else NSImageInterpolationNone)
-
-        frame = self.frame();
-        imgsize = image.size()
-        offx = (frame.size.width  - imgsize.width * self.zoom() )/2 + self.imageOffset[0]
-        offy = (frame.size.height - imgsize.height * self.zoom() )/2 + self.imageOffset[1]
-
-        x = (rect.origin.x - offx) / self.zoom()
-        y = (rect.origin.y - offy) / self.zoom()
-
-        if unscaled:
-            x = ceil(x)
-            y = ceil(y)
-
-        imgrect = ((x,y), (rect.size.width / self.zoom(), rect.size.height / self.zoom()));
-        image.drawInRect_fromRect_operation_fraction_(rect, imgrect, NSCompositeSourceOver, self.imageFade)
-
