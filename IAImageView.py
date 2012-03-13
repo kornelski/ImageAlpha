@@ -165,7 +165,9 @@ class IAImageView(NSView):
         return self._drawAlternateImage == True
 
     def setBackgroundLayer_(self, layer):
-        assert self.layer() is not None;
+        if self.layer() is None: self.initWithFrame_(self.frame());
+        layer.setFrame_(self.layer().bounds());
+        layer.setAutoresizingMask_(kCALayerWidthSizable|kCALayerHeightSizable)
         self.layer().replaceSublayer_with_(self._backgroundLayer, layer);
         self._backgroundLayer = layer;
 
