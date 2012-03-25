@@ -230,7 +230,7 @@
 											<string key="NSFrame">{{18, 261}, {223, 18}}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
+											<reference key="NSNextKeyView" ref="305462152"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="833034245">
 												<int key="NSCellFlags">-2080374784</int>
@@ -1325,7 +1325,7 @@
 						<string key="label">enabled: documentImage</string>
 						<reference key="source" ref="773012018"/>
 						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="745916439">
 							<reference key="NSSource" ref="773012018"/>
 							<reference key="NSDestination" ref="1021"/>
 							<string key="NSLabel">enabled: documentImage</string>
@@ -1360,6 +1360,31 @@
 						</object>
 					</object>
 					<int key="connectionID">830</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled2: zoomedImageView.drawAlternateImage</string>
+						<reference key="source" ref="773012018"/>
+						<reference key="destination" ref="1021"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="773012018"/>
+							<reference key="NSDestination" ref="1021"/>
+							<string key="NSLabel">enabled2: zoomedImageView.drawAlternateImage</string>
+							<string key="NSBinding">enabled2</string>
+							<string key="NSKeyPath">zoomedImageView.drawAlternateImage</string>
+							<dictionary key="NSOptions">
+								<integer value="-1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="-1" key="NSNoSelectionPlaceholder"/>
+								<integer value="-1" key="NSNotApplicablePlaceholder"/>
+								<integer value="-1" key="NSNullPlaceholder"/>
+								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
+								<string key="NSValueTransformerName">NSNegateBoolean</string>
+							</dictionary>
+							<reference key="NSPreviousConnector" ref="745916439"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1162</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2338,7 +2363,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1158</int>
+			<int key="maxID">1162</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
