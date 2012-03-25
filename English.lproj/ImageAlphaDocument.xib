@@ -230,7 +230,7 @@
 											<string key="NSFrame">{{18, 261}, {223, 18}}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="305462152"/>
+											<reference key="NSNextKeyView" ref="1008938209"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="833034245">
 												<int key="NSCellFlags">-2080374784</int>
@@ -397,6 +397,28 @@
 											</object>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 										</object>
+										<object class="NSCollectionView" id="1008938209">
+											<reference key="NSNextResponder" ref="695552624"/>
+											<int key="NSvFlags">4114</int>
+											<string key="NSFrameSize">{264, 205}</string>
+											<reference key="NSSuperview" ref="695552624"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="305462152"/>
+											<bool key="NSViewIsLayerTreeHost">YES</bool>
+											<string key="NSMinGridSize">{0, 0}</string>
+											<string key="NSMaxGridSize">{0, 0}</string>
+											<int key="NSMaxNumberOfGridRows">6</int>
+											<int key="NSMaxNumberOfGridColumns">4</int>
+											<array key="NSBackgroundColors">
+												<object class="NSColor" id="370859135">
+													<int key="NSColorSpace">1</int>
+													<bytes key="NSRGB">MSAwLjYxNTM5MDEyIDAuMzg1NTYyMTIgMAA</bytes>
+												</object>
+											</array>
+											<bool key="NSSelectable">YES</bool>
+											<int key="NSDraggingSourceMaskForLocal">-1</int>
+											<int key="NSDraggingSourceMaskForNonLocal">0</int>
+										</object>
 									</array>
 									<string key="NSFrameSize">{264, 483}</string>
 									<reference key="NSSuperview" ref="130628275"/>
@@ -412,34 +434,12 @@
 										<object class="NSCustomView" id="30346470">
 											<reference key="NSNextResponder" ref="305462152"/>
 											<int key="NSvFlags">256</int>
-											<string key="NSFrameSize">{482, 424}</string>
-											<reference key="NSSuperview" ref="305462152"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="1008938209"/>
-											<bool key="NSViewIsLayerTreeHost">YES</bool>
-											<string key="NSClassName">IAImageViewInteractive</string>
-										</object>
-										<object class="NSCollectionView" id="1008938209">
-											<reference key="NSNextResponder" ref="305462152"/>
-											<int key="NSvFlags">4114</int>
-											<string key="NSFrame">{{0, 425}, {482, 58}}</string>
+											<string key="NSFrameSize">{482, 483}</string>
 											<reference key="NSSuperview" ref="305462152"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="287756090"/>
 											<bool key="NSViewIsLayerTreeHost">YES</bool>
-											<string key="NSMinGridSize">{0, 0}</string>
-											<string key="NSMaxGridSize">{0, 0}</string>
-											<int key="NSMaxNumberOfGridRows">1</int>
-											<int key="NSMaxNumberOfGridColumns">0</int>
-											<array key="NSBackgroundColors">
-												<object class="NSColor" id="370859135">
-													<int key="NSColorSpace">1</int>
-													<bytes key="NSRGB">MSAwLjYxNTM5MDEyIDAuMzg1NTYyMTIgMAA</bytes>
-												</object>
-											</array>
-											<bool key="NSSelectable">YES</bool>
-											<int key="NSDraggingSourceMaskForLocal">-1</int>
-											<int key="NSDraggingSourceMaskForNonLocal">0</int>
+											<string key="NSClassName">IAImageViewInteractive</string>
 										</object>
 									</array>
 									<string key="NSFrame">{{265, 0}, {482, 483}}</string>
@@ -1045,11 +1045,27 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">leftPaneView</string>
+						<reference key="source" ref="1021"/>
+						<reference key="destination" ref="695552624"/>
+					</object>
+					<int key="connectionID">1165</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">nextKeyView</string>
 						<reference key="source" ref="439893737"/>
 						<reference key="destination" ref="582137970"/>
 					</object>
 					<int key="connectionID">1049</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="130628275"/>
+						<reference key="destination" ref="1021"/>
+					</object>
+					<int key="connectionID">1164</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1325,7 +1341,7 @@
 						<string key="label">enabled: documentImage</string>
 						<reference key="source" ref="773012018"/>
 						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector" id="745916439">
+						<object class="NSNibBindingConnector" key="connector" id="793311888">
 							<reference key="NSSource" ref="773012018"/>
 							<reference key="NSDestination" ref="1021"/>
 							<string key="NSLabel">enabled: documentImage</string>
@@ -1380,7 +1396,7 @@
 								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
 								<string key="NSValueTransformerName">NSNegateBoolean</string>
 							</dictionary>
-							<reference key="NSPreviousConnector" ref="745916439"/>
+							<reference key="NSPreviousConnector" ref="793311888"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -1547,6 +1563,14 @@
 					<int key="connectionID">1106</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">imageView</string>
+						<reference key="source" ref="1008938209"/>
+						<reference key="destination" ref="30346470"/>
+					</object>
+					<int key="connectionID">1105</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">hidden: documentImage</string>
 						<reference key="source" ref="1008938209"/>
@@ -1565,14 +1589,6 @@
 						</object>
 					</object>
 					<int key="connectionID">1125</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">imageView</string>
-						<reference key="source" ref="1008938209"/>
-						<reference key="destination" ref="30346470"/>
-					</object>
-					<int key="connectionID">1105</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1973,6 +1989,7 @@
 							<reference ref="209113524"/>
 							<reference ref="402300490"/>
 							<reference ref="1032523297"/>
+							<reference ref="1008938209"/>
 						</array>
 						<reference key="parent" ref="130628275"/>
 					</object>
@@ -2151,19 +2168,8 @@
 						<reference key="object" ref="305462152"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="30346470"/>
-							<reference ref="1008938209"/>
 						</array>
 						<reference key="parent" ref="130628275"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">400</int>
-						<reference key="object" ref="30346470"/>
-						<reference key="parent" ref="305462152"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1104</int>
-						<reference key="object" ref="1008938209"/>
-						<reference key="parent" ref="305462152"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1135</int>
@@ -2177,6 +2183,16 @@
 						<int key="objectID">1136</int>
 						<reference key="object" ref="801902851"/>
 						<reference key="parent" ref="209113524"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">400</int>
+						<reference key="object" ref="30346470"/>
+						<reference key="parent" ref="305462152"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1104</int>
+						<reference key="object" ref="1008938209"/>
+						<reference key="parent" ref="695552624"/>
 					</object>
 				</array>
 			</object>
@@ -2363,7 +2379,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1162</int>
+			<int key="maxID">1165</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2491,6 +2507,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundsView">id</string>
+						<string key="leftPaneView">id</string>
 						<string key="progressBarView">id</string>
 						<string key="savePanelView">id</string>
 						<string key="statusBarView">id</string>
@@ -2499,6 +2516,10 @@
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="backgroundsView">
 							<string key="name">backgroundsView</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="leftPaneView">
+							<string key="name">leftPaneView</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="progressBarView">
