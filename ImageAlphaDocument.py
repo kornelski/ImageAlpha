@@ -27,20 +27,21 @@ class ImageAlphaDocument(NSDocument):
 
 		self._startWork();
 
-		self.backgroundsView.setContent_([
+		bgs = [
 			IAImageBackgroundRenderer(self._getImage("textures/photoshop","png")),
-			IAImageBackgroundRenderer(self._getImage("textures/Rustpattern","jpeg")),
+			IAColorBackgroundRenderer(NSColor.redColor()),
+			IAColorBackgroundRenderer(NSColor.greenColor()),
+			IAColorBackgroundRenderer(NSColor.blueColor()),
+			IAImageBackgroundRenderer(self._getImage("textures/461223192","jpg")),
 			IAImageBackgroundRenderer(self._getImage("textures/A_MIXRED","jpeg")),
 			IAImageBackgroundRenderer(self._getImage("textures/nature71","jpg")),
+			IAImageBackgroundRenderer(self._getImage("textures/seawaterfull2","jpg")),
+			IAImageBackgroundRenderer(self._getImage("textures/STONE4","jpeg")),
+			IAImageBackgroundRenderer(self._getImage("textures/Rustpattern","jpeg")),
 			IAImageBackgroundRenderer(self._getImage("textures/461223185","jpg")),
 			IAImageBackgroundRenderer(self._getImage("textures/G_IRON3","jpg")),
-			IAImageBackgroundRenderer(self._getImage("textures/STONE4","jpeg")),
-			IAImageBackgroundRenderer(self._getImage("textures/seawaterfull2","jpg")),
-			IAImageBackgroundRenderer(self._getImage("textures/461223192","jpg")),
-			IAColorBackgroundRenderer(NSColor.redColor()),
-			IAColorBackgroundRenderer(NSColor.blueColor()),
-			IAColorBackgroundRenderer(NSColor.greenColor()),
-		])
+		]
+		self.backgroundsView.setContent_(bgs);
 
 		self.zoomedImageView.window().setAcceptsMouseMovedEvents_(YES);
 		self.zoomedImageView.setBackgroundRenderer_(IAImageBackgroundRenderer(self._getImage("textures/photoshop","png")))
