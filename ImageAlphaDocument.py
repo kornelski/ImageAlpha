@@ -64,7 +64,7 @@ class ImageAlphaDocument(NSDocument):
 
 	def validateUserInterfaceItem_(self,item):
 		# I can't find nice way to compare selectors in pyobjc, so here comes __repr__() hack (or non-hack I hope)
-		if self.documentImage() is None and item.action().__repr__() in ["'saveDocument:'","'saveDocumentAs:'","'zoomIn:'","'zoomOut:'"]:
+		if self.documentImage() is None and item.action().__repr__() in ["'saveDocument:'","'saveDocumentAs:'","'zoomIn:'","'zoomOut:'", "'toggleShowOriginal:'"]:
 			return NO
 
 		return super(ImageAlphaDocument, self).validateUserInterfaceItem_(item);
@@ -247,6 +247,11 @@ class ImageAlphaDocument(NSDocument):
 			self.progressBarView.startAnimation_(self);
 		else:
 			self.progressBarView.stopAnimation_(self);
+
+	@objc.IBAction
+	def toggleShowOriginal_(self,action):
+		if self.zoomedImageView is not None:
+			self.zoomedImageView.setDrawAlternateImage_(not self.zoomedImageView.drawAlternateImage());
 
 	@objc.IBAction
 	def revert_(self,action):

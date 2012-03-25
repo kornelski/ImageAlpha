@@ -22,9 +22,6 @@ class IAImageViewInteractive(IAImageView):
     dragBackground = False
     dragStart = (0,0)
 
-    def awakeFromNib(self):
-        pass
-
     def draggingEntered_(self,sender):
         if self.controller.canSetDocumentImageFromPasteboard_(sender.draggingPasteboard()):
             self.imageFade = 0.85
