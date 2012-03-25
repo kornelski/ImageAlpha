@@ -17,7 +17,7 @@ class IAImage(NSObject):
     transparencyDepth = 8;
     transparencyAdjust = 0;
 
-    _quantizationMethod = 2; # 1 = pngnq; 2 = pngquant; 3 = posterizer
+    _quantizationMethod = 0; # 0 = pngquant; 1 = pngnq; 2 = posterizer
     _dithering = YES
     _ieMode = NO
 
@@ -54,8 +54,8 @@ class IAImage(NSObject):
 
     def setIeMode_(self,val):
         self._ieMode = int(val) > 0;
-        if self._ieMode and self.quantizationMethod() != 2:
-            self.setQuantizationMethod_(2);
+        if self._ieMode and self.quantizationMethod() != 0:
+            self.setQuantizationMethod_(0);
         self.update()
 
     def dithering(self):
@@ -77,7 +77,7 @@ class IAImage(NSObject):
 
     def setQuantizationMethod_(self,num):
         self._quantizationMethod = num
-        if num != 2:
+        if num != 0:
             self.setIeMode_(False)
         self.update()
 
@@ -112,7 +112,7 @@ class IAImage(NSObject):
     def currentVersionId(self):
         d = self.dithering();
         c = self.numberOfColors();
-        if (self.quantizationMethod() == 3): # ugly hack to reduce amount of pointless versions posterizer generates
+        if (self.quantizationMethod() == 2): # ugly hack to reduce amount of pointless versions posterizer generates
             c = round(2+c*100/256);
 
         return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
@@ -140,7 +140,7 @@ class IAImageVersion(NSObject):
 
         if method == 1:
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngnq", ""), ["-Q","f" if dither else "n","-n","%d" % colors], path, True);
-        elif method == 2:
+        elif method == 0:
             args = ["--floyd" if dither else "--nofs","%d" % colors];
             if ieMode:
                 args.insert(0,"--iebug");

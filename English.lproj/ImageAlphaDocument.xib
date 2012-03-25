@@ -18,7 +18,6 @@
 			<string>NSCollectionViewItem</string>
 			<string>NSCustomObject</string>
 			<string>NSCustomView</string>
-			<string>NSMatrix</string>
 			<string>NSMenu</string>
 			<string>NSMenuItem</string>
 			<string>NSPopUpButton</string>
@@ -371,93 +370,13 @@
 											</object>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 										</object>
-										<object class="NSMatrix" id="46657808">
-											<reference key="NSNextResponder" ref="695552624"/>
-											<int key="NSvFlags">289</int>
-											<string key="NSFrame">{{253, 13}, {94, 58}}</string>
-											<reference key="NSSuperview" ref="695552624"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="30346470"/>
-											<bool key="NSEnabled">YES</bool>
-											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-											<int key="NSNumRows">3</int>
-											<int key="NSNumCols">1</int>
-											<array class="NSMutableArray" key="NSCells">
-												<object class="NSButtonCell" id="1026534074">
-													<int key="NSCellFlags">67108864</int>
-													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">Median Cut</string>
-													<reference key="NSSupport" ref="825786217"/>
-													<reference key="NSControlView" ref="46657808"/>
-													<int key="NSTag">2</int>
-													<int key="NSButtonFlags">1211912448</int>
-													<int key="NSButtonFlags2">0</int>
-													<object class="NSButtonImageSource" key="NSAlternateImage" id="165984318">
-														<string key="NSImageName">NSRadioButton</string>
-													</object>
-													<int key="NSPeriodicDelay">400</int>
-													<int key="NSPeriodicInterval">75</int>
-												</object>
-												<object class="NSButtonCell" id="41913158">
-													<int key="NSCellFlags">-2080374784</int>
-													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">NeuQuant</string>
-													<reference key="NSSupport" ref="825786217"/>
-													<reference key="NSControlView" ref="46657808"/>
-													<int key="NSTag">1</int>
-													<int key="NSButtonFlags">1211912448</int>
-													<int key="NSButtonFlags2">0</int>
-													<reference key="NSAlternateImage" ref="165984318"/>
-													<string key="NSAlternateContents"/>
-													<string key="NSKeyEquivalent"/>
-													<int key="NSPeriodicDelay">200</int>
-													<int key="NSPeriodicInterval">25</int>
-												</object>
-												<object class="NSButtonCell" id="269188188">
-													<int key="NSCellFlags">67108864</int>
-													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">Posterizer</string>
-													<reference key="NSSupport" ref="825786217"/>
-													<reference key="NSControlView" ref="46657808"/>
-													<int key="NSTag">3</int>
-													<int key="NSButtonFlags">1211912448</int>
-													<int key="NSButtonFlags2">2</int>
-													<reference key="NSAlternateImage" ref="165984318"/>
-												</object>
-											</array>
-											<string key="NSCellSize">{94, 18}</string>
-											<string key="NSIntercellSpacing">{4, 2}</string>
-											<int key="NSMatrixFlags">1151868928</int>
-											<string key="NSCellClass">NSActionCell</string>
-											<object class="NSButtonCell" key="NSProtoCell" id="400535215">
-												<int key="NSCellFlags">67108864</int>
-												<int key="NSCellFlags2">0</int>
-												<string key="NSContents">Radio</string>
-												<reference key="NSSupport" ref="825786217"/>
-												<int key="NSButtonFlags">1211912448</int>
-												<int key="NSButtonFlags2">2</int>
-												<object class="NSCustomResource" key="NSNormalImage">
-													<string key="NSClassName">NSImage</string>
-													<string key="NSResourceName">NSRadioButton</string>
-												</object>
-												<reference key="NSAlternateImage" ref="165984318"/>
-											</object>
-											<int key="NSSelectedRow">1</int>
-											<reference key="NSSelectedCell" ref="41913158"/>
-											<reference key="NSBackgroundColor" ref="742973226"/>
-											<object class="NSColor" key="NSCellBackgroundColor" id="528311249">
-												<int key="NSColorSpace">3</int>
-												<bytes key="NSWhite">MQA</bytes>
-											</object>
-											<reference key="NSFont" ref="825786217"/>
-										</object>
 										<object class="NSCollectionView" id="1008938209">
 											<reference key="NSNextResponder" ref="695552624"/>
 											<int key="NSvFlags">4114</int>
 											<string key="NSFrameSize">{355, 235}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="46657808"/>
+											<reference key="NSNextKeyView"/>
 											<bool key="NSViewIsLayerTreeHost">YES</bool>
 											<string key="NSMinGridSize">{0, 0}</string>
 											<string key="NSMaxGridSize">{0, 0}</string>
@@ -646,7 +565,10 @@
 						<int key="NSColorSpace">6</int>
 						<string key="NSCatalogName">System</string>
 						<string key="NSColorName">textBackgroundColor</string>
-						<reference key="NSColor" ref="528311249"/>
+						<object class="NSColor" key="NSColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+						</object>
 					</object>
 					<object class="NSColor" key="NSTextColor">
 						<int key="NSColorSpace">3</int>
@@ -1172,14 +1094,6 @@
 					<int key="connectionID">1070</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">nextKeyView</string>
-						<reference key="source" ref="582137970"/>
-						<reference key="destination" ref="46657808"/>
-					</object>
-					<int key="connectionID">1050</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: documentImage</string>
 						<reference key="source" ref="582137970"/>
@@ -1414,54 +1328,6 @@
 						<reference key="destination" ref="823448764"/>
 					</object>
 					<int key="connectionID">646</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">nextKeyView</string>
-						<reference key="source" ref="46657808"/>
-						<reference key="destination" ref="402300490"/>
-					</object>
-					<int key="connectionID">1051</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: documentImage</string>
-						<reference key="source" ref="46657808"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="46657808"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">enabled: documentImage</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">documentImage</string>
-							<dictionary key="NSOptions">
-								<boolean value="NO" key="NSRaisesForNotApplicableKeys"/>
-								<string key="NSValueTransformerName">NSIsNotNil</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">977</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectedTag: documentImage.quantizationMethod</string>
-						<reference key="source" ref="46657808"/>
-						<reference key="destination" ref="1021"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="46657808"/>
-							<reference key="NSDestination" ref="1021"/>
-							<string key="NSLabel">selectedTag: documentImage.quantizationMethod</string>
-							<string key="NSBinding">selectedTag</string>
-							<string key="NSKeyPath">documentImage.quantizationMethod</string>
-							<dictionary key="NSOptions">
-								<integer value="0" key="NSAllowsEditingMultipleValuesSelection"/>
-								<integer value="0" key="NSRaisesForNotApplicableKeys"/>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">902</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2003,7 +1869,6 @@
 						<int key="objectID">1097</int>
 						<reference key="object" ref="695552624"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="46657808"/>
 							<reference ref="1008938209"/>
 							<reference ref="582137970"/>
 							<reference ref="402300490"/>
@@ -2118,37 +1983,6 @@
 						<reference key="parent" ref="454238828"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">892</int>
-						<reference key="object" ref="46657808"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="269188188"/>
-							<reference ref="1026534074"/>
-							<reference ref="41913158"/>
-							<reference ref="400535215"/>
-						</array>
-						<reference key="parent" ref="695552624"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1042</int>
-						<reference key="object" ref="269188188"/>
-						<reference key="parent" ref="46657808"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">906</int>
-						<reference key="object" ref="1026534074"/>
-						<reference key="parent" ref="46657808"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">893</int>
-						<reference key="object" ref="41913158"/>
-						<reference key="parent" ref="46657808"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">895</int>
-						<reference key="object" ref="400535215"/>
-						<reference key="parent" ref="46657808"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1104</int>
 						<reference key="object" ref="1008938209"/>
 						<reference key="parent" ref="695552624"/>
@@ -2236,15 +2070,6 @@
 				<string key="1004.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1023.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1024.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<object class="NSMutableDictionary" key="1042.IBAttributePlaceholdersKey">
-					<string key="NS.key.0">ToolTip</string>
-					<object class="IBToolTipAttribute" key="NS.object.0">
-						<string key="name">ToolTip</string>
-						<reference key="object" ref="269188188"/>
-						<string key="toolTip">Posterizer reduces intensity levels in 24-bit PNGs, not total number of colors</string>
-					</object>
-				</object>
-				<string key="1042.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1086.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1087.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1097.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2331,27 +2156,6 @@
 				<real value="2" key="642.IBViewIntegration.shadowOffsetWidth"/>
 				<string key="678.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="886.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<dictionary class="NSMutableDictionary" key="892.IBAttributePlaceholdersKey"/>
-				<string key="892.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<object class="NSMutableDictionary" key="893.IBAttributePlaceholdersKey">
-					<string key="NS.key.0">ToolTip</string>
-					<object class="IBToolTipAttribute" key="NS.object.0">
-						<string key="name">ToolTip</string>
-						<reference key="object" ref="41913158"/>
-						<string key="toolTip">NeuQuant is best for images with gradients</string>
-					</object>
-				</object>
-				<string key="893.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="895.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<object class="NSMutableDictionary" key="906.IBAttributePlaceholdersKey">
-					<string key="NS.key.0">ToolTip</string>
-					<object class="IBToolTipAttribute" key="NS.object.0">
-						<string key="name">ToolTip</string>
-						<reference key="object" ref="1026534074"/>
-						<string key="toolTip">Median Cut is best for small number of colors or images with very varying colors</string>
-					</object>
-				</object>
-				<string key="906.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="935.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="936.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="937.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2583,7 +2387,6 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NSMenuCheckmark">{11, 11}</string>
 			<string key="NSMenuMixedState">{10, 3}</string>
-			<string key="NSRadioButton">{16, 15}</string>
 			<string key="NSSwitch">{15, 15}</string>
 		</dictionary>
 	</data>
