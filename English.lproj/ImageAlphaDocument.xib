@@ -73,16 +73,16 @@
 									<reference key="NSNextResponder" ref="130628275"/>
 									<int key="NSvFlags">268</int>
 									<array class="NSMutableArray" key="NSSubviews">
-										<object class="NSTextField" id="669323580">
+										<object class="NSTextField" id="512293066">
 											<reference key="NSNextResponder" ref="695552624"/>
 											<int key="NSvFlags">268</int>
 											<string key="NSFrame">{{17, 213}, {118, 17}}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
-											<int key="NSViewLayerContentsRedrawPolicy">2</int>
+											<reference key="NSNextKeyView" ref="1008938209"/>
 											<bool key="NSEnabled">YES</bool>
-											<object class="NSTextFieldCell" key="NSCell" id="169329069">
-												<int key="NSCellFlags">68288064</int>
+											<object class="NSTextFieldCell" key="NSCell" id="619385769">
+												<int key="NSCellFlags">68157504</int>
 												<int key="NSCellFlags2">4195328</int>
 												<string key="NSContents">Backgrounds</string>
 												<object class="NSFont" key="NSSupport" id="41844582">
@@ -90,7 +90,7 @@
 													<double key="NSSize">13</double>
 													<int key="NSfFlags">2072</int>
 												</object>
-												<reference key="NSControlView" ref="669323580"/>
+												<reference key="NSControlView" ref="512293066"/>
 												<bool key="NSDrawsBackground">YES</bool>
 												<object class="NSColor" key="NSBackgroundColor" id="742973226">
 													<int key="NSColorSpace">6</int>
@@ -132,26 +132,6 @@
 												<reference key="NSTextColor" ref="291667911"/>
 											</object>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-										</object>
-										<object class="NSTextField" id="209113524">
-											<reference key="NSNextResponder" ref="695552624"/>
-											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{17, 313}, {71, 17}}</string>
-											<reference key="NSSuperview" ref="695552624"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="402300490"/>
-											<int key="NSViewLayerContentsRedrawPolicy">2</int>
-											<bool key="NSEnabled">YES</bool>
-											<object class="NSTextFieldCell" key="NSCell" id="801902851">
-												<int key="NSCellFlags">68288064</int>
-												<int key="NSCellFlags2">4195328</int>
-												<string key="NSContents">Options</string>
-												<reference key="NSSupport" ref="41844582"/>
-												<reference key="NSControlView" ref="209113524"/>
-												<bool key="NSDrawsBackground">YES</bool>
-												<reference key="NSBackgroundColor" ref="742973226"/>
-												<reference key="NSTextColor" ref="291667911"/>
-											</object>
 										</object>
 										<object class="NSTextField" id="931452600">
 											<reference key="NSNextResponder" ref="695552624"/>
@@ -270,7 +250,7 @@
 											<string key="NSFrame">{{18, 261}, {222, 18}}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="1008938209"/>
+											<reference key="NSNextKeyView" ref="512293066"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="833034245">
 												<int key="NSCellFlags">-2080374784</int>
@@ -401,7 +381,6 @@
 										<object class="NSProgressIndicator" id="393512811">
 											<reference key="NSNextResponder" ref="695552624"/>
 											<int key="NSvFlags">1289</int>
-											<object class="NSPSMatrix" key="NSDrawMatrix"/>
 											<string key="NSFrame">{{200, 394}, {16, 16}}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
@@ -444,7 +423,7 @@
 											<string key="NSFrameSize">{263, 205}</string>
 											<reference key="NSSuperview" ref="695552624"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView"/>
+											<reference key="NSNextKeyView" ref="30346470"/>
 											<bool key="NSViewIsLayerTreeHost">YES</bool>
 											<string key="NSMinGridSize">{0, 0}</string>
 											<string key="NSMaxGridSize">{0, 0}</string>
@@ -476,7 +455,6 @@
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="287756090"/>
 									<bool key="NSViewIsLayerTreeHost">YES</bool>
-									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<string key="NSClassName">IAImageViewInteractive</string>
 								</object>
 							</array>
@@ -1001,6 +979,7 @@
 					<int key="NSPeriodicDelay">200</int>
 					<int key="NSPeriodicInterval">25</int>
 				</object>
+				<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -2000,7 +1979,7 @@
 							<reference ref="402300490"/>
 							<reference ref="1032523297"/>
 							<reference ref="1008938209"/>
-							<reference ref="669323580"/>
+							<reference ref="512293066"/>
 						</array>
 						<reference key="parent" ref="130628275"/>
 					</object>
@@ -2180,16 +2159,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1166</int>
-						<reference key="object" ref="669323580"/>
+						<reference key="object" ref="512293066"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="169329069"/>
+							<reference ref="619385769"/>
 						</array>
 						<reference key="parent" ref="695552624"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1167</int>
-						<reference key="object" ref="169329069"/>
-						<reference key="parent" ref="669323580"/>
+						<reference key="object" ref="619385769"/>
+						<reference key="parent" ref="512293066"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">400</int>
