@@ -70,6 +70,13 @@
 			remoteGlobalIDString = D2AAC0630554660B00DB518D;
 			remoteInfo = libpng;
 		};
+		5A63037D1534E0C80036E553 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5A630352153328890036E553;
+			remoteInfo = tests;
+		};
 		5A8CE1950F5B5E23002ED669 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
@@ -340,6 +347,7 @@
 			children = (
 				5ADA1685142F9C96006C94D4 /* pngquant */,
 				5AD180630F4B732100370142 /* pngquant */,
+				5A63037E1534E0C80036E553 /* pngquant-tests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,6 +438,13 @@
 			fileType = "compiled.mach-o.dylib";
 			path = liblibpng.dylib;
 			remoteRef = 5A31234C1399A6BD00448815 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5A63037E1534E0C80036E553 /* pngquant-tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "pngquant-tests";
+			remoteRef = 5A63037D1534E0C80036E553 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5ABD76500F0E78E700515CC9 /* pngnq */ = {
@@ -646,7 +661,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -679,7 +694,7 @@
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
