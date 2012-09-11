@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "IABackgroundRenderer.h"
 
-@interface IAPatternBackgroundRenderer : NSObject {
+@interface IAPatternBackgroundRenderer : IABackgroundRenderer {
     CGImageRef image;
+    CALayer *bgLayer;
 }
 @end

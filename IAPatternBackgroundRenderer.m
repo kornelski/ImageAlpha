@@ -15,11 +15,31 @@ static void drawPatternImage(void *info, CGContextRef ctx)
     CGContextDrawImage(ctx, CGRectMake(0,0, CGImageGetWidth(image),CGImageGetHeight(image)), image);
 }
 
-
 @implementation IAPatternBackgroundRenderer
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        bgLayer = [CALayer new];
+        NSMutableDictionary *newActions = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+                                           [NSNull null], @"backgroundColor",
+                                           [NSNull null], @"contents",
+                                           [NSNull null], @"bounds",
+                                           nil];
+        bgLayer.actions = newActions; // non-animated scroll
+        [newActions release];
+    }
+    return self;
+}
+
+-(CALayer *)getLayer {
+    return bgLayer;
+}
 
 -(void)dealloc {
     if (image) CGImageRelease(image);
+    [bgLayer release];
     [super dealloc];
 }
 
@@ -32,7 +52,7 @@ static void drawPatternImage(void *info, CGContextRef ctx)
     [NSGraphicsContext restoreGraphicsState];
 }
 
--(void)tileLayer:(CALayer *)layer atX:(NSNumber*)x Y:(NSNumber *)y {
+-(void)tileLayerAtX:(NSNumber*)x Y:(NSNumber *)y {
 
     CGFloat width = CGImageGetWidth(image), height = CGImageGetHeight(image);
     CGPatternRef pattern = CGPatternCreate( image,
@@ -46,8 +66,7 @@ static void drawPatternImage(void *info, CGContextRef ctx)
     CGColorRef color = CGColorCreateWithPattern(space, pattern, &(CGFloat){1.0});
     CGColorSpaceRelease(space);
     CGPatternRelease(pattern);
-    NSLog(@"Got color %@", color);
-    layer.backgroundColor = color; //set your layer's background to the image
+    bgLayer.backgroundColor = color; //set your layer's background to the image
     CGColorRelease(color);
 }
 
