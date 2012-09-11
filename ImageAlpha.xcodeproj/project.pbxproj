@@ -29,7 +29,9 @@
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
 		5A3123501399A6C500448815 /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; };
 		5A31235C1399A72500448815 /* posterizer in Resources */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; };
+		5A43016F16629393000E55BA /* IABackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A43016E16629393000E55BA /* IABackgroundRenderer.m */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
+		5A6E7F92153C99F400D00506 /* IAColorBackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E7F91153C99F400D00506 /* IAColorBackgroundRenderer.m */; };
 		5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
 		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
 		5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */; };
@@ -172,7 +174,11 @@
 		5A30108D0F55DE1B0083C154 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
 		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = posterizer.xcodeproj; path = ../posterizer/posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5A3123451399A6BD00448815 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../ImageOptim/libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5A43016D16629393000E55BA /* IABackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IABackgroundRenderer.h; sourceTree = "<group>"; };
+		5A43016E16629393000E55BA /* IABackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IABackgroundRenderer.m; sourceTree = "<group>"; };
 		5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ImageAlpha.icns; sourceTree = "<group>"; };
+		5A6E7F90153C99F400D00506 /* IAColorBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAColorBackgroundRenderer.h; sourceTree = "<group>"; };
+		5A6E7F91153C99F400D00506 /* IAColorBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAColorBackgroundRenderer.m; sourceTree = "<group>"; };
 		5A7B7EDF0F5CA4DD00F72F1F /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -246,8 +252,6 @@
 			children = (
 				5A0A24B9174843C5003264CC /* pngquant */,
 				5A2C9C68150EB26100E9245E /* Quartz.framework */,
-				5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */,
-				5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */,
 				5A3123451399A6BD00448815 /* libpng.xcodeproj */,
 				5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */,
 				5AD1805E0F4B732100370142 /* pngquant.xcodeproj */,
@@ -327,7 +331,13 @@
 		5A91FE9B0E958383004954A0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */,
+				5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */,
 				5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */,
+				5A43016D16629393000E55BA /* IABackgroundRenderer.h */,
+				5A43016E16629393000E55BA /* IABackgroundRenderer.m */,
+				5A6E7F90153C99F400D00506 /* IAColorBackgroundRenderer.h */,
+				5A6E7F91153C99F400D00506 /* IAColorBackgroundRenderer.m */,
 				5A91FE920E95837F004954A0 /* IASlider.py */,
 				5A91FE8A0E958375004954A0 /* IACollectionItem.py */,
 				5A91FE8D0E95837F004954A0 /* IAImageView.py */,
@@ -564,6 +574,8 @@
 			files = (
 				8D15AC320486D014006FF6A4 /* main.m in Sources */,
 				5A2C9C61150EAFE600E9245E /* IAPatternBackgroundRenderer.m in Sources */,
+				5A6E7F92153C99F400D00506 /* IAColorBackgroundRenderer.m in Sources */,
+				5A43016F16629393000E55BA /* IABackgroundRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
