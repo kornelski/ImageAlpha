@@ -10,10 +10,9 @@ class IAImageViewInteractive(IAImageView):
     def initWithFrame_(self, frame):
         self = super(IAImageViewInteractive, self).initWithFrame_(frame)
         if self:
-            # initialization code here
             types = [NSFilenamesPboardType]
-            types.append(NSImage.imagePasteboardTypes())
-            self.registerForDraggedTypes_(types);
+            types.extend(NSImage.imagePasteboardTypes())
+            self.registerForDraggedTypes_(types)
             pass
         return self
 
