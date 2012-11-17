@@ -17,8 +17,20 @@
 <pubDate>Sat, 11 Feb 2012 17:04:13 +0000</pubDate>
 <enclosure url="http://pngmini.com/ImageAlpha1.2.3.tar.bz2" sparkle:version="1.2.3" length="959331" type="application/bzip2" sparkle:dsaSignature="MC0CFQCKEfeVpRRmEtW1lhONt3Wm3txCNAIULO5Ay03NekhF69weaG61ltTaG70="/>
 <sparkle:minimumSystemVersion>10.6.4</sparkle:minimumSystemVersion>
-
-
+</item>
+<item>
+<title>Version 1.2.4</title>
+<description><![CDATA[
+<ul>
+  <li>Compatibility fix for drag'n'drop in Mountain Lion</li>
+  <li>Upgraded to pngquant 1.8.0</li>
+  <li>Upgraded to <a href="http://sourceforge.net/projects/pngnqs9/">pngnq-s9</a>, which is a fork of pngnq with several quality improvements</li>
+  <li>Upgraded to latest posterizer, which fixes unnecessary banding due to wrong gamma correction</li>
+</ul>
+]]></description>
+<pubDate>Sat, 17 Nov 2012 12:32:58 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.2.4.tar.bz2" sparkle:version="1.2.4" length="1091823" type="application/bzip2" sparkle:dsaSignature="MCwCFD/ORMrmNNq+LGweRYcrgVGb6aiiAhQScou3PJZmZ4769VnjOtGgv04WxA=="/>
+<sparkle:minimumSystemVersion>10.8.0</sparkle:minimumSystemVersion>
 </item>
 </channel>
 </rss>
