@@ -141,9 +141,9 @@ class IAImageVersion(NSObject):
         if method == 1:
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngnq", ""), ["-Q","f" if dither else "n","-n","%d" % colors], path, True);
         elif method == 2:
-            args = ["-fs" if dither else "-nofs","%d" % colors];
+            args = ["--floyd" if dither else "--nofs","%d" % colors];
             if ieMode:
-                args.insert(0,"-iebug");
+                args.insert(0,"--iebug");
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),args,path,False);
         else:
             c = round(2+colors*100/256);
