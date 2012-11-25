@@ -75,27 +75,12 @@ class IACollectionImageView(IAImageView):
         return 1234; # magic for interface builder
 
     def mouseEntered_(self,event):
-        self.imageFade = 0.85
+        self.imageFade = 0.75
         self.drawBorder = True
 
     def mouseExited_(self,event):
         self.imageFade = 1
         pass
-
-#    def drawRect_(self,rect):
-#        if self.drawBorder:
-#            self.imageFade = 0.85
-#            super(IACollectionImageView, self).drawRect_(rect);
-#            self.imageFade = 1
-#            path = NSBezierPath.bezierPath()
-#            size = self.frame().size;
-#            NSColor.selectedControlColor().colorWithAlphaComponent_(0.8).set()
-#            path.setLineWidth_(4)
-#            path.appendBezierPathWithRoundedRect_xRadius_yRadius_(((3,3),(size.width-6,size.height-6)),8,8)
-#            path.stroke()
-#        else:
-#            super(IACollectionImageView, self).drawRect_(rect);
-
 
     def mouseUp_(self,event):
         self.drawBorder = False

@@ -24,7 +24,7 @@ class IAImageViewInteractive(IAImageView):
 
     def draggingEntered_(self,sender):
         if self.controller.canSetDocumentImageFromPasteboard_(sender.draggingPasteboard()):
-            self.imageFade = 0.85
+            self.imageFade = 0.15
             self.setNeedsDisplay_(YES)
             return NSDragOperationCopy | NSDragOperationGeneric | NSDragOperationMove
 
