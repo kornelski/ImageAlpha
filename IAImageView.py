@@ -10,6 +10,7 @@ from math import ceil, floor
 
 class IAImageView(NSView):
     _zoom = 2.0
+    _lastZoom = -1
     _image = None
     _alternateImage = None
     _drawAlternateImage = NO
@@ -108,8 +109,9 @@ class IAImageView(NSView):
 
     def setSmooth_(self,smooth):
         self._smooth = smooth
-        NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if smooth else NSImageInterpolationNone)
-        self.setNeedsDisplay_(YES)
+        if self._imageLayer:
+            self._imageLayer.setMagnificationFilter_(kCAFilterLinear if smooth else kCAFilterNearest)
+            self.setNeedsDisplay_(YES)
 
     def zoom(self):
         return self._zoom;
@@ -134,6 +136,7 @@ class IAImageView(NSView):
             self.zoomToFill(self.zoomingToFill)
         self.setDrawAlternateImage_(NO)
 
+
     def _getScaleOfImage_(self, image):
         w,h = image.size()
         rep = image.representations();
@@ -152,6 +155,9 @@ class IAImageView(NSView):
         if self._image and aImage:
             self._setScale_ofImage_(self._getScaleOfImage_(aImage), self._image);
         self._alternateImage = aImage
+        self.imageOffset = (0,0)
+        if not self.zoomingToFill:
+            self.setZoom_(1.0)
         self.setNeedsDisplay_(YES)
 
     def drawAlternateImage(self):
@@ -159,6 +165,14 @@ class IAImageView(NSView):
 
     def setDrawAlternateImage_(self,tf):
         self._drawAlternateImage = tf
+        if self._imageLayer:
+            image = self.image() if not tf else self.alternateImage()
+            CATransaction.begin()
+            CATransaction.setDisableActions_(True)
+            self._imageLayer.setContents_(image);
+            self._updateLayerZoom()
+            CATransaction.commit()
+
         self.setNeedsDisplay_(YES)
 
     def drawAlternateImage(self):
@@ -181,11 +195,31 @@ class IAImageView(NSView):
     def isOpaque(self):
         return self.backgroundRenderer is not None
 
-#    def setNeedsDisplay_(self, tf):
-#        if tf:
-#            image = self.image() if not self.drawAlternateImage() else self.alternateImage();
-#            if image is not None:
-#                self._imageLayer.setContents_(image);
-#
-#        super(IAImageView, self).setNeedsDisplay_(tf);
+    def _updateLayerZoom(self):
+        if self._lastZoom != self._zoom:
+            image = self.image() if not self.drawAlternateImage() else self.alternateImage();
+            if image is not None:
+                w,h = image.size()
+                x,y = self.imageOffset
+                size = self.bounds()[1]
+                self._imageLayer.setFrame_(((x+size[0]/2-w/2,y+size[1]/2-h/2),(w*self._zoom, h*self._zoom)));
+                self._lastZoom = self._zoom
+
+    def setNeedsDisplay_(self, tf):
+        if tf:
+            image = self.image() if not self.drawAlternateImage() else self.alternateImage();
+            if image is not None:
+                self._updateLayerZoom()
+
+                self._imageLayer.setOpacity_(self.imageFade);
+
+                x,y = self.imageOffset
+                size = self.bounds()[1]
+
+                CATransaction.begin()
+                CATransaction.setDisableActions_(True)
+                self._imageLayer.setPosition_((x+size[0]/2,y+size[1]/2))
+                CATransaction.commit()
+
+        super(IAImageView, self).setNeedsDisplay_(tf);
 
