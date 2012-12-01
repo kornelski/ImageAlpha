@@ -57,7 +57,7 @@ class IAImageView(NSView):
     def setSmooth_(self,smooth):
         self._smooth = smooth
         NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if smooth else NSImageInterpolationNone)
-        self.setNeedsDisplay_(YES)
+            self.setNeedsDisplay_(YES)
 
     def zoom(self):
         return self._zoom;
@@ -76,9 +76,10 @@ class IAImageView(NSView):
 
     def setImage_(self,aImage):
         self._image=aImage
-        if self._alternateImage and self._image:
-            self._setScale_ofImage_(self._getScaleOfImage_(self._alternateImage), self._image);
-        if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
+        if self._alternateImage and aImage:
+            self._setScale_ofImage_(self._getScaleOfImage_(self._alternateImage), aImage);
+        if self.zoomingToFill:
+            self.zoomToFill(self.zoomingToFill)
         self.setDrawAlternateImage_(NO)
 
     def _getScaleOfImage_(self, image):
@@ -96,7 +97,7 @@ class IAImageView(NSView):
         return self._alternateImage;
 
     def setAlternateImage_(self,aImage):
-        if (self._image):
+        if self._image and aImage:
             self._setScale_ofImage_(self._getScaleOfImage_(aImage), self._image);
         self._alternateImage = aImage
         self.setNeedsDisplay_(YES)
@@ -128,7 +129,7 @@ class IAImageView(NSView):
     def drawRect_(self,rect):
         if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
 
-        image = self.image() if not self.drawAlternateImage() else self.alternateImage();
+            image = self.image() if not self.drawAlternateImage() else self.alternateImage();
         if image is None: return
 
         unscaled = abs(self.zoom() - 1.0) < 0.01;
