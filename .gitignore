@@ -3,3 +3,5 @@
 Sparkle.framework
 build
 DerivedData
+sign_update.rb
+update_appcast.php

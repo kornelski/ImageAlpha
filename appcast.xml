@@ -2,9 +2,23 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
 <channel>
 <title>ImageAlpha</title>
-<link>http://pornel.net/imagealpha/appcast.xml</link>
+<link>http://pngmini.com/appcast.xml</link>
 <description>ImageAlpha updates</description>
 <language>en</language>
+<item>
+<title>Version 1.2.5</title>
+<description><![CDATA[
+<ul>
+  <li>Fixed corruption of transparent pixels in median cut mode</li>
+  <li>Added color profile support in posterizer</li>
+  <li>Upgraded to pngquant 1.8.2</li>
+  <li>Droppped support for Snow Leopard and 32-bit CPUs (sorry, Apple makes backwards compatibility annoyingly difficult)</li>
+<ul>
+]]></description>
+<pubDate>Sat, 15 Dec 2012 12:21:57 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.2.5.tar.bz2" sparkle:version="1.2.5" length="1041018" type="application/bzip2" sparkle:dsaSignature="MC0CFEAyBRFt0sw5vvD1dwvC9afCqrlkAhUAnOs68zYQfILyQE1ljX4qgrgyKGQ="/>
+<sparkle:minimumSystemVersion>10.7.1</sparkle:minimumSystemVersion>
+</item>
 <item>
 <title>Version 1.2.3</title>
 <description><![CDATA[
@@ -29,11 +43,9 @@
   <li>Droppped support for Snow Leopard and 32-bit CPUs (sorry, Apple makes backwards compatibility annoyingly difficult)</li>
 </ul>
 ]]></description>
-<pubDate>Tue, 11 Dec 2012 21:52:21 +0000</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.2.4.2.tar.bz2" sparkle:version="1.2.4.2" length="1057435" type="application/bzip2" sparkle:dsaSignature="MCwCFDVf+9lvWI7XHl93E3vIIbfDk6RNAhRn96HB5qp4Ky4Qad6nBEyx8JlA5A=="/>
+<pubDate>Thu, 13 Dec 2012 00:37:33 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.2.4.2.tar.bz2" sparkle:version="1.2.4.2" length="1064933" type="application/bzip2" sparkle:dsaSignature="MCwCFESHQfM2nI/WfwFFeJ5hQTDeqhx0AhRrhKRpSN3O6evu3nPmY3p9Hr0uSA=="/>
 <sparkle:minimumSystemVersion>10.7.1</sparkle:minimumSystemVersion>
-
-
 </item>
 </channel>
 </rss>
