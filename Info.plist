@@ -38,9 +38,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.5</string>
+	<string>1.2.5.2</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.5</string>
+	<string>1.2.5.2</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.7.1</string>
 	<key>NSHumanReadableCopyright</key>
@@ -49,6 +49,8 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSSupportsAutomaticGraphicsSwitching</key>
+	<true/>
 	<key>SUFeedURL</key>
 	<string>http://pngmini.com/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
