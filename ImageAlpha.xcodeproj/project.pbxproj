@@ -26,6 +26,7 @@
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
 		5A3123501399A6C500448815 /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; };
 		5A31235C1399A72500448815 /* posterizer in Resources */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; };
+		5A52B266167FD14B009153F7 /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA1685142F9C96006C94D4 /* pngquant */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
 		5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
 		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
@@ -40,7 +41,6 @@
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA9BAB914268CED007E98AA /* Python.framework */; };
 		5ABD76510F0E791500515CC9 /* pngnq in Resources */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; };
-		5AD1807B0F4B738000370142 /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; };
 		77383F230C07AB8F0043B131 /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = 77383F220C07AB8F0043B131 /* main.py */; };
 		779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F70C0A0980000694DF /* MainMenu.xib */; };
 		779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */; };
@@ -70,7 +70,7 @@
 			remoteGlobalIDString = D2AAC0630554660B00DB518D;
 			remoteInfo = libpng;
 		};
-		5A5E4C8415FFE5DB00E92975 /* PBXContainerItemProxy */ = {
+		5A52B262167FD127009153F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5AD1805E0F4B732100370142 /* pngquant.xcodeproj */;
 			proxyType = 1;
@@ -367,7 +367,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5A5E4C8515FFE5DB00E92975 /* PBXTargetDependency */,
+				5A52B263167FD127009153F7 /* PBXTargetDependency */,
 				5A8DB0F9140EBBF300475FA3 /* PBXTargetDependency */,
 				5A937D5012FEDF30001D2786 /* PBXTargetDependency */,
 				5A3122E31399A1E900448815 /* PBXTargetDependency */,
@@ -490,9 +490,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A31235C1399A72500448815 /* posterizer in Resources */,
+				5A52B266167FD14B009153F7 /* pngquant in Resources */,
 				5A3123501399A6C500448815 /* liblibpng.dylib in Resources */,
 				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
-				5AD1807B0F4B738000370142 /* pngquant in Resources */,
 				77383F230C07AB8F0043B131 /* main.py in Resources */,
 				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
 				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
@@ -563,10 +563,10 @@
 			name = posterizer;
 			targetProxy = 5A3122E21399A1E900448815 /* PBXContainerItemProxy */;
 		};
-		5A5E4C8515FFE5DB00E92975 /* PBXTargetDependency */ = {
+		5A52B263167FD127009153F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "pngquant-openmp";
-			targetProxy = 5A5E4C8415FFE5DB00E92975 /* PBXContainerItemProxy */;
+			targetProxy = 5A52B262167FD127009153F7 /* PBXContainerItemProxy */;
 		};
 		5A8CE1960F5B5E23002ED669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
