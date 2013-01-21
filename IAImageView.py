@@ -76,19 +76,21 @@ class IAImageView(NSView):
 
     def setImage_(self,aImage):
         self._image=aImage
-        if self._alternateImage:
+        if self._alternateImage and self._image:
             self._setScale_ofImage_(self._getScaleOfImage_(self._alternateImage), self._image);
         if self.zoomingToFill: self.zoomToFill(self.zoomingToFill)
         self.setDrawAlternateImage_(NO)
 
     def _getScaleOfImage_(self, image):
         w,h = image.size()
-        rep = image.representations()[0];
-        return (rep.pixelsWide()/w, rep.pixelsHigh()/h);
+        rep = image.representations();
+        if not rep or not rep.count(): return (0,0);
+        return (rep[0].pixelsWide()/w, rep[0].pixelsHigh()/h);
 
     def _setScale_ofImage_(self, scale, image):
-        rep = image.representations()[0];
-        image.setSize_((rep.pixelsWide()/scale[0], rep.pixelsHigh()/scale[1]));
+        rep = image.representations();
+        if not rep or not rep.count(): return (0,0);
+        image.setSize_((rep[0].pixelsWide()/scale[0], rep[0].pixelsHigh()/scale[1]));
 
     def alternateImage(self):
         return self._alternateImage;
