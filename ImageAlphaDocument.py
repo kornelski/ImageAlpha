@@ -71,7 +71,8 @@ class ImageAlphaDocument(NSDocument):
 
 
 	def prepareSavePanel_(self, savePanel):
-		if NSApplication.sharedApplication().delegate().imageOptimPath is not None:
+		delegate = NSApplication.sharedApplication().delegate()
+		if delegate and delegate.imageOptimPath is not None:
 			savePanel.setAccessoryView_(self.savePanelView);
 		return YES
 
@@ -100,7 +101,7 @@ class ImageAlphaDocument(NSDocument):
 
 	def optimizeFileIfNeeded_(self,url):
 		delegate = NSApplication.sharedApplication().delegate();
-		if delegate.imageOptimPath is None or not delegate.imageOptimEnabled():
+		if not delegate or delegate.imageOptimPath is None or not delegate.imageOptimEnabled():
 			return
 
 		w = NSWorkspace.sharedWorkspace();
