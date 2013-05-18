@@ -155,6 +155,8 @@ class IAImageVersion(NSObject):
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("posterizer", ""),args,path,False);
 
     def launchTask_withArguments_stdin_library_(self,launchPath,args,path,useLib):
+        assert launchPath
+        assert path
         task = NSTask.alloc().init()
 
         task.setLaunchPath_(launchPath)
