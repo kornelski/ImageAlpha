@@ -38,6 +38,7 @@ class IAImageView(NSView):
             self.layer().addSublayer_(self._backgroundLayer);
 
             self._imageLayer = CALayer.layer()
+            assert self._imageLayer
             self.layer().addSublayer_(self._imageLayer);
 
             NSLog("initing self with frame");
@@ -179,6 +180,7 @@ class IAImageView(NSView):
         return self._drawAlternateImage == True
 
     def setBackgroundLayer_(self, layer):
+        assert layer
         if self.layer() is None: self.initWithFrame_(self.frame());
         layer.setFrame_(self.layer().bounds());
         layer.setAutoresizingMask_(kCALayerWidthSizable|kCALayerHeightSizable)
@@ -198,7 +200,7 @@ class IAImageView(NSView):
     def _updateLayerZoom(self):
         if self._lastZoom != self._zoom:
             image = self.image() if not self.drawAlternateImage() else self.alternateImage();
-            if image is not None:
+            if image is not None and self._imageLayer is not None:
                 w,h = image.size()
                 x,y = self.imageOffset
                 size = self.bounds()[1]
