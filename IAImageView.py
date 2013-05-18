@@ -32,16 +32,14 @@ class IAImageView(NSView):
             if self.layer() is None: self.setLayer_(CALayer.layer());
             assert self.layer() is not None;
 
-            bg = CALayer.layer();
-            bg.setBackgroundColor_(CGColorCreateGenericRGB(0.5,0.5,0.5,1));
+            self._imageLayer = CALayer.layer()
             self._backgroundLayer = CALayer.layer();
+            self._backgroundLayer.setAutoresizingMask_(kCALayerWidthSizable | kCALayerHeightSizable);
+
+            self._backgroundLayer.setBackgroundColor_(CGColorCreateGenericRGB(0.5,0.5,0.5,1));
             self.layer().addSublayer_(self._backgroundLayer);
 
-            self._imageLayer = CALayer.layer()
-            assert self._imageLayer
             self.layer().addSublayer_(self._imageLayer);
-
-            NSLog("initing self with frame");
 
             self.addShadow();
         return self
@@ -210,7 +208,7 @@ class IAImageView(NSView):
     def setNeedsDisplay_(self, tf):
         if tf:
             image = self.image() if not self.drawAlternateImage() else self.alternateImage();
-            if image is not None:
+            if image is not None and self._imageLayer is not None:
                 self._updateLayerZoom()
 
                 self._imageLayer.setOpacity_(self.imageFade);
