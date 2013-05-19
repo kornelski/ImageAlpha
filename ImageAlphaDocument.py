@@ -77,6 +77,16 @@ class ImageAlphaDocument(NSDocument):
 			if zoomToFill:
 				self.zoomedImageView.zoomToFill()
 
+	def setDrawAlternateImage_(self, val):
+		""" indirection to avoid leaks caused by xib observing itself """
+		if self.zoomedImageView is not None and self.documentImage() is not None:
+			self.zoomedImageView.setDrawAlternateImage_(val)
+
+	def drawAlternateImage(self):
+		if self.zoomedImageView is not None and self.documentImage() is not None:
+			return self.zoomedImageView.drawAlternateImage()
+		return False
+
 	def validateUserInterfaceItem_(self,item):
 		# I can't find nice way to compare selectors in pyobjc, so here comes __repr__() hack (or non-hack I hope)
 		if self.documentImage() is None and item.action().__repr__() in ["'saveDocument:'","'saveDocumentAs:'","'zoomIn:'","'zoomOut:'", "'toggleShowOriginal:'"]:
