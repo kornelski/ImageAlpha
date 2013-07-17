@@ -110,6 +110,7 @@ class IAImageView(NSView):
         self._smooth = smooth
         if self._imageLayer:
             self._imageLayer.setMagnificationFilter_(kCAFilterLinear if smooth else kCAFilterNearest)
+            self._imageLayer.setMinificationFilter_(kCAFilterLinear if smooth else kCAFilterNearest)
             self.setNeedsDisplay_(YES)
 
     def zoom(self):
@@ -122,6 +123,11 @@ class IAImageView(NSView):
     def _setZoom(self,zoom):
         self._zoom = min(16.0,max(1.0/128.0,zoom))
         self._limitImageOffset()
+        if self._imageLayer:
+            if 1.0==zoom:
+                self._imageLayer.setMagnificationFilter_(kCAFilterNearest)
+            elif self._smooth:
+                self.setSmooth_(YES)
         self.setNeedsDisplay_(YES)
 
     def image(self):
