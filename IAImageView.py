@@ -57,7 +57,7 @@ class IAImageView(NSView):
     def setSmooth_(self,smooth):
         self._smooth = smooth
         NSGraphicsContext.currentContext().setImageInterpolation_(NSImageInterpolationHigh if smooth else NSImageInterpolationNone)
-            self.setNeedsDisplay_(YES)
+        self.setNeedsDisplay_(YES)
 
     def zoom(self):
         return self._zoom;
@@ -129,7 +129,7 @@ class IAImageView(NSView):
     def drawRect_(self,rect):
         if self.backgroundRenderer is not None: self.backgroundRenderer.drawRect_(rect);
 
-            image = self.image() if not self.drawAlternateImage() else self.alternateImage();
+        image = self.image() if not self.drawAlternateImage() else self.alternateImage();
         if image is None: return
 
         unscaled = abs(self.zoom() - 1.0) < 0.01;
