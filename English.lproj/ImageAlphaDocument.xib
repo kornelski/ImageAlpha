@@ -54,13 +54,13 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{216, 183}, {793, 515}}</string>
-				<int key="NSWTFlags">1946157056</int>
+				<string key="NSWindowRect">{{615, 400}, {793, 515}}</string>
+				<int key="NSWTFlags">880280576</int>
 				<string key="NSWindowTitle">ImageAlpha</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMinSize">{673, 222}</string>
+				<string key="NSWindowContentMinSize">{673, 310}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -472,7 +472,6 @@
 							<string key="NSFrame">{{690, 5}, {92, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<array key="NSViewContentFilters">
 								<object class="CIExposureAdjust">
@@ -571,7 +570,7 @@
 					<reference key="NSNextKeyView" ref="130628275"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1578}}</string>
-				<string key="NSMinSize">{673, 244}</string>
+				<string key="NSMinSize">{673, 332}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<string key="NSFrameAutosaveName"/>
 				<bool key="NSAutorecalculatesContentBorderThicknessMinY">NO</bool>
