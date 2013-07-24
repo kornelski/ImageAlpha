@@ -10,4 +10,7 @@
 
 @implementation IABackgroundRenderer
 
+-(BOOL)canMove {
+    return NO;
+}
 @end

@@ -33,6 +33,10 @@ static void drawPatternImage(void *info, CGContextRef ctx)
     return self;
 }
 
+-(BOOL)canMove {
+    return YES;
+}
+
 -(CALayer *)getLayer {
     CALayer *newLayer = [CALayer new];
     newLayer.actions = [[bgLayer.actions copy] autorelease];
