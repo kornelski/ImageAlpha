@@ -79,6 +79,8 @@ class IAImage(NSObject):
         self._quantizationMethod = num
         if num != 0:
             self.setIeMode_(False)
+        if num == 2:
+            self.setDithering_(False)
         self.update()
 
     def isBusy(self):
@@ -113,7 +115,7 @@ class IAImage(NSObject):
         d = self.dithering();
         c = self.numberOfColors();
         if (self.quantizationMethod() == 2): # ugly hack to reduce amount of pointless versions posterizer generates
-            c = round(2+c*100/256);
+            c = round(6+c*100/256);
 
         return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
                                 self.quantizationMethod(), d, self.ieMode());
@@ -146,7 +148,7 @@ class IAImageVersion(NSObject):
                 args.insert(0,"--iebug");
             self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),args,path,False);
         else:
-            c = round(2+colors*100/256);
+            c = round(6+colors*100/256);
             args = ["%d" % c];
             if dither:
                 args.insert(0,"-d");
