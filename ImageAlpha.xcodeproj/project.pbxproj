@@ -209,9 +209,9 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 				5AA9BAB914268CED007E98AA /* Python.framework */,
 				5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */,
-				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -279,12 +279,12 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */,
 				5A30108D0F55DE1B0083C154 /* textures */,
+				5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */,
 				5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */,
-				779AE5F70C0A0980000694DF /* MainMenu.xib */,
 				779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */,
 				8D15AC360486D014006FF6A4 /* Info.plist */,
+				779AE5F70C0A0980000694DF /* MainMenu.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -319,10 +319,10 @@
 			isa = PBXGroup;
 			children = (
 				5A91FE900E95837F004954A0 /* IABackgroundRenderer.py */,
-				5A91FE920E95837F004954A0 /* IASlider.py */,
 				5A91FE8A0E958375004954A0 /* IACollectionItem.py */,
 				5A91FE8D0E95837F004954A0 /* IAImageView.py */,
 				5A91FE8E0E95837F004954A0 /* IAImageViewInteractive.py */,
+				5A91FE920E95837F004954A0 /* IASlider.py */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -338,8 +338,8 @@
 		5ABD764C0F0E78E700515CC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5ABD76500F0E78E700515CC9 /* pngnq */,
 				5ABD774A0F0E87ED00515CC9 /* pngcomp */,
+				5ABD76500F0E78E700515CC9 /* pngnq */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -491,24 +491,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A31235C1399A72500448815 /* posterizer in Resources */,
-				5A3123501399A6C500448815 /* liblibpng.dylib in Resources */,
-				5A0A24C3174843D0003264CC /* pngquant in Resources */,
-				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
-				77383F230C07AB8F0043B131 /* main.py in Resources */,
-				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
-				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
+				5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */,
+				5A91FE970E95837F004954A0 /* IABackgroundRenderer.py in Resources */,
 				5A91FE8B0E958375004954A0 /* IACollectionItem.py in Resources */,
-				5A91FE930E95837F004954A0 /* ImageAlphaApplication.py in Resources */,
+				5AA5327E0EE32FC700360305 /* IAImage.py in Resources */,
 				5A91FE940E95837F004954A0 /* IAImageView.py in Resources */,
 				5A91FE950E95837F004954A0 /* IAImageViewInteractive.py in Resources */,
-				5A91FE970E95837F004954A0 /* IABackgroundRenderer.py in Resources */,
 				5A91FE990E95837F004954A0 /* IASlider.py in Resources */,
-				5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */,
 				5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */,
-				5AA5327E0EE32FC700360305 /* IAImage.py in Resources */,
+				5A91FE930E95837F004954A0 /* ImageAlphaApplication.py in Resources */,
+				5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */,
+				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
+				5A3123501399A6C500448815 /* liblibpng.dylib in Resources */,
+				77383F230C07AB8F0043B131 /* main.py in Resources */,
+				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
+				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
+				5A0A24C3174843D0003264CC /* pngquant in Resources */,
+				5A31235C1399A72500448815 /* posterizer in Resources */,
 				5A3010980F55DE1B0083C154 /* textures in Resources */,
-				5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
