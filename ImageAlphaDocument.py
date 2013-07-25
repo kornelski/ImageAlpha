@@ -9,16 +9,14 @@ from IACollectionItem import *
 from IABackgroundRenderer import *
 from IAImage import IAImage
 
-class ImageAlphaDocument(NSDocument):
+class ImageAlphaDocument(ImageAlphaDocumentC):
 
-	zoomedImageView = objc.IBOutlet()
 	statusBarView = objc.IBOutlet()
 	backgroundsView = objc.IBOutlet()
 	progressBarView = objc.IBOutlet()
 	savePanelView = objc.IBOutlet()
 	leftPaneView = objc.IBOutlet()
 
-	_documentImage = None;
 
 	def windowNibName(self):
 		return u"ImageAlphaDocument"
@@ -44,8 +42,8 @@ class ImageAlphaDocument(NSDocument):
 		]
 		self.backgroundsView.setContent_(bgs);
 
-		self.zoomedImageView.window().setAcceptsMouseMovedEvents_(YES);
-		self.zoomedImageView.setBackgroundRenderer_(bgs[0])
+		self.zoomedImageView().window().setAcceptsMouseMovedEvents_(YES);
+		self.zoomedImageView().setBackgroundRenderer_(bgs[0])
 
 		if self.documentImage() is not None:
 			self.setDisplayImage_(self.documentImage().image())
@@ -72,20 +70,10 @@ class ImageAlphaDocument(NSDocument):
 
 
 	def updateZoomedImageViewAlternateImage(self, zoomToFill=False):
-		if self.zoomedImageView is not None and self.documentImage() is not None:
-			self.zoomedImageView.setAlternateImage_(self.documentImage().image())
+		if self.zoomedImageView() is not None and self.documentImage() is not None:
+			self.zoomedImageView().setAlternateImage_(self.documentImage().image())
 			if zoomToFill:
-				self.zoomedImageView.zoomToFill()
-
-	def setDrawAlternateImage_(self, val):
-		""" indirection to avoid leaks caused by xib observing itself """
-		if self.zoomedImageView is not None and self.documentImage() is not None:
-			self.zoomedImageView.setDrawAlternateImage_(val)
-
-	def drawAlternateImage(self):
-		if self.zoomedImageView is not None and self.documentImage() is not None:
-			return self.zoomedImageView.drawAlternateImage()
-		return False
+				self.zoomedImageView().zoomToFill()
 
 	def validateUserInterfaceItem_(self,item):
 		# I can't find nice way to compare selectors in pyobjc, so here comes __repr__() hack (or non-hack I hope)
@@ -191,7 +179,8 @@ class ImageAlphaDocument(NSDocument):
 
 		docimg.setPath_(path);
 		docimg.setImage_(image);
-		return self.setNewDocumentImage_(docimg);
+		self.setNewDocumentImage_(docimg)
+		return YES
 
 	def setDocumentImageFromImage_(self,image):
 		return NO # not supported until iaimage can save temp image
@@ -206,29 +195,18 @@ class ImageAlphaDocument(NSDocument):
 
 	def setNewDocumentImage_(self,docimg):
 		#NSLog("new dimage set");
-		if self._documentImage is not None:
-			#NSLog("Destroying document image %s" % self._documentImage);
-			self._documentImage.destroy();
+		if self.documentImage() is not None:
+			self.documentImage().destroy();
 
-		#NSLog("Setting new document image %s, replaces old %s " % ( docimg, self._documentImage));
 		self.setDocumentImage_(docimg);
 		docimg.setCallbackWhenImageChanges_(self);
 		self.setDisplayImage_(docimg.image());
 
 		self.updateZoomedImageViewAlternateImage(zoomToFill=True)
 
-		return YES
-
-	def documentImage(self):
-		return self._documentImage;
-
-	def setDocumentImage_(self,docimg):
-		# FIXME: check if callbacks of old one need to be stopped
-		self._documentImage = docimg;
-
 	def setDisplayImage_(self,image):
-		if self.zoomedImageView is None or self.backgroundsView is None: return;
-		self.zoomedImageView.setImage_(image)
+		if self.zoomedImageView() is None or self.backgroundsView is None: return;
+		self.zoomedImageView().setImage_(image)
 		self.backgroundsView.setImage_(image)
 		self.backgroundsView.setSelectable_(YES if image is not None else NO);
 		#NSLog("Set new display image %s" % image);
@@ -276,8 +254,8 @@ class ImageAlphaDocument(NSDocument):
 
 	@objc.IBAction
 	def toggleShowOriginal_(self,action):
-		if self.zoomedImageView is not None:
-			self.zoomedImageView.setDrawAlternateImage_(not self.zoomedImageView.drawAlternateImage());
+		if self.zoomedImageView() is not None:
+			self.zoomedImageView().setDrawAlternateImage_(not self.zoomedImageView().drawAlternateImage());
 
 	@objc.IBAction
 	def revert_(self,action):
@@ -285,10 +263,10 @@ class ImageAlphaDocument(NSDocument):
 
 	@objc.IBAction
 	def zoomIn_(self, sender):
-		if self.zoomedImageView is not None:
-			self.zoomedImageView.zoomIn_(sender);
+		if self.zoomedImageView() is not None:
+			self.zoomedImageView().zoomIn_(sender);
 
 	@objc.IBAction
 	def zoomOut_(self, sender):
-		if self.zoomedImageView is not None:
-			self.zoomedImageView.zoomOut_(sender);
+		if self.zoomedImageView() is not None:
+			self.zoomedImageView().zoomOut_(sender);
