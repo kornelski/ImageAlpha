@@ -24,7 +24,6 @@ import IAImageViewInteractive
 import IABackgroundRenderer
 import IAImageView
 import IAImage
-import ImageAlphaApplication
 
 # pass control to AppKit
 AppHelper.runEventLoop()
