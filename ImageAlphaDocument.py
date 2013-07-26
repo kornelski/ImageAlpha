@@ -114,7 +114,7 @@ class ImageAlphaDocument(ImageAlphaDocumentC):
 
 	def optimizeFileIfNeeded_(self,url):
 		delegate = NSApplication.sharedApplication().delegate();
-		if not delegate or delegate.imageOptimPath is None or not delegate.imageOptimEnabled():
+		if not delegate or delegate.imageOptimPath is None or not NSUserDefaults.standardUserDefaults().boolForKey_("Optimize"):
 			return
 
 		w = NSWorkspace.sharedWorkspace();

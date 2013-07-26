@@ -472,6 +472,7 @@
 							<string key="NSFrame">{{690, 5}, {92, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<array key="NSViewContentFilters">
 								<object class="CIExposureAdjust">
@@ -633,9 +634,12 @@
 				<bool key="NSSharedInstance">YES</bool>
 			</object>
 			<object class="NSButton" id="970603212">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
 				<string key="NSFrameSize">{203, 24}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<bool key="NSEnabled">YES</bool>
 				<object class="NSButtonCell" key="NSCell" id="323328904">
 					<int key="NSCellFlags">67108864</int>
@@ -1226,19 +1230,23 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: delegate.imageOptimEnabled</string>
+						<string key="label">value: values.Optimize</string>
 						<reference key="source" ref="323328904"/>
-						<reference key="destination" ref="1050"/>
+						<reference key="destination" ref="139094920"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="323328904"/>
-							<reference key="NSDestination" ref="1050"/>
-							<string key="NSLabel">value: delegate.imageOptimEnabled</string>
+							<reference key="NSDestination" ref="139094920"/>
+							<string key="NSLabel">value: values.Optimize</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">delegate.imageOptimEnabled</string>
+							<string key="NSKeyPath">values.Optimize</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSRaisesForNotApplicableKeys</string>
+								<boolean value="NO" key="NS.object.0"/>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1048</int>
+					<int key="connectionID">1186</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1480,6 +1488,7 @@
 							<reference ref="323328904"/>
 						</array>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Save Dialog Optimize Checkbox</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1024</int>
@@ -1847,7 +1856,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1183</int>
+			<int key="maxID">1186</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1948,7 +1957,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">ImageAlphaDocument</string>
-					<string key="superclassName">NSDocument</string>
+					<string key="superclassName">ImageAlphaDocumentC</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="revert:">id</string>
 						<string key="toggleShowOriginal:">id</string>
@@ -1979,7 +1988,6 @@
 						<string key="progressBarView">id</string>
 						<string key="savePanelView">id</string>
 						<string key="statusBarView">id</string>
-						<string key="zoomedImageView">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="backgroundsView">
@@ -2002,14 +2010,29 @@
 							<string key="name">statusBarView</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="zoomedImageView">
-							<string key="name">zoomedImageView</string>
-							<string key="candidateClassName">id</string>
-						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/ImageAlphaDocument.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">ImageAlphaDocumentC</string>
+					<string key="superclassName">NSDocument</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">zoomedImageView</string>
+						<string key="NS.object.0">IAImageView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">zoomedImageView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">zoomedImageView</string>
+							<string key="candidateClassName">IAImageView</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/ImageAlphaDocumentC.h</string>
 					</object>
 				</object>
 			</array>
