@@ -6,11 +6,24 @@
 <description>ImageAlpha updates</description>
 <language>en</language>
 <item>
+<title>Version 1.3.1</title>
+<description><![CDATA[
+<ul>
+  <li>Fixed <samp>Optimize with ImageOptim</samp> checkbox</li>
+  <li>Upgraded to pngquant 2.0.0</li>
+<ul>
+]]></description>
+<pubDate>Tue, 06 Aug 2013 20:28:06 +0100</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.3.1.tar.bz2" sparkle:version="1.3.1" length="958267" type="application/bzip2" sparkle:dsaSignature="MCwCFHWRO7xOgA8nn7swaWmtkDjMx+ufAhR43neOKX4Z0GPjEM1eBrzJddOFlg=="/>
+<sparkle:minimumSystemVersion>10.8.4</sparkle:minimumSystemVersion>
+</item>
+
+<item>
 <title>Version 1.3.0</title>
 <description><![CDATA[
 <ul>
   <li>New UI layout based on design by Hiten Patel</li>
-  <li>Upgraded posterized (much better support for low alpha values)</li>
+  <li>Upgraded posterizer (much better support for low alpha values)</li>
   <li>Upgraded to pngquant 1.8.4</li>
 <ul>
 ]]></description>
@@ -32,8 +45,8 @@
 <pubDate>Mon, 17 Dec 2012 23:12:57 +0000</pubDate>
 <enclosure url="http://pngmini.com/ImageAlpha1.2.5.1.tar.bz2" sparkle:version="1.2.5.1" length="1033522" type="application/bzip2" sparkle:dsaSignature="MC4CFQCMkguuI1rpVTGi3xyd9sNsSDPy+AIVAIDodYPjLlXx29fjXRh8xtDPrcqE"/>
 <sparkle:minimumSystemVersion>10.7.2</sparkle:minimumSystemVersion>
-
 </item>
+
 <item>
 <title>Version 1.2.3</title>
 <description><![CDATA[
