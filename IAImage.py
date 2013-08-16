@@ -4,6 +4,46 @@ from objc import *
 from Foundation import *
 from AppKit import *
 
+class Quantizer(object):
+    def supportsIeMode(self):
+        return False
+
+    def preferredDithering(self):
+        return True
+
+    def numberOfColorsToQuality(self, colors):
+        return colors;
+
+    def versionId(self, colors, dithering, ieMode):
+        return "c%d:m%s:d%d%d" % (self.numberOfColorsToQuality(colors), self.__class__.__name__, dithering, ieMode)
+
+class Pngquant(Quantizer):
+    def supportsIeMode(self):
+        return True
+
+    def launchArguments(self, dither, colors, ieMode):
+        args = ["--floyd" if dither else "--nofs","%d" % colors];
+        if ieMode:
+            args.insert(0,"--iebug");
+        return ("pngquant", args)
+
+class Pngnq(Quantizer):
+    def launchArguments(self, dither, colors, ieMode):
+        return ("pngnq", ["-Q","f" if dither else "n","-n","%d" % colors])
+
+class Posterizer(Quantizer):
+    def preferredDithering(self):
+        return False
+
+    def numberOfColorsToQuality(self, c):
+        return round(6+c*100/256)
+
+    def launchArguments(self, dither, colors, ieMode):
+        args = ["%d" % self.numberOfColorsToQuality(colors)];
+        if dither:
+            args.insert(0,"-d")
+        return ("posterizer",args);
+
 class IAImage(NSObject):
     _image = None
     _imageData = None
@@ -14,10 +54,13 @@ class IAImage(NSObject):
     versions = None
 
     _numberOfColors = 256;
-    transparencyDepth = 8;
-    transparencyAdjust = 0;
 
     _quantizationMethod = 0; # 0 = pngquant; 1 = pngnq; 2 = posterizer
+    _quantizationMethods = [
+        Pngquant(),
+        Pngnq(),
+        Posterizer(),
+    ]
     _dithering = YES
     _ieMode = NO
 
@@ -54,7 +97,7 @@ class IAImage(NSObject):
 
     def setIeMode_(self,val):
         self._ieMode = int(val) > 0;
-        if self._ieMode and self.quantizationMethod() != 0:
+        if self._ieMode and not self.quantizer().supportsIeMode():
             self.setQuantizationMethod_(0);
         self.update()
 
@@ -75,12 +118,17 @@ class IAImage(NSObject):
     def quantizationMethod(self):
         return self._quantizationMethod
 
+    def quantizer(self):
+        return self._quantizationMethods[self._quantizationMethod]
+
     def setQuantizationMethod_(self,num):
         self._quantizationMethod = num
-        if num != 0:
+
+        quantizer = self.quantizer()
+        if not quantizer.supportsIeMode():
             self.setIeMode_(False)
-        if num == 2:
-            self.setDithering_(False)
+        if quantizer.preferredDithering() is not None:
+            self.setDithering_(quantizer.preferredDithering())
         self.update()
 
     def isBusy(self):
@@ -101,7 +149,7 @@ class IAImage(NSObject):
 
             elif id not in self.versions:
                 self.versions[id] = IAImageVersion.alloc().init()
-                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizationMethod(), self.dithering(), self.ieMode(), self.numberOfColors(), self)
+                self.versions[id].generateFromPath_method_dither_iemode_colors_callback_(self.path, self.quantizer(), self.dithering(), self.ieMode(), self.numberOfColors(), self)
 
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.updateProgressbar();
 
@@ -112,13 +160,7 @@ class IAImage(NSObject):
                 if self.callbackWhenImageChanges is not None: self.callbackWhenImageChanges.imageChanged();
 
     def currentVersionId(self):
-        d = self.dithering();
-        c = self.numberOfColors();
-        if (self.quantizationMethod() == 2): # ugly hack to reduce amount of pointless versions posterizer generates
-            c = round(6+c*100/256);
-
-        return "c%d:t%d:m%d:d%d%d" % (c, self.transparencyDepth,
-                                self.quantizationMethod(), d, self.ieMode());
+        return self.quantizer().versionId(self.numberOfColors(), self.dithering(), self.ieMode());
 
     def destroy(self):
         self.callbackWhenImageChanges = None
@@ -135,34 +177,18 @@ class IAImageVersion(NSObject):
     outputPipe = None
     callbackWhenFinished = None
 
-    def generateFromPath_method_dither_iemode_colors_callback_(self,path,method,dither,ieMode,colors,callbackWhenFinished):
+    def generateFromPath_method_dither_iemode_colors_callback_(self,path,quantizer,dither,ieMode,colors,callbackWhenFinished):
 
         self.isDone = False
         self.callbackWhenFinished = callbackWhenFinished
 
-        if method == 1:
-            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngnq", ""), ["-Q","f" if dither else "n","-n","%d" % colors], path, True);
-        elif method == 0:
-            args = ["--floyd" if dither else "--nofs","%d" % colors];
-            if ieMode:
-                args.insert(0,"--iebug");
-            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("pngquant", ""),args,path,False);
-        else:
-            c = round(6+colors*100/256);
-            args = ["%d" % c];
-            if dither:
-                args.insert(0,"-d");
-            self.task = self.launchTask_withArguments_stdin_library_(NSBundle.mainBundle().pathForResource_ofType_("posterizer", ""),args,path,False);
+        (executable, args) = quantizer.launchArguments(dither, colors, ieMode)
 
-    def launchTask_withArguments_stdin_library_(self,launchPath,args,path,useLib):
         task = NSTask.alloc().init()
 
-        task.setLaunchPath_(launchPath)
+        task.setLaunchPath_(NSBundle.mainBundle().pathForResource_ofType_(executable, ""))
         task.setCurrentDirectoryPath_(NSBundle.mainBundle().resourcePath())
         task.setArguments_(args);
-
-        if useLib:
-            environment = NSProcessInfo.processInfo().environment();
 
         # pngout works best via standard input/output
         file = NSFileHandle.fileHandleForReadingAtPath_(path);
@@ -184,11 +210,9 @@ class IAImageVersion(NSObject):
     def onHandleReadToEndOfFile_(self,notification):
         self.isDone = True
 
-        data = notification.userInfo().objectForKey_(NSFileHandleNotificationDataItem);
-        if data is not None:
-            if self.callbackWhenFinished is not None:
-                self.imageData = data
-                self.callbackWhenFinished.update()
+        self.imageData = notification.userInfo().objectForKey_(NSFileHandleNotificationDataItem);
+        if self.callbackWhenFinished is not None:
+            self.callbackWhenFinished.update()
 
     # FIXME: use dealloc and super()?
     def destroy(self):
