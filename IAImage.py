@@ -3,6 +3,7 @@
 from objc import *
 from Foundation import *
 from AppKit import *
+from math import log
 
 class Quantizer(object):
     def supportsIeMode(self):
@@ -44,6 +45,24 @@ class Posterizer(Quantizer):
             args.insert(0,"-d")
         return ("posterizer",args);
 
+class Blurizer(Quantizer):
+    def preferredDithering(self):
+        return True
+
+    def numberOfColorsToQuality(self, colors):
+        return colors;
+
+    def versionId(self, colors, dithering, ieMode):
+        return "blur%d" % self.numberOfColorsToQuality(colors)
+
+    def numberOfColorsToQuality(self, c):
+        return int(1+ 24-log(c,2)*3)
+
+    def launchArguments(self, dither, colors, ieMode):
+        args = ["%d" % self.numberOfColorsToQuality(colors)];
+        return ("blurizer",args);
+
+
 class IAImage(NSObject):
     _image = None
     _imageData = None
@@ -59,6 +78,7 @@ class IAImage(NSObject):
     _quantizationMethods = [
         Pngquant(),
         Pngnq(),
+        Blurizer(),
         Posterizer(),
     ]
     _dithering = YES
