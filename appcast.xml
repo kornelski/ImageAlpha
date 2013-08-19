@@ -6,16 +6,18 @@
 <description>ImageAlpha updates</description>
 <language>en</language>
 <item>
-<title>Version 1.3.1</title>
+<title>Version 1.3.5</title>
 <description><![CDATA[
 <ul>
   <li>Fixed <samp>Optimize with ImageOptim</samp> checkbox</li>
   <li>Upgraded to pngquant 2.0.0</li>
+  <li><a href="http://pngmini.com/lossypng.html">New lossy PNG algorithm</a></li>
 <ul>
 ]]></description>
-<pubDate>Tue, 06 Aug 2013 20:28:06 +0100</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.3.1.tar.bz2" sparkle:version="1.3.1" length="958267" type="application/bzip2" sparkle:dsaSignature="MCwCFHWRO7xOgA8nn7swaWmtkDjMx+ufAhR43neOKX4Z0GPjEM1eBrzJddOFlg=="/>
-<sparkle:minimumSystemVersion>10.8.4</sparkle:minimumSystemVersion>
+<pubDate>Mon, 19 Aug 2013 18:47:30 +0100</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.3.5.tar.bz2" sparkle:version="1.3.5" length="967878" type="application/bzip2" sparkle:dsaSignature="MCwCFEzpKFagUkYcv7j56XebHcvp229NAhQc6D6Sr5czoZXlGJvFdntpQ96EcQ=="/>
+<sparkle:minimumSystemVersion>10.7.1</sparkle:minimumSystemVersion>
+
 </item>
 
 <item>
@@ -59,21 +61,6 @@
 <pubDate>Sat, 11 Feb 2012 17:04:13 +0000</pubDate>
 <enclosure url="http://pngmini.com/ImageAlpha1.2.3.tar.bz2" sparkle:version="1.2.3" length="959331" type="application/bzip2" sparkle:dsaSignature="MC0CFQCKEfeVpRRmEtW1lhONt3Wm3txCNAIULO5Ay03NekhF69weaG61ltTaG70="/>
 <sparkle:minimumSystemVersion>10.6.4</sparkle:minimumSystemVersion>
-</item>
-<item>
-<title>Version 1.2.4 (64-bit)</title>
-<description><![CDATA[
-<ul>
-  <li>Compatibility fix for drag'n'drop in Mountain Lion</li>
-  <li>Upgraded to pngquant 1.8.0</li>
-  <li>Upgraded to <a href="http://sourceforge.net/projects/pngnqs9/">pngnq-s9</a>, which is a fork of pngnq with several quality improvements</li>
-  <li>Upgraded to latest posterizer, which fixes unnecessary banding due to wrong gamma correction</li>
-  <li>Droppped support for Snow Leopard and 32-bit CPUs (sorry, Apple makes backwards compatibility annoyingly difficult)</li>
-</ul>
-]]></description>
-<pubDate>Thu, 13 Dec 2012 00:37:33 +0000</pubDate>
-<enclosure url="http://pngmini.com/ImageAlpha1.2.4.2.tar.bz2" sparkle:version="1.2.4.2" length="1064933" type="application/bzip2" sparkle:dsaSignature="MCwCFESHQfM2nI/WfwFFeJ5hQTDeqhx0AhRrhKRpSN3O6evu3nPmY3p9Hr0uSA=="/>
-<sparkle:minimumSystemVersion>10.7.1</sparkle:minimumSystemVersion>
 </item>
 </channel>
 </rss>

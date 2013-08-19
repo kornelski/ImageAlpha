@@ -49,14 +49,11 @@ class Blurizer(Quantizer):
     def preferredDithering(self):
         return True
 
-    def numberOfColorsToQuality(self, colors):
-        return colors;
-
     def versionId(self, colors, dithering, ieMode):
         return "blur%d" % self.numberOfColorsToQuality(colors)
 
     def numberOfColorsToQuality(self, c):
-        return int(1+ 24-log(c,2)*3)
+        return int(2+ 24-log(c,2)*3)
 
     def launchArguments(self, dither, colors, ieMode):
         args = ["%d" % self.numberOfColorsToQuality(colors)];
@@ -78,6 +75,7 @@ class IAImage(NSObject):
     _quantizationMethods = [
         Pngquant(),
         Pngnq(),
+        None, # separator
         Blurizer(),
         Posterizer(),
     ]
