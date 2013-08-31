@@ -10,9 +10,11 @@
 
 @interface ImageAlphaDocumentC : NSDocument {
     IAImageView* zoomedImageView;
+    NSView *leftPaneView;
 }
 
 @property (assign) BOOL drawAlternateImage;
 @property (retain) IBOutlet IAImageView* zoomedImageView;
 @property (retain) IAImage* documentImage;
+@property (retain) IBOutlet NSView* leftPaneView;
 @end

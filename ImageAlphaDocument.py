@@ -15,8 +15,6 @@ class ImageAlphaDocument(ImageAlphaDocumentC):
 	backgroundsView = objc.IBOutlet()
 	progressBarView = objc.IBOutlet()
 	savePanelView = objc.IBOutlet()
-	leftPaneView = objc.IBOutlet()
-
 
 	def windowNibName(self):
 		return u"ImageAlphaDocument"
@@ -53,21 +51,8 @@ class ImageAlphaDocument(ImageAlphaDocumentC):
 
 		self.updateZoomedImageViewAlternateImage()
 
+
 		self._endWork();
-
-
-	def splitView_constrainMinCoordinate_ofSubviewAt_(self, splitView, proposedSize, dividerIndex):
-		return max(proposedSize, 200);
-
-	def splitView_constrainMaxCoordinate_ofSubviewAt_(self, splitView, proposedSize, dividerIndex):
-		return min(proposedSize, 300);
-
-	def splitView_constrainSplitPosition_ofSubviewAt_(self, splitView, proposedSize, dividerIndex):
-		return max(min(proposedSize, 300),200);
-
-	def splitView_shouldAdjustSizeOfSubview_(self, splitView, subView):
-		return NO if subView is self.leftPaneView else YES;
-
 
 	def updateZoomedImageViewAlternateImage(self, zoomToFill=False):
 		if self.zoomedImageView() is not None and self.documentImage() is not None:
