@@ -26,6 +26,9 @@ class ImageAlphaDocument(ImageAlphaDocumentC):
 
 		bgs = [
 			IAImageBackgroundRenderer(self._getImage("textures/photoshop","png")),
+			IAColorBackgroundRenderer(NSColor.whiteColor()),
+			IAColorBackgroundRenderer(NSColor.colorWithWhite_alpha_(0.5,1)),
+			IAColorBackgroundRenderer(NSColor.blackColor()),
 			IAColorBackgroundRenderer(NSColor.redColor()),
 			IAColorBackgroundRenderer(NSColor.greenColor()),
 			IAColorBackgroundRenderer(NSColor.blueColor()),
