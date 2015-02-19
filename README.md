@@ -7,4 +7,5 @@ ImageAlpha is written in Python and Cocoa (PyObjC).
 ![Screenshot](http://pornel.net/imagealpha/screenshot.png)
 
 ###Sponsored By:
-<a href="http://tracking.maxcdn.com/c/69095/133486/378"><img src="http://jdorfman.cdnconnect.com/maxcdn/MaxCDN-Orange-200x33.png" alt="MaxCDN" target="_blank"></a>
+
+[PSW GROUP](https://www.psw-group.de/)
