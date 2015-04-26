@@ -6,6 +6,9 @@ from AppKit import *
 from math import log
 
 class Quantizer(object):
+    def qualityLabel(self):
+        return "Colors"
+
     def supportsIeMode(self):
         return False
 
@@ -33,6 +36,9 @@ class Pngnq(Quantizer):
         return ("pngnq", ["-Q","f" if dither else "n","-n","%d" % colors])
 
 class Posterizer(Quantizer):
+    def qualityLabel(self):
+        return "Quality"
+
     def preferredDithering(self):
         return False
 
@@ -46,6 +52,9 @@ class Posterizer(Quantizer):
         return ("posterizer",args);
 
 class Blurizer(Quantizer):
+    def qualityLabel(self):
+        return "Quality"
+
     def preferredDithering(self):
         return True
 
@@ -129,6 +138,9 @@ class IAImage(NSObject):
     def numberOfColors(self):
         return self._numberOfColors
 
+    def qualityLabel(self):
+        return self.quantizer().qualityLabel()
+
     def setNumberOfColors_(self,num):
         self._numberOfColors = int(num)
         self.update()
@@ -140,7 +152,9 @@ class IAImage(NSObject):
         return self._quantizationMethods[self._quantizationMethod]
 
     def setQuantizationMethod_(self,num):
+        self.willChangeValueForKey_("qualityLabel");
         self._quantizationMethod = num
+        self.didChangeValueForKey_("qualityLabel");
 
         quantizer = self.quantizer()
         if not quantizer.supportsIeMode():
