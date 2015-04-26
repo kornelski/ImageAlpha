@@ -530,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=$SRCROOT/optimal_file_list\n";
+			shellScript = "find \"$TARGET_BUILD_DIR\" -name '*.pyc' -delete\ncd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=$SRCROOT/optimal_file_list\n";
 		};
 		5A8CE19A0F5B5E9D002ED669 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
