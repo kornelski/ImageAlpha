@@ -32,7 +32,7 @@
 		5A3F4E8717A1F4D600469537 /* ImageAlphaApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F4E8617A1F4D600469537 /* ImageAlphaApplication.m */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
 		5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
-		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
+		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */; };
 		5A91FE8B0E958375004954A0 /* IACollectionItem.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8A0E958375004954A0 /* IACollectionItem.py */; };
 		5A91FE940E95837F004954A0 /* IAImageView.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8D0E95837F004954A0 /* IAImageView.py */; };
@@ -411,7 +411,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "ImageAlpha" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -702,6 +702,7 @@
 			buildSettings = {
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
