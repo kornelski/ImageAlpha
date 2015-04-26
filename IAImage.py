@@ -218,8 +218,9 @@ class IAImageVersion(NSObject):
 
         task = NSTask.alloc().init()
 
-        task.setLaunchPath_(NSBundle.mainBundle().pathForResource_ofType_(executable, ""))
-        task.setCurrentDirectoryPath_(NSBundle.mainBundle().resourcePath())
+        exePath = NSBundle.mainBundle().pathForAuxiliaryExecutable_(executable)
+        task.setLaunchPath_(exePath)
+        task.setCurrentDirectoryPath_(exePath.stringByDeletingLastPathComponent())
         task.setArguments_(args);
 
         # pngout works best via standard input/output

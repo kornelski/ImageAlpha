@@ -23,10 +23,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5A0A24C3174843D0003264CC /* pngquant in Resources */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; };
+		5A0A24C3174843D0003264CC /* pngquant in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
-		5A3123501399A6C500448815 /* liblibpng.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; };
-		5A31235C1399A72500448815 /* posterizer in Resources */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; };
+		5A3123501399A6C500448815 /* liblibpng.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5A31235C1399A72500448815 /* posterizer in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5A3F4E6117A1F3FE00469537 /* ImageAlphaDocumentC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F4E6017A1F3FE00469537 /* ImageAlphaDocumentC.m */; };
 		5A3F4E8717A1F4D600469537 /* ImageAlphaApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F4E8617A1F4D600469537 /* ImageAlphaApplication.m */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
@@ -41,7 +41,7 @@
 		5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FF230E958EE6004954A0 /* ImageAlphaDocument.py */; };
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA9BAB914268CED007E98AA /* Python.framework */; };
-		5ABD76510F0E791500515CC9 /* pngnq in Resources */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; };
+		5ABD76510F0E791500515CC9 /* pngnq in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		77383F230C07AB8F0043B131 /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = 77383F220C07AB8F0043B131 /* main.py */; };
 		779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F70C0A0980000694DF /* MainMenu.xib */; };
 		779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */; };
@@ -146,6 +146,19 @@
 				5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AF2D49C1AED3A9200E761BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				5A31235C1399A72500448815 /* posterizer in CopyFiles */,
+				5ABD76510F0E791500515CC9 /* pngnq in CopyFiles */,
+				5A3123501399A6C500448815 /* liblibpng.dylib in CopyFiles */,
+				5A0A24C3174843D0003264CC /* pngquant in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -362,6 +375,7 @@
 			buildPhases = (
 				8D15AC2B0486D014006FF6A4 /* Resources */,
 				8D15AC300486D014006FF6A4 /* Sources */,
+				5AF2D49C1AED3A9200E761BA /* CopyFiles */,
 				8D15AC330486D014006FF6A4 /* Frameworks */,
 				5A8CE1460F5B5BD5002ED669 /* Copy Frameworks */,
 			);
@@ -493,12 +507,8 @@
 				5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */,
 				5A91FF240E958EE6004954A0 /* ImageAlphaDocument.py in Resources */,
 				779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */,
-				5A3123501399A6C500448815 /* liblibpng.dylib in Resources */,
 				77383F230C07AB8F0043B131 /* main.py in Resources */,
 				779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */,
-				5ABD76510F0E791500515CC9 /* pngnq in Resources */,
-				5A0A24C3174843D0003264CC /* pngquant in Resources */,
-				5A31235C1399A72500448815 /* posterizer in Resources */,
 				5A3010980F55DE1B0083C154 /* textures in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,6 +627,7 @@
 		C05733C808A9546B00998B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,6 +648,7 @@
 		C05733C908A9546B00998B17 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
