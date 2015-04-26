@@ -62,11 +62,11 @@ class Blurizer(Quantizer):
         return "blur%d" % self.numberOfColorsToQuality(colors)
 
     def numberOfColorsToQuality(self, c):
-        return int(2+ 24-log(c,2)*3)
+        return round(255 - 12 + 1.5*log(c, 2));
 
     def launchArguments(self, dither, colors, ieMode):
-        args = ["%d" % self.numberOfColorsToQuality(colors)];
-        return ("blurizer",args);
+        args = ["-b", "%d" % self.numberOfColorsToQuality(colors)];
+        return ("posterizer",args);
 
 
 class IAImage(NSObject):
