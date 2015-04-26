@@ -5,6 +5,20 @@
 <link>http://pngmini.com/appcast.xml</link>
 <description>ImageAlpha updates</description>
 <language>en</language>
+
+<item>
+<title>Version 1.4.0</title>
+<description><![CDATA[
+<ul>
+  <li>Colors/Quality label changes to match the selected tool</li>
+  <li>Upgraded to pngquant 2.4.1</li>
+<ul>
+]]></description>
+<pubDate>Sun, 28 Jun 2015 22:57:27 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.4.0.tar.bz2" sparkle:version="1.4.0" length="1201842" type="application/bzip2" sparkle:dsaSignature="MC0CFQCUYGVjaG6tBU5gZX4oEf+5z2NOHQIUIjXOBhbYSDg1OI3DiABO5oaUG7Q="/>
+<sparkle:minimumSystemVersion>10.8.4</sparkle:minimumSystemVersion>
+</item>
+
 <item>
 <title>Version 1.3.5</title>
 <description><![CDATA[
