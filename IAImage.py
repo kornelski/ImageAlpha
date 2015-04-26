@@ -43,7 +43,7 @@ class Posterizer(Quantizer):
         return False
 
     def numberOfColorsToQuality(self, c):
-        return round(6+c*100/256)
+        return round(15 + (c * 240 / 255));
 
     def launchArguments(self, dither, colors, ieMode):
         args = ["%d" % self.numberOfColorsToQuality(colors)];
