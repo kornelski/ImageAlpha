@@ -30,6 +30,10 @@ class IAImageView(NSView):
             self.addLayers()
         return self
 
+    # existence of initWithCoder_ causes later crashes in a place
+    # with backtrace I don't recognize, so lazy addLayers()
+    # is scattered all over the place instead
+
     def addLayers(self):
         self.setWantsLayer_(YES);
         if self.layer() is None: self.setLayer_(CALayer.layer());
@@ -188,8 +192,10 @@ class IAImageView(NSView):
 
     def setBackgroundLayer_(self, layer):
         assert layer
-        if self.layer() is None: self.initWithFrame_(self.frame());
-        layer.setFrame_(self.layer().bounds());
+        if self.layer() is None:
+            self.addLayers()
+
+        layer.setFrame_(self.bounds());
         layer.setAutoresizingMask_(kCALayerWidthSizable|kCALayerHeightSizable)
         self.layer().replaceSublayer_with_(self._backgroundLayer, layer);
         self._backgroundLayer = layer;
@@ -216,6 +222,10 @@ class IAImageView(NSView):
 
     def setNeedsDisplay_(self, tf):
         if tf:
+
+            if self.layer() is None:
+                self.addLayers()
+
             image = self.image() if not self.drawAlternateImage() else self.alternateImage();
             if image is not None and self._imageLayer is not None:
                 self._updateLayerZoom()
