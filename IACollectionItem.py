@@ -32,12 +32,14 @@ class IACollectionImageView(IAImageView):
         self = super(IACollectionImageView, self).initWithFrame_(frame)
         assert self.layer() is not None;
         if self:
-            # initialization code here
-            types = [NSFilenamesPboardType]
-            types.append(NSImage.imagePasteboardTypes())
-            self.registerForDraggedTypes_(types);
+            self.registerTypes()
         return self
 
+    def registerTypes(self):
+        # initialization code here
+        types = [NSFilenamesPboardType]
+        types.append(NSImage.imagePasteboardTypes())
+        self.registerForDraggedTypes_(types);
     def draggingEntered_(self,sender):
         if NSImage.canInitWithPasteboard_(sender.draggingPasteboard()):
             self.imageFade = 0.2

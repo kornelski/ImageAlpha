@@ -27,22 +27,25 @@ class IAImageView(NSView):
     def initWithFrame_(self, frame):
         self = super(IAImageView, self).initWithFrame_(frame)
         if self:
-
-            self.setWantsLayer_(YES);
-            if self.layer() is None: self.setLayer_(CALayer.layer());
-            assert self.layer() is not None;
-
-            self._imageLayer = CALayer.layer()
-            self._backgroundLayer = CALayer.layer();
-            self._backgroundLayer.setAutoresizingMask_(kCALayerWidthSizable | kCALayerHeightSizable);
-
-            self._backgroundLayer.setBackgroundColor_(CGColorCreateGenericRGB(0.5,0.5,0.5,1));
-            self.layer().addSublayer_(self._backgroundLayer);
-
-            self.layer().addSublayer_(self._imageLayer);
-
-            self.addShadow();
+            self.addLayers()
         return self
+
+    def addLayers(self):
+        self.setWantsLayer_(YES);
+        if self.layer() is None: self.setLayer_(CALayer.layer());
+        assert self.layer() is not None;
+
+        self._imageLayer = CALayer.layer()
+        self._backgroundLayer = CALayer.layer();
+        self._backgroundLayer.setFrame_(self.bounds())
+        self._backgroundLayer.setAutoresizingMask_(kCALayerWidthSizable | kCALayerHeightSizable);
+
+        self._backgroundLayer.setBackgroundColor_(CGColorCreateGenericRGB(0.5,0.5,0.5,1));
+        self.layer().addSublayer_(self._backgroundLayer);
+
+        self.layer().addSublayer_(self._imageLayer);
+
+        self.addShadow();
 
     def addShadow(self):
 
