@@ -35,7 +35,11 @@ static CGColorRef CGColorCreateFromNSColor(CGColorSpaceRef colorSpace, NSColor *
 }
 
 -(CALayer *)getLayer {
-    return layer;
+    CALayer *newLayer = [CALayer new];
+    CGColorRef color = CGColorCreateCopy(layer.backgroundColor);
+    newLayer.backgroundColor = color;
+    CGColorRelease(color);
+    return [newLayer autorelease];
 }
 
 - (void)dealloc

@@ -34,7 +34,14 @@ static void drawPatternImage(void *info, CGContextRef ctx)
 }
 
 -(CALayer *)getLayer {
-    return bgLayer;
+    CALayer *newLayer = [CALayer new];
+    newLayer.actions = [[bgLayer.actions copy] autorelease];
+    
+    CGColorRef color = CGColorCreateCopy(bgLayer.backgroundColor);
+    newLayer.backgroundColor = color;
+    CGColorRelease(color);
+    
+    return [newLayer autorelease];
 }
 
 -(void)dealloc {
