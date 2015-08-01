@@ -199,10 +199,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				5A31235C1399A72500448815 /* posterizer in CopyFiles */,
-				5ABD76510F0E791500515CC9 /* pngnq in CopyFiles */,
 				5A3123501399A6C500448815 /* liblibpng.dylib in CopyFiles */,
+				5ABD76510F0E791500515CC9 /* pngnq in CopyFiles */,
 				5A0A24C3174843D0003264CC /* pngquant in CopyFiles */,
+				5A31235C1399A72500448815 /* posterizer in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,8 +412,8 @@
 		5ABD764C0F0E78E700515CC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5ABD76500F0E78E700515CC9 /* pngnq */,
 				5ABD774A0F0E87ED00515CC9 /* pngcomp */,
+				5ABD76500F0E78E700515CC9 /* pngnq */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -746,6 +746,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = net.pornel.ImageAlpha;
 				PRODUCT_NAME = ImageAlpha;
 				WRAPPER_EXTENSION = app;
 			};
@@ -764,6 +765,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = net.pornel.ImageAlpha;
 				PRODUCT_NAME = ImageAlpha;
 				WRAPPER_EXTENSION = app;
 			};
@@ -773,6 +775,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AED10DC139BAC1400FF5C69 /* debug.xcconfig */;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
