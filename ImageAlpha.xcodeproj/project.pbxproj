@@ -12,7 +12,6 @@
 			buildConfigurationList = 5A8CE1980F5B5E4F002ED669 /* Build configuration list for PBXAggregateTarget "Archive" */;
 			buildPhases = (
 				5A8CE1910F5B5E1D002ED669 /* ShellScript */,
-				5A8CE19A0F5B5E9D002ED669 /* ShellScript */,
 			);
 			dependencies = (
 				5A8CE1960F5B5E23002ED669 /* PBXTargetDependency */,
@@ -34,8 +33,6 @@
 		5A43016F16629393000E55BA /* IABackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A43016E16629393000E55BA /* IABackgroundRenderer.m */; };
 		5A6B42DD0E96E50100ACA396 /* ImageAlpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5A6B42DC0E96E50100ACA396 /* ImageAlpha.icns */; };
 		5A6E7F92153C99F400D00506 /* IAColorBackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6E7F91153C99F400D00506 /* IAColorBackgroundRenderer.m */; };
-		5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; };
-		5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5A8CE14B0F5B5CDD002ED669 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */; };
 		5A91FE8B0E958375004954A0 /* IACollectionItem.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8A0E958375004954A0 /* IACollectionItem.py */; };
 		5A91FE940E95837F004954A0 /* IAImageView.py in Resources */ = {isa = PBXBuildFile; fileRef = 5A91FE8D0E95837F004954A0 /* IAImageView.py */; };
@@ -46,6 +43,8 @@
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA9BAB914268CED007E98AA /* Python.framework */; };
 		5ABD76510F0E791500515CC9 /* pngnq in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5AD99A5B1B6D61AF000BC400 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD99A501B6D619C000BC400 /* Sparkle.framework */; };
+		5AD99A5C1B6D61BB000BC400 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD99A501B6D619C000BC400 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77383F230C07AB8F0043B131 /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = 77383F220C07AB8F0043B131 /* main.py */; };
 		779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F70C0A0980000694DF /* MainMenu.xib */; };
 		779AE5FC0C0A0980000694DF /* ImageAlphaDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F90C0A0980000694DF /* ImageAlphaDocument.xib */; };
@@ -138,6 +137,48 @@
 			remoteGlobalIDString = 8DD76FB20486AB0100D96B5E;
 			remoteInfo = pngquant;
 		};
+		5AD99A4F1B6D619C000BC400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		5AD99A511B6D619C000BC400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		5AD99A531B6D619C000BC400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		5AD99A551B6D619C000BC400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		5AD99A571B6D619C000BC400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = Autoupdate;
+		};
+		5AD99A591B6D61A8000BC400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -147,7 +188,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5A8CE1420F5B5BD3002ED669 /* Sparkle.framework in Copy Frameworks */,
+				5AD99A5C1B6D61BB000BC400 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +232,6 @@
 		5A6E7F90153C99F400D00506 /* IAColorBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAColorBackgroundRenderer.h; sourceTree = "<group>"; };
 		5A6E7F91153C99F400D00506 /* IAColorBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAColorBackgroundRenderer.m; sourceTree = "<group>"; };
 		5A7B7EDF0F5CA4DD00F72F1F /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
-		5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		5A8CE14A0F5B5CDD002ED669 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		5A91FE8A0E958375004954A0 /* IACollectionItem.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IACollectionItem.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
 		5A91FE8D0E95837F004954A0 /* IAImageView.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; lineEnding = 0; path = IAImageView.py; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; xcLanguageSpecificationIdentifier = xcode.lang.python; };
@@ -204,6 +244,7 @@
 		5AA9BAB914268CED007E98AA /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 		5ABD764B0F0E78E700515CC9 /* pngnq.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngnq.xcodeproj; path = ../pngnq/pngnq.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5AD1805E0F4B732100370142 /* pngquant.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pngquant.xcodeproj; path = ../pngquant/pngquant.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = Sparkle/Sparkle.xcodeproj; sourceTree = "<group>"; };
 		5AED10DB139BAC1400FF5C69 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 		5AED10DC139BAC1400FF5C69 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		77383F220C07AB8F0043B131 /* main.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; lineEnding = 0; path = main.py; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.python; };
@@ -221,7 +262,7 @@
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */,
 				5A2C9C69150EB26200E9245E /* Quartz.framework in Frameworks */,
-				5A8CE1350F5B5BA0002ED669 /* Sparkle.framework in Frameworks */,
+				5AD99A5B1B6D61AF000BC400 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +274,6 @@
 			children = (
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 				5AA9BAB914268CED007E98AA /* Python.framework */,
-				5A8CE1340F5B5BA0002ED669 /* Sparkle.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -244,6 +284,7 @@
 				2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */,
 				13E42FBA07B3F13500E4EEF1 /* CoreData.framework */,
 				2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */,
+				5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -386,6 +427,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5AD99A451B6D619B000BC400 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AD99A561B6D619C000BC400 /* BinaryDelta */,
+				5AD99A581B6D619C000BC400 /* Autoupdate.app */,
+				5AD99A521B6D619C000BC400 /* Sparkle Test App.app */,
+				5AD99A541B6D619C000BC400 /* Sparkle Unit Tests.xctest */,
+				5AD99A501B6D619C000BC400 /* Sparkle.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +455,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5AD99A5A1B6D61A8000BC400 /* PBXTargetDependency */,
 				5A52B263167FD127009153F7 /* PBXTargetDependency */,
 				5A8DB0F9140EBBF300475FA3 /* PBXTargetDependency */,
 				5A937D5012FEDF30001D2786 /* PBXTargetDependency */,
@@ -420,7 +474,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "ImageAlpha" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -450,6 +504,10 @@
 				{
 					ProductGroup = 5A3122DD1399A1CF00448815 /* Products */;
 					ProjectRef = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
+				},
+				{
+					ProductGroup = 5AD99A451B6D619B000BC400 /* Products */;
+					ProjectRef = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -510,6 +568,41 @@
 			remoteRef = 5AD180620F4B732100370142 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		5AD99A501B6D619C000BC400 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 5AD99A4F1B6D619C000BC400 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AD99A521B6D619C000BC400 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 5AD99A511B6D619C000BC400 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AD99A541B6D619C000BC400 /* Sparkle Unit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.xctest";
+			remoteRef = 5AD99A531B6D619C000BC400 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AD99A561B6D619C000BC400 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 5AD99A551B6D619C000BC400 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AD99A581B6D619C000BC400 /* Autoupdate.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Autoupdate.app;
+			remoteRef = 5AD99A571B6D619C000BC400 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -550,22 +643,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find \"$TARGET_BUILD_DIR\" -name '*.pyc' -delete\ncd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=$SRCROOT/optimal_file_list\n";
-		};
-		5A8CE19A0F5B5E9D002ED669 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(TARGET_BUILD_DIR)/ImageAlpha.tar.bz2",
-			);
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/sparkle.sig",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "ruby \"$SRCROOT/sign_update.rb\" \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" ~/.ssh/dsa_priv_imageoptim.pem > \"$TARGET_BUILD_DIR/sparkle.sig\"\nwc -c \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" >> \"$TARGET_BUILD_DIR/sparkle.sig\"\ndate '+%a, %e %b %Y %H:%M:%S %z' >> \"$TARGET_BUILD_DIR/sparkle.sig\"";
+			shellScript = "find \"$TARGET_BUILD_DIR\" '(' -name '*.pyc' -or -name '*.cstemp' ')' -delete\ncd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=$SRCROOT/optimal_file_list\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -610,6 +688,11 @@
 			isa = PBXTargetDependency;
 			name = pngnq;
 			targetProxy = 5A937D4F12FEDF30001D2786 /* PBXContainerItemProxy */;
+		};
+		5AD99A5A1B6D61A8000BC400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			targetProxy = 5AD99A591B6D61A8000BC400 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
