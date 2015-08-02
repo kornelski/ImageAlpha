@@ -7,6 +7,19 @@
 <language>en</language>
 
 <item>
+<title>Version 1.5.0a1</title>
+<description><![CDATA[
+<ul>
+  <li>Slow Python rendering code replaced with GPU-accelerated layers for super fast and smooth animations</li>
+  <li>Upgraded to pngquant 2.5.0</li>
+<ul>
+]]></description>
+<pubDate>Sun, 02 Aug 2015 09:58:02 +0000</pubDate>
+<enclosure url="http://pngmini.com/ImageAlpha1.5.0a1.tar.bz2" sparkle:version="1.5.0a1" length="1389306" type="application/bzip2" sparkle:dsaSignature="MCwCFFzYvMDQkbYY2EBZr/EqFBbZpDNKAhQPfri7wJ5LBYIwd4NNg971GSqRvA=="/>
+<sparkle:minimumSystemVersion>10.7.1</sparkle:minimumSystemVersion>
+</item>
+
+<item>
 <title>Version 1.4.0</title>
 <description><![CDATA[
 <ul>
