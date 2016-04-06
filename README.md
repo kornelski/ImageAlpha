@@ -4,7 +4,7 @@ ImageAlpha is a Mac OS X GUI for [pngquant](http://pngquant.org), pngnq and [pos
 
 ImageAlpha is written in Python and Cocoa (PyObjC).
 
-![Screenshot](http://pornel.net/imagealpha/screenshot.png)
+![Screenshot](https://pngmini.com/screenshot-1.3.png)
 
 ###Sponsored By:
 
