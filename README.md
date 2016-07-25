@@ -6,6 +6,9 @@ ImageAlpha is written in Python and Cocoa (PyObjC).
 
 ![Screenshot](https://pngmini.com/screenshot-1.3.png)
 
-###Sponsored By:
+##Sponsored By:
 
 [PSW GROUP](https://www.psw-group.de/)
+
+## Language Support
+* 中文简体 (Chinese Simplified) - [Pluwen](https://twitter.com/pluwen)
