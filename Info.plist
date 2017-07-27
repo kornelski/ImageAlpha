@@ -38,17 +38,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5.0</string>
+	<string>1.5.1</string>
 	<key>CFBundleVersion</key>
-	<string>1.5.0</string>
+	<string>1.5.1</string>
 	<key>LSArchitecturePriority</key>
 	<array>
 		<string>x86_64</string>
 	</array>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.7.1</string>
+	<string>10.8</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>©2013 Kornel Lesiński</string>
+	<string>©2017 Kornel Lesiński</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

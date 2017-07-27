@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -23,8 +23,8 @@
 
 /* Begin PBXBuildFile section */
 		5A0A24C3174843D0003264CC /* pngquant in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD180630F4B732100370142 /* pngquant */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		5A1C388D1F2A3D0400E21DAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1C38831F2A3CDB00E21DAC /* QuartzCore.framework */; };
 		5A2C9C61150EAFE600E9245E /* IAPatternBackgroundRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */; };
-		5A2C9C69150EB26200E9245E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A2C9C68150EB26100E9245E /* Quartz.framework */; };
 		5A3010980F55DE1B0083C154 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = 5A30108D0F55DE1B0083C154 /* textures */; };
 		5A3123501399A6C500448815 /* liblibpng.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A31234D1399A6BD00448815 /* liblibpng.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		5A31235C1399A72500448815 /* posterizer in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A3122E11399A1CF00448815 /* posterizer */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -43,7 +43,7 @@
 		5AA5327E0EE32FC700360305 /* IAImage.py in Resources */ = {isa = PBXBuildFile; fileRef = 5AA5327D0EE32FC700360305 /* IAImage.py */; };
 		5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA9BAB914268CED007E98AA /* Python.framework */; };
 		5ABD76510F0E791500515CC9 /* pngnq in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5ABD76500F0E78E700515CC9 /* pngnq */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		5AD99A5B1B6D61AF000BC400 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD99A501B6D619C000BC400 /* Sparkle.framework */; };
+		5AD99A5B1B6D61AF000BC400 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD99A501B6D619C000BC400 /* Sparkle.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5AD99A5C1B6D61BB000BC400 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD99A501B6D619C000BC400 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77383F230C07AB8F0043B131 /* main.py in Resources */ = {isa = PBXBuildFile; fileRef = 77383F220C07AB8F0043B131 /* main.py */; };
 		779AE5FB0C0A0980000694DF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779AE5F70C0A0980000694DF /* MainMenu.xib */; };
@@ -53,6 +53,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A1C38871F2A3CDB00E21DAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 726B2B5D1C645FC900388755;
+			remoteInfo = "UI Tests";
+		};
+		5A1C38891F2A3CDB00E21DAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 722954B41D04ADAF00ECF9CA;
+			remoteInfo = fileop;
+		};
+		5A1C388B1F2A3CDB00E21DAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD99A441B6D619B000BC400 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5AE13FB31E0D9E07000D2C2C;
+			remoteInfo = generate_appcast;
+		};
 		5A3122E01399A1CF00448815 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */;
@@ -215,10 +236,9 @@
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		2A37F4C5FDCFA73011CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32DBCF750370BD2300C91783 /* ImageAlpha_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAlpha_Prefix.pch; sourceTree = "<group>"; };
-		5A0A24B9174843C5003264CC /* pngquant */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = pngquant; path = DerivedData/ImageAlpha/Build/Products/Release/pngquant; sourceTree = "<group>"; };
+		5A1C38831F2A3CDB00E21DAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPatternBackgroundRenderer.h; sourceTree = "<group>"; };
 		5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPatternBackgroundRenderer.m; sourceTree = "<group>"; };
-		5A2C9C68150EB26100E9245E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		5A30108D0F55DE1B0083C154 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
 		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = posterizer.xcodeproj; path = ../posterizer/posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5A3123451399A6BD00448815 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../ImageOptim/libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -261,7 +281,7 @@
 			files = (
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				5AA9BABA14268CED007E98AA /* Python.framework in Frameworks */,
-				5A2C9C69150EB26200E9245E /* Quartz.framework in Frameworks */,
+				5A1C388D1F2A3D0400E21DAC /* QuartzCore.framework in Frameworks */,
 				5AD99A5B1B6D61AF000BC400 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,8 +321,6 @@
 		2A37F4AAFDCFA73011CA2CEA /* ImageAlpha */ = {
 			isa = PBXGroup;
 			children = (
-				5A0A24B9174843C5003264CC /* pngquant */,
-				5A2C9C68150EB26100E9245E /* Quartz.framework */,
 				5A3123451399A6BD00448815 /* libpng.xcodeproj */,
 				5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */,
 				5AD1805E0F4B732100370142 /* pngquant.xcodeproj */,
@@ -361,6 +379,7 @@
 			children = (
 				1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */,
 				1058C7A8FEA54F5311CA2CBB /* Other Frameworks */,
+				5A1C38831F2A3CDB00E21DAC /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -396,7 +415,6 @@
 				5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */,
 				5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */,
 				5A91FE920E95837F004954A0 /* IASlider.py */,
-				5A91FE920E95837F004954A0 /* IASlider.py */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -431,10 +449,13 @@
 			isa = PBXGroup;
 			children = (
 				5AD99A561B6D619C000BC400 /* BinaryDelta */,
+				5A1C388A1F2A3CDB00E21DAC /* fileop */,
+				5A1C388C1F2A3CDB00E21DAC /* generate_appcast */,
 				5AD99A581B6D619C000BC400 /* Autoupdate.app */,
 				5AD99A521B6D619C000BC400 /* Sparkle Test App.app */,
 				5AD99A541B6D619C000BC400 /* Sparkle Unit Tests.xctest */,
 				5AD99A501B6D619C000BC400 /* Sparkle.framework */,
+				5A1C38881F2A3CDB00E21DAC /* UI Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,10 +495,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
+				TargetAttributes = {
+					8D15AC270486D014006FF6A4 = {
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "ImageAlpha" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -519,6 +545,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5A1C38881F2A3CDB00E21DAC /* UI Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "UI Tests.xctest";
+			remoteRef = 5A1C38871F2A3CDB00E21DAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5A1C388A1F2A3CDB00E21DAC /* fileop */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = fileop;
+			remoteRef = 5A1C38891F2A3CDB00E21DAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5A1C388C1F2A3CDB00E21DAC /* generate_appcast */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = generate_appcast;
+			remoteRef = 5A1C388B1F2A3CDB00E21DAC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5A3122E11399A1CF00448815 /* posterizer */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -643,7 +690,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find \"$TARGET_BUILD_DIR\" '(' -name '*.pyc' -or -name '*.cstemp' ')' -delete\ncd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" --files-from=$SRCROOT/optimal_file_list\n";
+			shellScript = "find \"$TARGET_BUILD_DIR\" '(' -name '*.pyc' -or -name '*.cstemp' ')' -delete\ncd \"$BUILT_PRODUCTS_DIR/\" && tar cjf \"$TARGET_BUILD_DIR/ImageAlpha.tar.bz2\" \"ImageAlpha.app\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -734,7 +781,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 59KZTZA4XR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -745,9 +794,10 @@
 				GCC_PREFIX_HEADER = ImageAlpha_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pornel.ImageAlpha;
 				PRODUCT_NAME = ImageAlpha;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -756,6 +806,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 59KZTZA4XR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -764,9 +816,10 @@
 				GCC_PREFIX_HEADER = ImageAlpha_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pornel.ImageAlpha;
 				PRODUCT_NAME = ImageAlpha;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -775,8 +828,28 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AED10DC139BAC1400FF5C69 /* debug.xcconfig */;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 			};
@@ -786,15 +859,34 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AED10DB139BAC1400FF5C69 /* release.xcconfig */;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_FAST_MATH = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OBJC_CALL_CXX_CDTORS = NO;
 				GCC_STRICT_ALIASING = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
@@ -804,6 +896,7 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_LABEL = YES;

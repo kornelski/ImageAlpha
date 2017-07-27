@@ -7,7 +7,7 @@
 //
 
 #import "IAPatternBackgroundRenderer.h"
-#import <Quartz/Quartz.h>
+#import <QuartzCore/QuartzCore.h>
 
 static void drawPatternImage(void *info, CGContextRef ctx)
 {
