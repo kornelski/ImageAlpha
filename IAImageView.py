@@ -12,6 +12,7 @@ class IAImageView(NSView):
     _zoom = 2.0
     _lastZoom = -1
     _image = None
+    _inWantsLayers = False
     _alternateImage = None
     _drawAlternateImage = NO
     backgroundRenderer = None
@@ -27,15 +28,19 @@ class IAImageView(NSView):
     def initWithFrame_(self, frame):
         self = super(IAImageView, self).initWithFrame_(frame)
         if self:
-            self.addLayers()
+            self.myAddLayers()
         return self
 
     # existence of initWithCoder_ causes later crashes in a place
-    # with backtrace I don't recognize, so lazy addLayers()
+    # with backtrace I don't recognize, so lazy myAddLayers()
     # is scattered all over the place instead
 
-    def addLayers(self):
-        self.setWantsLayer_(YES);
+    def myAddLayers(self):
+        if not self._inWantsLayers:
+            self._inWantsLayers = True;
+            self.setWantsLayer_(YES);
+            self._inWantsLayers = False;
+
         if self.layer() is None: self.setLayer_(CALayer.layer());
         assert self.layer() is not None;
 
@@ -193,7 +198,7 @@ class IAImageView(NSView):
     def setBackgroundLayer_(self, layer):
         assert layer
         if self.layer() is None:
-            self.addLayers()
+            self.myAddLayers()
 
         layer.setFrame_(self.bounds());
         layer.setAutoresizingMask_(kCALayerWidthSizable|kCALayerHeightSizable)
@@ -224,7 +229,7 @@ class IAImageView(NSView):
         if tf:
 
             if self.layer() is None:
-                self.addLayers()
+                self.myAddLayers()
 
             image = self.image() if not self.drawAlternateImage() else self.alternateImage();
             if image is not None and self._imageLayer is not None:
