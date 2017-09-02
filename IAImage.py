@@ -96,6 +96,7 @@ class IAImage(NSObject):
     def init(self):
         self = super(IAImage, self).init()
         self.versions = {};
+        self.updateDithering()
         return self
 
     def setCallbackWhenImageChanges_(self, documentToCallback):
@@ -135,6 +136,9 @@ class IAImage(NSObject):
         self._dithering = int(val) > 0
         self.update()
 
+    def updateDithering(self):
+        self.setDithering_(NSUserDefaults.standardUserDefaults().get("dithered", self.quantizer().preferredDithering()))
+
     def numberOfColors(self):
         return self._numberOfColors
 
@@ -159,8 +163,7 @@ class IAImage(NSObject):
         quantizer = self.quantizer()
         if not quantizer.supportsIeMode():
             self.setIeMode_(False)
-        if quantizer.preferredDithering() is not None:
-            self.setDithering_(quantizer.preferredDithering())
+        self.updateDithering()
         self.update()
 
     def isBusy(self):
