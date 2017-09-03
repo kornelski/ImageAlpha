@@ -45,4 +45,23 @@ static CGFloat constrain(NSInteger dividerIndex, CGFloat proposedSize)
     return NO;
 }
 
+-(BOOL) validateMenuItem:(NSMenuItem *)sender {
+    return self.documentImage != nil;
+}
+
+-(void) setDitheredPreference:(NSMenuItem *)sender {
+    for (NSMenuItem *item in sender.menu.itemArray) {
+        [item setState:item == sender ? NSOnState : NSOffState];
+    }
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (sender.tag < 0) {
+        [defaults removeObjectForKey:@"dithered"];
+    } else {
+        [defaults setBool:sender.tag forKey:@"dithered"];
+    }
+    [defaults synchronize];
+    [self.documentImage updateDithering];
+}
+
 @end

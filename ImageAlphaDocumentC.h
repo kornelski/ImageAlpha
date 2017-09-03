@@ -6,7 +6,9 @@
 -(void)setDrawAlternateImage:(NSNumber*)b;
 @end
 
-@class IAImage;
+@interface IAImage : NSObject
+-(void)updateDithering;
+@end
 
 @interface ImageAlphaDocumentC : NSDocument {
     IAImageView* zoomedImageView;
