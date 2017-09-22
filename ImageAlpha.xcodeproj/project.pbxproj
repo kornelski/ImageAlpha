@@ -240,7 +240,7 @@
 		5A2C9C5F150EAFE500E9245E /* IAPatternBackgroundRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPatternBackgroundRenderer.h; sourceTree = "<group>"; };
 		5A2C9C60150EAFE600E9245E /* IAPatternBackgroundRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPatternBackgroundRenderer.m; sourceTree = "<group>"; };
 		5A30108D0F55DE1B0083C154 /* textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = textures; sourceTree = "<group>"; };
-		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = posterizer.xcodeproj; path = ../posterizer/posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
+		5A3122DC1399A1CF00448815 /* posterizer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = posterizer.xcodeproj; path = mediancut-posterizer/posterizer.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5A3123451399A6BD00448815 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../ImageOptim/libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5A3F4E5F17A1F3FE00469537 /* ImageAlphaDocumentC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAlphaDocumentC.h; sourceTree = "<group>"; };
 		5A3F4E6017A1F3FE00469537 /* ImageAlphaDocumentC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAlphaDocumentC.m; sourceTree = "<group>"; };
